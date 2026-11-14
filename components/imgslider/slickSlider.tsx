@@ -24,7 +24,8 @@ const SECONDS_PER_IMAGE = 10;
 /**
  * Banner con imágenes que se desplazan de forma continua hacia la izquierda.
  *
- * En escritorio cada imagen ocupa el ancho de la pantalla (hasta el 82% del alto),
+ * Cada imagen ocupa el ancho de la pantalla (hasta el 42% del alto en celular y
+ * el 82% en escritorio),
  * con el texto abajo a la derecha, como en la versión original.
  *
  * Antes era react-slick con `variableWidth`, que recalculaba anchos a medida que
@@ -38,14 +39,14 @@ const SimpleSlider: React.FC<Props> = ({ url, imgInfo = [] }) => {
             <div
                 key={`${copy}-${index}-${item.imgName}`}
                 aria-hidden={copy === 1 || undefined}
-                className="shrink-0 md:w-[100cqw]"
+                className="shrink-0 w-[100cqw]"
             >
                 {/* inline-block como lo hacía react-slick: mantiene el mismo alto total */}
                 <div className="relative" style={{ width: "100%", display: "inline-block" }}>
                     <div className="z-0">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
-                            className="block m-auto w-auto max-w-none h-[min(500px,42vh)] md:w-full md:h-auto md:max-h-[82vh]"
+                            className="block m-auto w-full h-auto max-h-[42vh] md:max-h-[82vh]"
                             alt={copy === 0 ? `Imagen ${index}` : ""}
                             src={`${url}${item.imgName}.webp`}
                             width={IMG_WIDTH}
