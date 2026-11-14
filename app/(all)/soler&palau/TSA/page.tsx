@@ -3,7 +3,7 @@ import ScrollFrames from "@/components/scrollFrames/ScrollFrames";
 
 
 
-import { Image } from "@nextui-org/image";
+import { Image } from "@/components/ui/Image";
 import NextLink from "next/link";
  import { itemsNavSolerPalau } from "@/public/data/navbarData";
 import { tsaData } from "@/public/data/soler&palau/tsaData";

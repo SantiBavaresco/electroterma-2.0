@@ -1,7 +1,7 @@
 "use client";
 import NextLink from "next/link";
 
-import { Image } from "@nextui-org/image";
+import { Image } from "@/components/ui/Image";
 import CardDisplay from "@/components/navbar/cardDisplay";
 import { itemsNavTempomatic } from "@/public/data/navbarData";
 import { AsesoramietoButton } from "@/components/custonButtons/asesoramiento";

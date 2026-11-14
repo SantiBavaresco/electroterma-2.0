@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Slider from "react-slick";
-import { Image } from "@nextui-org/image";
+import { Image } from "@/components/ui/Image";
 
 interface Props {
     url?: string;

@@ -1,7 +1,7 @@
 "use client"
 import { Link } from "@nextui-org/link";
 import { IoMailOutline } from "react-icons/io5";
-import { Image } from "@nextui-org/image";
+import { Image } from "@/components/ui/Image";
 import { openContactEmail } from "@/lib/contact";
 
 

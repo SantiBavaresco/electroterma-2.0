@@ -1,6 +1,6 @@
 "use client";
 
-import { Image } from "@nextui-org/image";
+import { Image } from "@/components/ui/Image";
 import { AsesoramietoButton } from "@/components/custonButtons/asesoramiento";
 import { EscribinosButton } from "@/components/custonButtons/escribinos";
 import { Divider } from "@nextui-org/react";

@@ -137,3 +137,23 @@ html.pre-desktop main {
         visibility: visible;
     }
 }
+
+/* Banner de imágenes en movimiento (components/imgslider/slickSlider.tsx) */
+.banner-marquee {
+    display: flex;
+    flex-wrap: nowrap;
+    width: max-content;
+    animation-name: banner-marquee;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    will-change: transform;
+}
+
+@keyframes banner-marquee {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        transform: translate3d(-50%, 0, 0);
+    }
+}

@@ -1,5 +1,5 @@
 "use client";
-import { Image } from "@nextui-org/image";
+import { Image } from "@/components/ui/Image";
 import React from "react";
 import InfoTecnica from "./infotecnica";
 import { DotSVG } from "@/public/svg/dot";

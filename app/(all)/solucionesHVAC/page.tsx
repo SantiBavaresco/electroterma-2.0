@@ -1,7 +1,7 @@
 "use client"
 import { solucionesGeneralData } from "@/public/data/soluciones/solucionesGeneralData";
 import { Button } from "@nextui-org/button";
-import { Image } from "@nextui-org/image";
+import { Image } from "@/components/ui/Image";
 import { IoMailOutline } from "react-icons/io5";
 import { useIsDesktop } from "@/hooks/useIsDesktop";
 import { openContactEmail } from "@/lib/contact";

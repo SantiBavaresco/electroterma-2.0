@@ -1,6 +1,6 @@
 "use client";
 import { Link } from "@nextui-org/link";
-import { Image } from "@nextui-org/image";
+import { Image } from "@/components/ui/Image";
 import { Button, Divider } from "@nextui-org/react";
 
 import VideoAutoPlayer from "@/components/videoplayer/videoautoplayer";
@@ -21,7 +21,7 @@ export default function Home() {
     return (
         <div className="flex flex-col items-center justify-center gap-4  pb-0 md:pb-0 ">
             <section className="max-h-[90vh] w-full xl:px-[0%] flex items-center justify-center overflow-hidden bg-lowgrasy">
-                <VideoAutoPlayer url="/img/home/video/homePresentacion.mp4"/>
+                <VideoAutoPlayer url="/img/home/video/homePresentacion.mp4" aspectRatio="1920 / 1080"/>
                 
             </section>
 

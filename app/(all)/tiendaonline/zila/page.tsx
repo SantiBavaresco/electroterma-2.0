@@ -1,5 +1,5 @@
 "use client"
-import { Image } from "@nextui-org/image";
+import { Image } from "@/components/ui/Image";
 import { AsesoramietoButton } from "@/components/custonButtons/asesoramiento";
 import { useIsDesktop } from "@/hooks/useIsDesktop";
 

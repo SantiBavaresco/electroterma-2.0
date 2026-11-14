@@ -1,6 +1,6 @@
 "use client";
 
-import { Image } from "@nextui-org/image";
+import { Image } from "@/components/ui/Image";
 import { itemsNavSolerPalauHome } from "@/public/data/navbarData";
 import CardDisplaySypHome from "@/components/navbar/cardDisplaySypHome";
 import { TiendaButton } from "@/components/custonButtons/tienda";

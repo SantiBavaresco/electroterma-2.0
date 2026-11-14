@@ -6,6 +6,9 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./scrollFrames.css";
 
 gsap.registerPlugin(ScrollTrigger);
+// En celulares la barra de direcciones aparece/desaparece al scrollear y cambia
+// el alto de la ventana: eso no debe recalcular nada.
+ScrollTrigger.config({ ignoreMobileResize: true });
 
 export type ScrollFramesVariant = "web" | "mobile";
 
@@ -24,6 +27,9 @@ interface ScrollFramesProps {
     fit?: "cover" | "stretch";
 }
 
+// La animación arranca cuando el borde superior de la sección llega a este punto
+// de la pantalla (antes empezaba recién al quedar fija arriba de todo)
+const START_AT = "top 85%";
 // Desplazamiento vertical con el que se dibujaba cada frame en la versión original
 const OFFSET_Y: Record<ScrollFramesVariant, number> = { web: 30, mobile: 50 };
 const MAX_DPR = 2;
@@ -58,10 +64,17 @@ export default function ScrollFrames({ product, frameCount, variant, storyClassN
         let disposed = false;
 
         // ---------- dibujo ----------
+        // tamaño de la "pantalla" del canvas: se fija al cargar y sólo cambia si cambia
+        // el ancho (rotar el celular, achicar la ventana), no con la barra del navegador
+        let viewW = 0;
+        let viewH = 0;
         const resize = () => {
             const dpr = Math.min(window.devicePixelRatio || 1, MAX_DPR);
-            const w = window.innerWidth;
-            const h = window.innerHeight;
+            if (window.innerWidth === viewW && viewH) return;
+            viewW = window.innerWidth;
+            viewH = window.innerHeight;
+            const w = viewW;
+            const h = viewH;
             // mismo tamaño "lógico" que la versión original (ancho x alto de la ventana);
             // el CSS (max-width / max-height) lo ajusta igual que antes
             canvas.width = Math.round(w * dpr);
@@ -85,8 +98,8 @@ export default function ScrollFrames({ product, frameCount, variant, storyClassN
             const idx = nearestLoaded(i);
             if (idx < 0 || idx === drawn) return;
             const img = images[idx]!;
-            const cw = window.innerWidth;
-            const ch = window.innerHeight;
+            const cw = viewW;
+            const ch = viewH;
             ctx.clearRect(0, 0, cw, ch);
             if (fit === "stretch") {
                 ctx.drawImage(img, 0, OFFSET_Y[variant], cw, ch);
@@ -160,7 +173,7 @@ export default function ScrollFrames({ product, frameCount, variant, storyClassN
         // ---------- scroll ----------
         const trigger = ScrollTrigger.create({
             trigger: section,
-            start: "top top",
+            start: START_AT,
             end: "bottom bottom",
             scrub: 0.4,
             onUpdate: (self) => {

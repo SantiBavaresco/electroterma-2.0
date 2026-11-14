@@ -1,5 +1,5 @@
 import { title } from "@/components/primitives";
-import { Image } from "@nextui-org/image";
+import { Image } from "@/components/ui/Image";
 
 export default function TestPage() {
 	return (

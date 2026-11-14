@@ -5,7 +5,7 @@ import { rlsData } from "@/public/data/soler&palau/rlsData";
 import { itemsNavSolerPalau } from "@/public/data/navbarData";
 
 
-import { Image } from "@nextui-org/image";
+import { Image } from "@/components/ui/Image";
 import NextLink from "next/link";
 
 

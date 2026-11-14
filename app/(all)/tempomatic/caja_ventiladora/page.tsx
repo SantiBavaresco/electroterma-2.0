@@ -1,6 +1,6 @@
 "use client";
 
-import { Image } from "@nextui-org/image";
+import { Image } from "@/components/ui/Image";
 
 import CardDisplay from "@/components/navbar/cardDisplay";
 import { itemsNavTempomatic } from "@/public/data/navbarData";

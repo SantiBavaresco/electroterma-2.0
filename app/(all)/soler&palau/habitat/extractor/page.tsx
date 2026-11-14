@@ -1,5 +1,5 @@
 "use client";
-import { Image } from "@nextui-org/image";
+import { Image } from "@/components/ui/Image";
 
 
 import { habitatData } from "@/public/data/soler&palau/habitatData";

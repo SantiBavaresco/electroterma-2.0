@@ -1,6 +1,6 @@
 "use client"
 import { Button } from "@nextui-org/button";
-import { Image } from "@nextui-org/image";
+import { Image } from "@/components/ui/Image";
 import { Avatar } from "@nextui-org/react";
 import { IoMailOutline } from "react-icons/io5";
 import { useIsDesktop } from "@/hooks/useIsDesktop";

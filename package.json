@@ -3,7 +3,10 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "images:sizes": "node scripts/generate-image-sizes.mjs",
+    "predev": "npm run images:sizes",
     "dev": "next dev",
+    "prebuild": "npm run images:sizes",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -51,6 +54,7 @@
     "daisyui": "^4.12.23",
     "eslint": "^8.48.0",
     "eslint-config-next": "^14.2.35",
+    "image-size": "^1.2.1",
     "typescript": "^5.0.4"
   }
 }
