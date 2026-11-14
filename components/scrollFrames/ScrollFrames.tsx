@@ -29,7 +29,7 @@ interface ScrollFramesProps {
 
 // La animación arranca cuando el borde superior de la sección llega a este punto
 // de la pantalla (antes empezaba recién al quedar fija arriba de todo)
-const START_AT = "top 85%";
+const START_AT = "top 60%";
 // Desplazamiento vertical con el que se dibujaba cada frame en la versión original
 const OFFSET_Y: Record<ScrollFramesVariant, number> = { web: 30, mobile: 50 };
 const MAX_DPR = 2;

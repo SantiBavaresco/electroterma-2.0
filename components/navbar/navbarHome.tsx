@@ -11,6 +11,7 @@ import { Dropdown, Space } from 'antd';
 import type { MenuProps } from 'antd';
 
 import { BsArrowBarLeft } from "react-icons/bs";
+import { BsArrowBarRight } from "react-icons/bs";
 
 import { Image } from "@/components/ui/Image";
 
@@ -430,7 +431,8 @@ export const NavbarHome: React.FC<Props> = ({ css, ...props }) => {
                                     {dropdown.dropdown ? 
                                         <div className="py-0">
                                             <Accordion variant="light">
-                                                <AccordionItem key={dropdown.label} aria-label={dropdown.label} hideIndicator
+                                                <AccordionItem key={dropdown.label} aria-label={dropdown.label} 
+                                                indicator={<BsArrowBarRight className="text-2xl text-black"/> }
                                                 title={
                                                     <a key={dropdown.label} 
                                                     href={dropdown.label==="Tempomatic" ? undefined : dropdown.label==="Soler & Palau" ? undefined : dropdown.href }  target="_top" >
@@ -519,7 +521,7 @@ export const NavbarHome: React.FC<Props> = ({ css, ...props }) => {
                                 {dropdown.dropdown ? 
                                     <div className="py-0">
                                         <Accordion variant="light">
-                                            <AccordionItem key={dropdown.label} aria-label={dropdown.label} hideIndicator
+                                            <AccordionItem key={dropdown.label} aria-label={dropdown.label} 
                                             title={
                                                 <a key={dropdown.label} 
                                                 href={dropdown.label==="Tempomatic" ? dropdown.href : dropdown.label==="Soler & Palau" ? dropdown.href : undefined}  target="_top" >

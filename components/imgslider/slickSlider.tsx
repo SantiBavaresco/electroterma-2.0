@@ -24,6 +24,9 @@ const SECONDS_PER_IMAGE = 10;
 /**
  * Banner con imágenes que se desplazan de forma continua hacia la izquierda.
  *
+ * En escritorio cada imagen ocupa el ancho de la pantalla (hasta el 82% del alto),
+ * con el texto abajo a la derecha, como en la versión original.
+ *
  * Antes era react-slick con `variableWidth`, que recalculaba anchos a medida que
  * cargaban las imágenes y daba tirones. Ahora es una animación CSS (transform,
  * acelerada por GPU) sobre dos copias de la tira de imágenes, con el tamaño de
@@ -32,13 +35,17 @@ const SECONDS_PER_IMAGE = 10;
 const SimpleSlider: React.FC<Props> = ({ url, imgInfo = [] }) => {
     const slides = (copy: number) =>
         imgInfo.map((item, index) => (
-            <div key={`${copy}-${index}-${item.imgName}`} aria-hidden={copy === 1 || undefined}>
+            <div
+                key={`${copy}-${index}-${item.imgName}`}
+                aria-hidden={copy === 1 || undefined}
+                className="shrink-0 md:w-[100cqw]"
+            >
                 {/* inline-block como lo hacía react-slick: mantiene el mismo alto total */}
-                <div className="relative max-h-[80%]" style={{ width: "100%", display: "inline-block" }}>
+                <div className="relative" style={{ width: "100%", display: "inline-block" }}>
                     <div className="z-0">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
-                            className="block m-auto w-auto max-w-none h-[min(500px,42vh)] md:h-[min(500px,82vh)]"
+                            className="block m-auto w-auto max-w-none h-[min(500px,42vh)] md:w-full md:h-auto md:max-h-[82vh]"
                             alt={copy === 0 ? `Imagen ${index}` : ""}
                             src={`${url}${item.imgName}.webp`}
                             width={IMG_WIDTH}
@@ -48,7 +55,7 @@ const SimpleSlider: React.FC<Props> = ({ url, imgInfo = [] }) => {
                             decoding="async"
                         />
 
-                        <div className="absolute px-6 z-10 bottom-[0%] rounded-tl-[42px] flex flex-col justify-start items-center bg-white p-1">
+                        <div className="absolute px-6 z-10 bottom-[0%] right-0 rounded-tl-[42px] flex flex-col justify-start items-center bg-white p-1">
                             <div className="flex flex-col justify-start items-start text-sm lg:text-3xl py-4 lg:py-6 2xl:py-10">
                                 {item.imgLable?.map((label, i) => (
                                     <h1
@@ -66,7 +73,7 @@ const SimpleSlider: React.FC<Props> = ({ url, imgInfo = [] }) => {
         ));
 
     return (
-        <div className="overflow-hidden flex flex-grow min-h-full pointer-events-none">
+        <div className="overflow-hidden flex flex-grow min-h-full pointer-events-none [container-type:inline-size]">
             <div className="banner-marquee" style={{ animationDuration: `${imgInfo.length * SECONDS_PER_IMAGE}s` }}>
                 {slides(0)}
                 {slides(1)}
