@@ -1,24 +1,13 @@
 "use client"
 import React from 'react';
-// import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem } from '@nextui-org/react';
-// import React from 'react';
-// import './index.css';
-import { DownOutlined } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
-import { Dropdown, Space, Menu, Button, Divider, theme  } from 'antd';
-import { Select } from 'antd';
+import { Dropdown, Space } from 'antd';
 import { BsArrowBarLeft } from "react-icons/bs";
-import { siteConfig } from "@/config/site";
 import { itemsNavSolerPalau as Soler, itemsNavTempomatic as Tempomatic } from "@/public/data/navbarData";
 import { Image } from "@nextui-org/image";
 
-
 import NextLink from "next/link";
 import CardDisplay from './cardDisplay';
-
-
-
-
 
 const Burger =  
   <div className="w-[22vw] 2xl:w-[15vw] px-auto h-[150%] md:min-w-64 flex items-center justify-center p-[18px] bg-[#EF771C]">
@@ -43,8 +32,6 @@ const Burger =
         />
     </svg>
   </div>
-
-
 
 const items: MenuProps['items'] = [
   {
@@ -72,7 +59,6 @@ const items: MenuProps['items'] = [
   {
     key: '2',
     type: "submenu",
-    // popupClassName: "flex flex-row",
     popupOffset:[0,0],
     
     style: { backgroundColor: "#EF771C", margin:-4 },
@@ -94,7 +80,6 @@ const items: MenuProps['items'] = [
               color="foreground"
               href={element.href}
               target="_top"
-              // onClick={setFirstFalse}
               >
                 <CardDisplay  data={element} />
             </NextLink>
@@ -102,8 +87,6 @@ const items: MenuProps['items'] = [
           ))}
           
         </div>,
-        
-        // style: { backgroundColor: "blue" },
 
       },
      
@@ -133,7 +116,6 @@ const items: MenuProps['items'] = [
               color="foreground"
               href={element.href}
               target="_top"
-              // onClick={setFirstFalse}
               >
                 <CardDisplay  data={element} />
             </NextLink>
@@ -170,9 +152,6 @@ const items: MenuProps['items'] = [
     key: '5',
     type: 'group',
     style: { backgroundColor: "#EF771C", margin:-4 },
-    // mode: "horizontal",
-    // label: <div className='bg-green-500 mx-2 w-full -m -trans- -mt-2 overflow-hidden '></div>,
-    // label: 'Group title',
     children: [
       {
         key: '5-1',
@@ -238,8 +217,6 @@ const items: MenuProps['items'] = [
   },
 ];  
 
-
-
 export const NavbarPrueba: React.FC = () => (
 
   <div id="area" className='flex fixe w-full bg-opacity-80 bg-white backdrop-blur-sm '>
@@ -250,9 +227,7 @@ export const NavbarPrueba: React.FC = () => (
           target="_top"
         >
             <Image
-               // className="sm:w-[180px]"
               src="../../img/electrotermalogoletrasNoPadding.png"
-              // height={50}
               width={240}
               alt="hola"
             />
@@ -263,7 +238,6 @@ export const NavbarPrueba: React.FC = () => (
     className=' text-5xl '>
     <div onClick={(e) => e.preventDefault()} className='w-[22vw] 2xl:w-[15vw] ml-auto -2 bg-livered h-16  rounded-3xl  '>
       <Space>
-        {/* <DownOutlined /> */}
         {Burger}
       </Space>
     </div>

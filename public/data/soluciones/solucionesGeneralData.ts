@@ -48,12 +48,7 @@ interface generalDataType {
             title: "EXTRACCIÓN DE AIRE LOCALIZADA",
             href: "/solucionesHVAC/extraccion_de_aire_localizada",
           },
-          // {
           //   imgUrl:"../../img/soluciones/home/Soluciones4.webp",
-          //   lable: "SOLUCIÓN ",
-          //   title: "VENTILACIÓN EN OFICINAS Y ESPACIOS PÚBLICOS",
-          //   href: "/solucionesHVAC/barcos",
-          // },
           {
             imgUrl:"../../img/soluciones/home/Soluciones5.webp",
             lable: "SOLUCIÓN ",
@@ -96,5 +91,4 @@ interface generalDataType {
     videoYoutube1: "https://www.youtube.com/watch?v=uMn8YFVzBkE",
     videoYoutube2: "https://www.youtube.com/watch?v=ea8KWDyYWcA",
 
-   
 }

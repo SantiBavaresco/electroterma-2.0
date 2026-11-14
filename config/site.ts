@@ -12,7 +12,6 @@ export const siteConfig = {
 			dropdown: false,
         },
 
-
         {
             label: "Tempomatic",
             key: "Tempomatic",
@@ -48,14 +47,8 @@ export const siteConfig = {
             key:"SolucionesEnHVAC",
             href: "/solucionesHVAC",
 			dropdown: false,
-            // dwData: itemsNavZila,
         },
-        // {
-        //     label: "Nosotros",
-        //     href: "/nosotros",
-		// 	dropdown: false,
 
-        // },
         {
             label: "Tienda Online",
             key: "TiendaOnline",
@@ -71,7 +64,6 @@ export const siteConfig = {
             href: "/",
 			dropdown: false,
         },
-
 
         {
             label: "Tempomatic",
@@ -102,12 +94,7 @@ export const siteConfig = {
             href: "/solucionesHVAC",
 			dropdown: false,
         },
-        // {
-        //     label: "Nosotros",
-        //     href: "/nosotros",
-		// 	dropdown: false,
 
-        // },
         {
             label: "Tienda Online",
             href: "https://www.tiendaelectroterma.com.ar/",

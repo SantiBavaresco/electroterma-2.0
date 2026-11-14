@@ -1,10 +1,7 @@
 "use client"
-import { title } from "@/components/primitives";
-import { solucionesGeneralData } from "@/public/data/soluciones/solucionesGeneralData";
 import { Button } from "@nextui-org/button";
 import { Image } from "@nextui-org/image";
 import { Avatar } from "@nextui-org/react";
-import {Link} from "@nextui-org/react";
 import { useEffect, useState } from "react";
 import { IoMailOutline } from "react-icons/io5";
 
@@ -19,10 +16,8 @@ export default function Soluciones_ventilacion_de_sala_de_transformadores_Page()
             subject
         )}&body=${encodeURIComponent(body)}`;
     
-        // window.location.href = mailtoLink;
         window.open(mailtoLink, '_blank');
     };
-
 
 	const [BigScreen, setBigScreen] = useState(false);
 
@@ -93,7 +88,6 @@ export default function Soluciones_ventilacion_de_sala_de_transformadores_Page()
 							className="p-"
 							radius="none"
 							src="../../img/soluciones/ventilacion_de_sala_de_transformadores/Soluciones1.webp"
-							// width="100%"
 							height="100%"
 							/> 
 							
@@ -172,7 +166,6 @@ export default function Soluciones_ventilacion_de_sala_de_transformadores_Page()
 							src="../../img/soluciones/ventilacion_de_sala_de_transformadores/Soluciones2.webp"
 							width="100%"
 							/>
-							
 
 							<p className="w-full">
 							Se propuso instalar un sistema que genere una corriente de aire entre los puntos de entrada (inyección) y salida (extracción). De esta forma se producirá un “barrido” entre la inyección de aire frío, el foco generador de calor y la extracción de aire caliente en la sala de transformadores.
@@ -181,7 +174,6 @@ export default function Soluciones_ventilacion_de_sala_de_transformadores_Page()
 						</div>
 						
 						<div className="w-full flex flex-col gap-6">
-							
 
 							<p className="text-[3.8vw] lg:text-[1.20vw] font-nunito">
 								Este recinto está construido en mampostería, con dos únicas caras disponibles para la inyección/expulsión de aire, sin posibilidad de instalar extractores en la cubierta. 
@@ -219,16 +211,6 @@ export default function Soluciones_ventilacion_de_sala_de_transformadores_Page()
 								
 							</article>
 
-							{/* <div className="mx-auto md:hidden">
-								<Button
-											className="mt-auto m-1 2 xm:mt-auto  ml-2 mb-2 z-10 bg-[#EF771C] xm:px-4 xm:py-4  font-nunito text-white shadow-xl"
-											radius="full"
-											size="md"
-											onClick={()=>(window.open("/solucionesHVAC", "_top"))}
-										>
-											Ver otras soluciones
-										</Button>
-							</div> */}
 						</div>
 
 						{BigScreen || 
@@ -267,8 +249,6 @@ export default function Soluciones_ventilacion_de_sala_de_transformadores_Page()
 										<a href="/solucionesHVAC"> 
 											<button
 												className="  z-10 bg-[#EF771C] px-2 py-2 rounded-[12px] font-nunito text-white text-sm 2xl:text-xl shadow-xl"
-												// radius="full"
-												// size={BigScreen ? "sm" : "sm"}
 											>
 												Ver otras soluciones
 											</button>
@@ -278,13 +258,9 @@ export default function Soluciones_ventilacion_de_sala_de_transformadores_Page()
 							</div>
 						</>
 						}
-						
-					
 
 					</div>
 
-					
-					
 				</div>
 			</article>
 
@@ -306,7 +282,6 @@ export default function Soluciones_ventilacion_de_sala_de_transformadores_Page()
                                     group-hover:bg-gradient-to-r group-hover:from-orange-400 group-hover:to-[#fe694f]
                                     group-active:bg-gradient-to-r group-active:from-[#f37a7ae5] group-active:to-[#FFFFFF]
                                 "> 
-                                    {/* <MailSvg css=" group-active:text-livered text-white lg:text-3xl" size={40}/> */}
                                     <IoMailOutline className=" group-active:text-livered text-white lg:text-4xl"/>
                                     </div>
                                 <span className="ml-[30px] lg:ml-10">Escribinos</span>

@@ -1,6 +1,5 @@
 import React from "react";
 import { MyButton } from "./myButton";
-import { BsWhatsapp } from "react-icons/bs";
 import { ShoppingCart } from "@/public/svg/shoppingCart";
 interface Props {
     css?: string;
@@ -21,7 +20,6 @@ export const TiendaButton: React.FC<Props> = ({ css, size, screen, label, link, 
                     className="z-10 mt-4 bg-[#EDEDED] font-nunito text-[#4C4B4B] 3xl:ml-0 2xl:text-2xl"
                     radius="full"
                     size={screen} 
-                    // href="https://www.tiendaelectroterma.com.ar/" target="_blank"
                 >
                     <div className={`absolute rounded-full left-0 z-20 p-0   shadow-r-xl shadow-[rgba(29,29,27,0.24)] border- border-gray-200 
                         ${size===15 ? "p-1.5" : " p-3 "} 

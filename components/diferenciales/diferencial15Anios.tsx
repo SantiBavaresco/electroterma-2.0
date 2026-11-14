@@ -3,7 +3,6 @@ import React from "react";
 
 import { D15Anios } from "@/public/svg/D15Anios";
 
-
 interface Props {
     svg?: string;
     text?: string;
@@ -19,7 +18,6 @@ export const Diferencial15Anio : React.FC<Props> =  ({size, text, textSize, cust
 				<span className=" z-10">
 
 				<D15Anios size={size || 70}/>				
-				{/* <svg size={size || 70}/> */}
 				</span>
 				<p className={`z-0   h-2/3 pl-8 pr-1 md:px-10 py-1 -translate-x-8 
 					bg-white bg-opacity-100 border-2 border-[#FF7800] rounded-tr-2xl md:rounded-tr-3xl  

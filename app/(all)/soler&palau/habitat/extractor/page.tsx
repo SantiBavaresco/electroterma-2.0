@@ -1,69 +1,42 @@
 "use client";
 import { useEffect, useState } from "react";
-import { Link } from "@nextui-org/link";
-import Lottie from "lottie-react";
-// import animationData from "../public/lottie/bulding-page.json";
-import { Snippet } from "@nextui-org/snippet";
-import { Code } from "@nextui-org/code";
-import { button as buttonStyles } from "@nextui-org/theme";
-import { siteConfig } from "@/config/site";
-import { title, subtitle } from "@/components/primitives";
-import { GithubIcon } from "@/components/icons";
 import {extendVariants, Button} from "@nextui-org/react";
 import { Image } from "@nextui-org/image";
 
-import { BsWhatsapp } from "react-icons/bs";
-import { IoMailOutline } from "react-icons/io5";
-import { DiferencialGranConfort } from "@/components/diferenciales/diferencialGranConfort";
-import { DiferencialCompuertaAntiretorno } from "@/components/diferenciales/diferencialCompuertaAntiretorno";
-import { DiferencialVolumenBajo } from "@/components/diferenciales/diferencialVolumenBajo";
-import { ShoppingCart } from "@/public/svg/shoppingCart";
-import YouTubePlayer from "@/components/youtubePlayer";
-import { MdKeyboardDoubleArrowRight } from "react-icons/md";
-
 
 import { habitatData } from "@/public/data/soler&palau/habitatData";
-import VideoAutoPlayer from "@/components/videoplayer/videoautoplayer";
-import SimpleSliderDemoImages from "@/components/imgslider/simpleSliderDemoImages";
-
 
 import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
-import SimpleSlider from "@/components/imgslider/slickSlider";
-import { Download } from "@/public/svg/download";
-import { TableSolerPalau } from "@/components/table/tableSoler&palau";
+import "slick-carousel/slick/slick.css"; // estilos globales que antes llegaban vía @/components/imgslider/slickSlider
+import "slick-carousel/slick/slick-theme.css"; // estilos globales que antes llegaban vía @/components/imgslider/slickSlider
 import { AsesoramietoButton } from "@/components/custonButtons/asesoramiento";
 import { TiendaButton } from "@/components/custonButtons/tienda";
 import { ManualButton } from "@/components/custonButtons/manual";
-
 
 export default function HabitatInlinePage() {
     const images = [
         {
           original: "../../img/solerpalau/habitat/imgDemo/1.jpg",
-        //   thumbnail: "https://picsum.photos/id/1018/250/150/",
         },
         {
           original: "../../img/solerpalau/habitat/imgDemo/2.jpg",
-        //   thumbnail: "https://picsum.photos/id/1015/250/150/",
         },
         {
           original: "../../img/solerpalau/habitat/imgDemo/3.jpg",
-        //   thumbnail: "https://picsum.photos/id/1019/250/150/",
         },
       ];
-
 
     const MyButton = extendVariants(Button, {  
         variants: {    
           size: {      
             xs: "px-2 min-w-12 h-6 text-tiny gap-1 rounded-small",      
             md: "px-4 min-w-20 h-10 text-small gap-2 rounded-small",      
-            xl: "px-10 min-w-32 h-16 text-xl gap-6 rounded-full", // <- new size variant
+            xl: "px-10 min-w-32 h-16 text-xl gap-6 rounded-full",
           },  
         },  
         defaultVariants: { 
-          size: "xl",  // <- set new size variant as default
+          size: "xl",
         },
       });
 
@@ -90,12 +63,10 @@ export default function HabitatInlinePage() {
             subject
         )}&body=${encodeURIComponent(body)}`;
     
-        // window.location.href = mailtoLink;
         window.open(mailtoLink, '_blank');
     };
 
     const DobleFlechaRoja = <span className="text-livered">»</span>
-
 
     const mobileImagesCol = [];
     for (let i = 0; i < 5; i++) {
@@ -138,41 +109,10 @@ export default function HabitatInlinePage() {
             <section className="relative top-0 w-full max-h-[50%] md:max-h-[93%] lg:max-h-[93%] py-0 font-size overflow-hidden">
                 <div className="h-[50%] md:h-[92%]">
                     
-                    {/* <SimpleSlider
-                        url={habitatData.urlImageBanner}
-                        imgInfo={habitatData.bannerImageInfo}
-                    /> */}
                 </div>
             </section>
-            {/* <section className="h-[100%] w-full xl:px-[3%] flex items-center justify-center overflow-hidden bg-lowgrasy">
-                <VideoAutoPlayer url="../img/solerpalau/habitat/video/habitatPresentacion.mp4"/>
-                
-            </section> */}
 
             {/* ------------- Consultanos ------------- */}
-            {/* <section className="w-full xl:px-[3%] max-h-[50%] py-0 font-size overflow-hidden">
-                <div className="bg-[#E61E25]  md:w-98% py-3  flex justify-between items-center rounded-tr-[24px] rounded-bl-[24px]">
-                    <div className="ml-[35px] md:ml-24">
-                        <h2 className="text-white text-xs xm:text-base md:text-2xl 2xl:text-3xl font-nunito-bold">
-                            {" "}
-                            ¿Cuál es tu necesidad?{" "}
-                        </h2>
-                    </div>
-                    <div className="mr-4 md:mr-12  ">
-                        <Button size={BigScreen ? "lg" : "sm"} radius="full" className="2xl:text-2xl lg:px-8 mr-[23px] lg:mr-0" onClick={handleEmailClick}>
-                            <div className="absolute rounded-full left-0 z-20 p-3   shadow-r-xl shadow-[rgba(29,29,27,0.24)] border- border-gray-200 
-                                    bg-gradient-to-r from-[#EF771CE5] to-[#E80303]
-                                    group-hover:bg-gradient-to-r group-hover:from-orange-400 group-hover:to-[#fe694f]
-                                    group-active:bg-gradient-to-r group-active:from-[#f37a7ae5] group-active:to-[#FFFFFF]
-                                "> 
-                                    
-                                    <IoMailOutline className=" group-active:text-livered text-white lg:text-3xl"/>
-                                    </div>
-                                <span className="ml-[30px] lg:ml-10">Escribinos</span>
-                        </Button>
-                    </div>
-                </div>
-            </section> */}
 
             <section className="flex flex-col px-[3%] w-full">
 
@@ -202,9 +142,6 @@ export default function HabitatInlinePage() {
 
                 {/* ------------- Parrafo Habitat ------------- */}
                 <article className=" mx-[8%] flex lg:mb-10 flex-col items-start justify-center font-nunito  ">
-                    {/* <h1 className="text-livered-title text-[6.5vw] md:text-[2vw] xl:text-[5.0vw]"> 
-                        {habitatData.inlineData.title} 
-                    </h1> */}   
                     <h2 className="text-livered-title text-[4.5vw] md:text-[2vw] xl:text-[3.5vw]"> 
                         {habitatData.extractorData.subTitle1}
                         <span className=" underline decoration-[3px] underline-offset-8">{habitatData.extractorData.subTitle2}</span>
@@ -220,20 +157,11 @@ export default function HabitatInlinePage() {
                 <section className="flex items-center justify-center text-livered-title my-4 lg:my-10 pt-4">
                     <div className="text-center">
                         <h1 className="font-nunito-thin text-[4.5vw] md:text-[4vw] xl:text-[3.0vw]   ">Conoce toda la línea de extractores de baño</h1>
-                        {/* <h1 className="font-nunito-thin text-[5vw] md:text-[4vw] xl:text-[3.0vw] ">helicocentrífugos en línea</h1> */}
                     </div>
                 </section>
 
                 {/* ------------- Titulo post parrafo ------------- */}
-                {/* <section className="flex items-center justify-center my-4 md:my-10">
-                    <div>
-                        <h1 className="font-nunito-thin text-[3.5vw] text-[#9D9D9C] py-4">
-                            {habitatData.pageData.subTitle}
-                        </h1>
-                    </div>
-                </section> */}
-                
-                
+
                 {/* ------------- DECOR ------------- */}
                 {BigScreen ? 
                     <>
@@ -288,7 +216,6 @@ export default function HabitatInlinePage() {
                                         <h2 className="">{DobleFlechaRoja} Modelo con temporizador regulable (mantiene el extractor en marcha entre 1 -30 minutos después de apagada la luz).</h2>
                                         <h2 className="">{DobleFlechaRoja} Aislamiento y protección II-IP45 protección contra objetos con un diámetro superior a 1mm y resistente a chorros de agua.</h2>
 
-
                                 </article>
                             </div>
 
@@ -297,7 +224,6 @@ export default function HabitatInlinePage() {
                     </>
                     : <>
                     {/* ------------- MOBILE ------------- */}
-                    {/* <section className="flex flex-col justify-center  items-center gap-y-10 h-full mx-[3%] "> */}
 
                     <section className="p-3 justify-center  items-center gap-y-6 h-full mx-[3%] flex flex-col font-nunito text-[#575756] text-[3.8vw] md:text-[1.3vw] xl:text-[1.4vw] 2xl:text-[1.3vw]">
                         {/* ------------- DECOR ------------- */}
@@ -354,16 +280,6 @@ export default function HabitatInlinePage() {
 
                     </section>
 
-
-                    {/* <section className="flex flex-col justify-center  items-center gap-y-10 h-full mx-[3%] ">
-                        <Image
-                            alt="SolerPalauHabitatInline1.png"
-                            className="mb-2"
-                            src="../../img/solerpalau/habitat/extractor/SolerPalauHabitatExtractor3.png"
-                            width="100%"
-                        />
-                    
-                    </section> */}
                     </>
                 }
                 
@@ -375,7 +291,6 @@ export default function HabitatInlinePage() {
 
                 {/* ------------- Tabla ------------- */}
                 <section className={`hidden lg:flex flex-col  items-start my-10 mx-[3%] gap-4 `}>
-                {/* <TableSolerPalau tableData={habitatData.tableData}/> */}
                     <Image
                                     alt="SolerPalauHabitatInline1.png"
                                     className="mb-2"
@@ -477,8 +392,6 @@ export default function HabitatInlinePage() {
                                 </article>
                             </div>
 
-                            
-
                         </div>
 
                     </section>
@@ -486,7 +399,6 @@ export default function HabitatInlinePage() {
                     : <>
                     {/* ------------- MOBILE ------------- */}
                     <section className="mt-2 p-3 justify-center  items-center gap-y-6 h-full mx-[3%] flex flex-col font-nunito text-[#575756] text-[3.8vw] md:text-[1.3vw] xl:text-[1.4vw] 2xl:text-[1.3vw]">
-
 
                     {/* ------------- Silent MOBILE ------------- */}
 
@@ -521,7 +433,6 @@ export default function HabitatInlinePage() {
                                     </p>
                                 </article>
                             </div>
-
 
                             <div className=" flex w-full">
                             <div className="w-1/3 h-full my-auto">
@@ -577,14 +488,6 @@ export default function HabitatInlinePage() {
                                         <h2 className="">{DobleFlechaRoja} Aislamiento y protección II-IP45 protección contra objetos con un diámetro superior a 1mm y resistente a chorros de agua.</h2>
                                 </article>
                             </div>
-                        {/* {mobileImagesCol} */}
-                        {/* <Image
-                            alt="SolerPalauHabitatInline1.png"
-                            className="mb-2"
-                            src="../../img/solerpalau/habitat/extractor/SolerPalauHabitatExtractor4.png"
-                            width="100%"
-                        /> */}
-                            {/* <ManualButton size={BigScreen ? 40 : 25} screen={BigScreen ? "xl" : "lg"} link={"../../manuales/habitatExtractor.pdf"} dwName={"Habitat Extractor Manual.pdf"}/>  */}
                     </section>
                     </>
                 }
@@ -594,12 +497,10 @@ export default function HabitatInlinePage() {
                 <section className="mx-auto lg:mx-[4%] lg:ml-auto">
                     <ManualButton size={BigScreen ? 40 : 25} screen={BigScreen ? "xl" : "lg"} link={"../../manuales/habitatExtractor.pdf"} dwName={"Habitat Extractor Manual.pdf"}/>
 
-
                 </section>
 
                 {/* ------------- Tabla ------------- */}
                 <section className={`hidden lg:flex flex-col  items-start my-10 mx-[3%] gap-4 `}>
-                {/* <TableSolerPalau tableData={habitatData.tableData}/> */}
                     <Image
                                     alt="SolerPalauHabitatInline1.png"
                                     className="mb-2"
@@ -609,7 +510,6 @@ export default function HabitatInlinePage() {
                                 />
                 </section>
 
-
                 {/* ------------- ASESORAMIENTO Y TIENDA ------------- */}
                 <section className="flex  h-full ">
                     <div className="flex flex-col mx-auto justify-center  items-center lg:gap-y-6 my-10 xl:my-16">
@@ -617,12 +517,6 @@ export default function HabitatInlinePage() {
                         <TiendaButton size={BigScreen ? 70 : 40} screen={BigScreen ? "xxl" : "xl"} link={`${habitatData.tiendaOnline}`} css={"lg:text-5xl"}/>
                     </div>
                 </section>
-
-                
-
-                
-
-
 
                 {/* ------------- PAYMENT ------------- */}
                 {BigScreen ? 
@@ -666,14 +560,6 @@ export default function HabitatInlinePage() {
                             width="100%"
                         />
                     </a>
-                    {/* <a href="/soler&palau/habitat/extractor" className="hover:opacity-70">
-                        <Image
-                            alt="SolerPalauHabitatInline1.png"
-                            className="mb-2"
-                            src="../../img/solerpalau/habitat/imgBanner/SolerPalauHabitaNav3.png"
-                            width="100%"
-                        />
-                    </a> */}
                 </section>
 
                 {/* ------------- LOGOS Electroterma-Soler ------------- */}

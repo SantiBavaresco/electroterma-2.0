@@ -1,9 +1,5 @@
 "use client"
 import { Link } from "@nextui-org/link";
-import { FiFacebook } from "react-icons/fi";
-import { AiOutlineYoutube } from "react-icons/ai";
-import { IoLogoFacebook, IoLogoInstagram } from "react-icons/io";
-import { CiLinkedin } from "react-icons/ci";
 import { IoMailOutline } from "react-icons/io5";
 import { Image } from "@nextui-org/image";
 
@@ -16,7 +12,6 @@ const handleEmailClick = () => {
         subject
     )}&body=${encodeURIComponent(body)}`;
 
-    // window.location.href = mailtoLink;
     window.open(mailtoLink, '_blank');
 };
 
@@ -40,7 +35,6 @@ export default function Footer() {
 		<div className="flex flex-row gap-4 items-center justify-center text-orange-600 text-2xl">
 
 			<Link  isExternal  href="https://www.linkedin.com/company/electroterma/" title="Linkedin de Electroterma">
-				{/* <CiLinkedin className="text-orange-600 hover:text-blue-700 text-2xl" href=""/>  */}
 				<svg width="24" height="19" viewBox="0 0 24 19" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<path d="M7 14.0011V10.5011V7.0011" stroke="#EF771C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
 				<path d="M11 14.0011V10.7511M11 10.7511V7.0011M11 10.7511C11 7.0011 17 7.0011 17 10.7511V14.0011" stroke="#EF771C" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -50,7 +44,6 @@ export default function Footer() {
 
 			</Link>
 			<Link  isExternal  href="https://www.instagram.com/electroterma/" title="Instragram de Electroterma">
-				{/* <IoLogoInstagram className="text-orange-600 hover:text-pink-600 text-2xl" /> */}
 				<svg width="24" height="19" viewBox="0 0 24 19" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<path d="M12 13.5011C14.2091 13.5011 16 11.7102 16 9.5011C16 7.29196 14.2091 5.5011 12 5.5011C9.79086 5.5011 8 7.29196 8 9.5011C8 11.7102 9.79086 13.5011 12 13.5011Z" stroke="#EF771C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
 				<path d="M17.5 4.01111L17.51 4" stroke="#EF771C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -70,7 +63,6 @@ export default function Footer() {
 			</Link>
 
 			<Link  isExternal  href="https://www.youtube.com/@electroterma849" title="Youtube de Electroterma">
-				{/* <AiOutlineYoutube className="text-orange-600 hover:text-livered text-2xl"/> */}
 				<svg width="24" height="19" viewBox="0 0 24 19" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<path d="M13.5 10L10 12V8L13.5 10Z" fill="#EF771C" stroke="#EF771C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
 				<rect x="0.75" y="0.75" width="22.5" height="17.5" rx="4.25" stroke="#EF771C" strokeWidth="1.5"/>
@@ -79,50 +71,18 @@ export default function Footer() {
 			</Link>
 		</div>
 
-		
 		</div>
 		<div className=" -mt-20 absolute right-0 md:right-24 w-[45px] md:w-[90px]">
 			<Link href="/" target="_top">
 				<Image
 				src="../../electroterma-logo.png"
 
-				
 				width="100%"
 				alt="hola"
 				/>
 			</Link>
 		</div>
 		<div className="w-full px-[3%] h-6 lg:h-12 py-2 mt-2 flex flew-row justify-between bg-[#D9D9D9]">
-			{/* <Link
-				isExternal
-				className="flex items-center gap-1 text-current pt-2"
-				href="https://santiagobavaresco.ar"
-				title="Bavaresco Santiago Portfolio"
-				>
-					<p className="text-primary text-sm">
-						Bavaresco Santiago
-					</p>
-					<span className="text-default-600 text-sm">
-						© 2024 
-					</span>
-			</Link>
-			<Link
-				isExternal
-				className="flex items-center gap-1 text-current pt-2 w-[70px] mr-[3.5%]"
-				href="https://tandemasesoria.ar/"
-				title="Tandem"
-				
-			>
-				<Image
-					src="../img/tandem.png"
-					// height={50}
-					radius="none"
-					width="100%"
-					alt="hola"
-					/>
-		    
-			
-			</Link> */}
 		</div>
 	</footer>
 	);

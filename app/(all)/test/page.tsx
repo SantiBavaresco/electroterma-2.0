@@ -4,17 +4,6 @@ import { Image } from "@nextui-org/image";
 export default function TestPage() {
 	return (
 		<main className="w-full overflow-hidden">
-			{/* <h1 className={title()}>IMG FIJA</h1>
-			<section className="w-full ">
-				<Image  
-                    className="mt-10"
-                    alt="Otam Logo"
-                    src="../../img/home/homeBanner.png"
-                    width="100%"
-                />
-
-			</section>
-			 */}
 
 			<h1 className={title()}>TEST 3</h1>
 			<section className="relative w-full h-[22vw] bg-gray-100 ">
@@ -37,15 +26,12 @@ export default function TestPage() {
 					/>
 				</div>
 
-
 				<span className="flex flex-4 items-center justify-center w-[80%] mt-[0vw] h-full gap-[1vw] mx-auto">
 					<div
-						// className="w-[20vw]" 
 						className="group w-1/4 relative 
 						transition-opacity duration-1000 erase-in-out
 						" 
 
-					// className="absolute w-[30%] top-[20%]  -right-[5vw]"
 					>
 						<div className="opacity-60 group-hover:opacity-100  transition duration-500 ease-in-out 
 						">
@@ -69,11 +55,9 @@ export default function TestPage() {
 						</div>
 					</div>
 					<div
-						// className="w-[13.5vw]" 
 						className="w-1/6 relative opacity-70 hover:opacity-100
 						transition-all duration-100 
 						"  
-					// className="absolute w-[30%] top-[20%]  -right-[5vw]"
 					>
 						<div className="opacity-60 hover:opacity-80">
 						<Image  
@@ -94,11 +78,9 @@ export default function TestPage() {
 
 					</div>
 					<div
-						// className="w-[13.5vw]"
 						className="w-1/6 relative opacity-70 hover:opacity-100
 						transition-all duration-100 
 						"    
-					// className="absolute w-[30%] top-[20%]  -right-[5vw]"
 					>
 						<div className="opacity-60 hover:opacity-80">
 						<Image  
@@ -117,11 +99,9 @@ export default function TestPage() {
 						/>
 					</div>
 					<div
-						// className="w-[20vw]" 
 						className="w-1/4 relative opacity-70 hover:opacity-100
 						transition-all duration-100 
 						"   
-					// className="absolute w-[30%] top-[20%]  -right-[5vw]"
 					>
 						<div className="opacity-60 hover:opacity-80">
 						<Image  
@@ -140,23 +120,15 @@ export default function TestPage() {
 						/>
 					</div>
 				</span>
-				
 
 			</section>
 
-
-
-
-
 			<section>
 				<div
-						// className="w-[20vw]" 
 						className="group w-1/4 relative 
 						duration-1000
 						" 
-						
 
-					// className="absolute w-[30%] top-[20%]  -right-[5vw]"
 					>
 						<div className="transition ease-in-out  opacity-60 group-hover:opacity-100
 						">

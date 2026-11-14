@@ -1,10 +1,7 @@
 "use client"
-import { title } from "@/components/primitives";
-import { solucionesGeneralData } from "@/public/data/soluciones/solucionesGeneralData";
 import { Button } from "@nextui-org/button";
 import { Image } from "@nextui-org/image";
 import { Avatar } from "@nextui-org/react";
-import {Link} from "@nextui-org/react";
 import { useEffect, useState } from "react";
 import { IoMailOutline } from "react-icons/io5";
 
@@ -19,10 +16,8 @@ export default function Soluciones_ventilacion_nave_industrial_Page() {
             subject
         )}&body=${encodeURIComponent(body)}`;
     
-        // window.location.href = mailtoLink;
         window.open(mailtoLink, '_blank');
     };
-
 
 	const [BigScreen, setBigScreen] = useState(false);
 
@@ -93,7 +88,6 @@ export default function Soluciones_ventilacion_nave_industrial_Page() {
 							className="p-6 py-6"
 							radius="none"
 							src="../../img/soluciones/ventilacion_nave_industrial/Soluciones11.webp"
-							// width="100%"
 							height="100%"
 							/> 
 							
@@ -123,7 +117,6 @@ export default function Soluciones_ventilacion_nave_industrial_Page() {
 							className="px-8"
 							radius="none"
 							src="../../img/soluciones/ventilacion_nave_industrial/Soluciones12.webp"
-							// width="100%"
 							height="100%"
 							/> 
 							
@@ -143,7 +136,6 @@ export default function Soluciones_ventilacion_nave_industrial_Page() {
 					
 				</div>
 
-				
 				<div className="  ml-[0.5vw] mt-6  bg-gray-00">
 					<div className=" flex flex-col items-center justify-center align-middle gap-4 p-10 m-10 mx-4 mt-16  text-white font-lexend-bold text-[2.5vw] 
 						bg-white rounded-[59px] border-1 border-lowgray shadow-2xl"> 
@@ -154,7 +146,6 @@ export default function Soluciones_ventilacion_nave_industrial_Page() {
 							className="p- rounded-t-[30px]"
 							radius="none"
 							src="../../img/soluciones/ventilacion_nave_industrial/Soluciones13.webp"
-							// width="100%"
 							height="100%"
 							/> 
 							
@@ -186,8 +177,6 @@ export default function Soluciones_ventilacion_nave_industrial_Page() {
 					
 				</div>
 
-				
-				
 			</section>
 			</>
 			:
@@ -211,7 +200,6 @@ export default function Soluciones_ventilacion_nave_industrial_Page() {
 						{/* ------------- Contenido primario ------------- */}
 						<div className="w-full flex flex-col gap-6 text-[3.8vw] lg:text-[1.40vw] font-nunito items-center ">
 
-							
 							<p className="">
 								Las naves industriales son lugares habituales de trabajo que por sus procesos productivos poseen generación de calor, de vapores, de humos y/o de polvo entre alguno de los contaminantes, por lo que es necesario el diseño e instalación de un eficiente sistema de ventilación. 
 							</p>
@@ -364,8 +352,6 @@ export default function Soluciones_ventilacion_nave_industrial_Page() {
 										<a href="/solucionesHVAC"> 
 											<button
 												className="  z-10 bg-[#EF771C] px-2 py-2 rounded-[12px] font-nunito text-white text-sm 2xl:text-xl shadow-xl"
-												// radius="full"
-												// size={BigScreen ? "sm" : "sm"}
 											>
 												Ver otras soluciones
 											</button>
@@ -378,8 +364,6 @@ export default function Soluciones_ventilacion_nave_industrial_Page() {
 
 					</div>
 
-					
-					
 				</div>
 			</article>
 
@@ -401,7 +385,6 @@ export default function Soluciones_ventilacion_nave_industrial_Page() {
                                     group-hover:bg-gradient-to-r group-hover:from-orange-400 group-hover:to-[#fe694f]
                                     group-active:bg-gradient-to-r group-active:from-[#f37a7ae5] group-active:to-[#FFFFFF]
                                 "> 
-                                    {/* <MailSvg css=" group-active:text-livered text-white lg:text-3xl" size={40}/> */}
                                     <IoMailOutline className=" group-active:text-livered text-white lg:text-4xl"/>
                                     </div>
                                 <span className="ml-[30px] lg:ml-10">Escribinos</span>
@@ -409,7 +392,6 @@ export default function Soluciones_ventilacion_nave_industrial_Page() {
                     </div>
                 </div>
             </section>
-
 
 		</main>
 	);

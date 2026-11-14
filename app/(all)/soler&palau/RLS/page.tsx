@@ -1,9 +1,7 @@
 "use client";
-import { title } from "@/components/primitives";
-import VideoScrollPlayer from "@/components/videoplayer/videoplayer";
-import VideoScrubber from "@/components/videoScrubber/videoScrubber";
-import FrameScrubber from "@/components/frameScrubber/frameScrubber";
-// import ScrollyVideo from 'scrolly-video/dist/ScrollyVideo.cjs.jsx';
+import "@/components/videoplayer/styles.css"; // estilos globales que antes llegaban vía @/components/videoplayer/videoplayer
+import "@/components/videoScrubber/styles.css"; // estilos globales que antes llegaban vía @/components/videoScrubber/videoScrubber
+import "@/components/frameScrubber/styles1.css"; // estilos globales que antes llegaban vía @/components/frameScrubber/frameScrubber
 
 import { rlsData } from "@/public/data/soler&palau/rlsData";
 import { itemsNavSolerPalau } from "@/public/data/navbarData";
@@ -11,50 +9,28 @@ import { itemsNavSolerPalau } from "@/public/data/navbarData";
 import { lazy, Suspense, useState, useEffect } from "react";
 
 import { Image } from "@nextui-org/image";
-import { Button } from "@nextui-org/button";
 import NextLink from "next/link";
 
 
-import { Accordion, AccordionItem } from "@nextui-org/react";
-
-import { Chip } from "@nextui-org/chip";
-import { Card, CardHeader, CardBody, CardFooter } from "@nextui-org/card";
-import { Ondas01SVG } from "@/public/svg/ondas01svg";
-import { Ondas02SVG } from "@/public/svg/ondas02svg";
-import { Ondas03SVG } from "@/public/svg/ondas03svg";
 
 
-import { ConstruccionDuradera } from "@/public/svg/construccionDuradera";
-import { EficienciaEnergetica } from "@/public/svg/eficienciaEnergetica";
-import { FacilInstalacion } from "@/public/svg/facilInstalacion";
-import { VersatilidadAplicacion } from "@/public/svg/versatilidadAplicacion";
 
-import { IoLogoInstagram } from "react-icons/io";
-import { BsWhatsapp } from "react-icons/bs";
 
-import { Download } from "@/public/svg/download";
+
 import SimpleSlider from "@/components/imgslider/slickSlider";
 import SimpleSliderDemoImages from "@/components/imgslider/simpleSliderDemoImages";
-import { Reveal } from "@/components/revealFramemotion";
-import { DiferencialMaterialGalvanizado } from "@/components/diferenciales/diferencialMaterialGalvanizado";
-import { DiferencialMultiposicion } from "@/components/diferenciales/diferencialMultiposicion";
 import { DiferencialVolumenBajo } from "@/components/diferenciales/diferencialVolumenBajo";
 import { DiferencialStockPermanente } from "@/components/diferenciales/diferencialStockPermanente";
 import CardDisplay from "@/components/navbar/cardDisplay";
 import { VinietaNaranjaSVG } from "@/public/svg/vinietaNaranja";
-import ScrollVideoPlayer from "@/components/videoplayer/scrollVideo";
 import { DiferencialEstaticoDinamico } from "@/components/diferenciales/diferencialEstraticoDinamico";
 import {TableSolerPalau} from "@/components/table/tableSoler&palau";
 import { VinietaRojaSVG } from "@/public/svg/vinietaRoja";
-import { IoMailOutline } from "react-icons/io5";
-import { MailSvg } from "@/public/svg/mailSvg";
 
 import { ManualButton } from "@/components/custonButtons/manual";
 import { AsesoramietoButton } from "@/components/custonButtons/asesoramiento";
-import { EscribinosButton } from "@/components/custonButtons/escribinos";
 import { TiendaButton } from "@/components/custonButtons/tienda";
 
-import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -62,20 +38,9 @@ import "slick-carousel/slick/slick-theme.css";
 export default function RLSPage() {
 
     const settings = {
-        // dots: true,
         className:
             "center variable-width  aspect[16/9] object-cover w-[100%] h-[90%] flex flex-nowrap overflow-hidden ",
-        // centerMode: true,
-        // display: "flex",
-        // flexDirection: "row",
-        // flexGrow: 1,
-        // height: "80%",
         infinite: true,
-        // centerPadding: "60px",
-        // variableWidth: true,
-        // width: 1200,
-        // adaptiveHeight: true,
-        // lazyLoad: true,
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
@@ -92,7 +57,6 @@ export default function RLSPage() {
             subject
         )}&body=${encodeURIComponent(body)}`;
     
-        // window.location.href = mailtoLink;
         window.open(mailtoLink, '_blank');
     };
 
@@ -130,81 +94,9 @@ export default function RLSPage() {
                         imgInfo={rlsData.bannerImageInfo}
                     />
 
-                    {/* <div className="overflow-hidden flex flex-grow min-h-full">
-                        <Slider {...settings}>
-                            {rlsData.bannerImageInfo?.map((item, index) => (
-                                <div
-                                    key={`${index} - ${item.imgName}`}
-                                    className="relative
-                                    
-                                    max-h-[80%]
-                                    "
-                                >
-                                    <div className="z-0">
-                                        <img
-                                            className=" w-[100%] h-auto max-h-[42vh] md:max-h-[82vh] block m-auto object-fill "
-                                            alt={`Imagen ${index}`}
-                                            src={`${rlsData.urlImageBanner}${item.imgName}.webp`}
-                                            key={`Imagen ${index} - ${item.imgName}`}
-                                        ></img>
-
-                                        <div
-                                            className="absolute px-6 z-10
-                                        
-                                        bottom-[0%]
-                                        // right-0
-                                        rounded-tl-[42px]
-                                        flex flex-col justify-start items-center bg-white p-1 "
-                                        >
-                                            <div className="flex flex-col justify-start items-start text-sm lg:text-3xl  py-4 lg:py-6 2xl:py-10">
-                                                {item.imgLable?.map((item, index) => (
-                                                    <h1
-                                                        className={`text-${
-                                                            item.textColor ||
-                                                            "livered-title"
-                                                        } font-bold font-lexend`}
-                                                        key={`${index}-${item}`}
-                                                    >
-                                                        {item.textLable}
-                                                    </h1>
-                                                ))}
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            ))}
-                        </Slider>
-                    </div> */}
                 </div>
-                {/* <div className="bg-[#E61E25]  md:w-98% py-3  flex justify-between items-center rounded-tr-[24px] rounded-bl-[24px]">
-                    <div className="ml-[35px] md:ml-12">
-                        <h2 className="text-white text-xs xm:text-base md:text-2xl 2xl:text-3xl font-nunito-bold">
-                            {" "}
-                            ¿Cuál es tu necesidad?{" "}
-                        </h2>
-                    </div>
-                    <div className="mr-4 md:mr-12  -mt-2 ">
-                    
-                    <EscribinosButton size={BigScreen ? 30 : 25} screen={BigScreen ? "lg" : "lg"} />
-                    </div>
-                </div> */}
             </section>
 
-            {/* <section className="">
-                
-            </section> */}
-              {/* <section className="flex flex-col items-start w-3/4 md:ml-10 mt-10 mb-8 justify-start">
-                <div className=" ">
-                        <Image
-                            alt="Otam Logo"
-                            className=""
-                            src="../img/otamlogo.png"
-                            width={200}
-                        />
-                        <span className="ml-0 relative -top-4 text-xs">Distribuidor en Argentina</span>
-                </div>
-                
-            </section> */}
             
             <section className="z-0 mr-auto ml-[45px]  md:mr-0 md:w-[90%] md:ml-10 md:mt-10 overflow-hidden">
                 
@@ -239,7 +131,6 @@ export default function RLSPage() {
 
                             <span className=" relative flex  justify-center items-center h-full
                                 "
-                                // text-xl lg:text-2xl xl:text-5xl 2xl:text-[51px] 3xl:text-[61px] text-[#9D9D9C] font-nunito 
                             >
                                 <div className="relative -left-10 top-0  ">
                                     <VinietaNaranjaSVG css=" h-[10px] w-[10px] md:h-[50px] md:h-[30px] lg:h-[40px] lg:w-[30px]" />
@@ -255,7 +146,6 @@ export default function RLSPage() {
                             <span><h1 
                                 className="mt-2 lg:mt-3 2xl:mt-4  leading-none  font-nunito-bolder text-livered-title text-[4.5vw] xl:text-[4.5vw]"
 
-                            // className="mt-2 lg:mt-6 text-3xl lg:text-5xl  xl:text-[63px] 2xl:text-[75px] 3xl:text-[95px] 2xl:mt-8 leading-none font-nunito-bolder text-livered-title"
                             >
                                 {/* CENTRÍFUGO */}
                                 {rlsData.pageData.title1} 
@@ -263,7 +153,6 @@ export default function RLSPage() {
 
                             <h1 
                                 className="mt-2  leading-none  font-nunito-bolder text-livered-title text-[4.5vw] xl:text-[4.5vw]"
-                            // className="mt-2 w-full lg:mt-3 text-3xl lg:text-[44px] xl:text-[63px] 2xl:text-[75px] 3xl:text-[95px] 2xl:mt-4  leading-none  font-nunito-bolder text-livered-title"
                             >
                                 {/* AUTOLIMITANTE - RLS */}
                                 {rlsData.pageData.title2} 
@@ -276,7 +165,6 @@ export default function RLSPage() {
                                 {rlsData.pageData.subTitle} 
                             </h1>
 
-                            {/* text-xl lg:text-4xl 2xl:text-[43px] */}
                             <div className="mt-2   tracking-normal text-[#4C4B4B] font-lexend-bold
                                 text-[2.5vw]
                             ">
@@ -287,9 +175,6 @@ export default function RLSPage() {
                                     <span className="text-livered ">niveles de suciedad.</span>
                                 </p>
                             </div>
-                            {/* z-20  absolute translate-x-[70%] translate-y-[160px]
-                            lg:translate-y-[60px] lg:translate-x-[190px] 
-                            2xl:translate-y-[90px] 2xl:translate-x-[220px]  */}
                             
                         </div>
                     </div>
@@ -301,9 +186,7 @@ export default function RLSPage() {
                         2xl:-left-[6%] 2xl:top-0 "
                         
                         >
-{/* -top-16 -left-6 */}
                     <Image
-                            // className="-top-16 left-1/2"
                             alt="Ventilador"
                             className=" w-[520px] md:w-[100%]  top-[75px] lg:top-[65px] 2xl:top-[70px] left-4 md:left-12"
                             src="../img/solerpalau/rls/SolerPalauRls1.webp"
@@ -316,7 +199,6 @@ export default function RLSPage() {
 
                     <section className="w-full px-[5%] flex mb-[10px] justify-between 
                     ">
-                        {/* text-[13px] xl:text-2xl  2xl:text-3xl */}
 
                         <div className="w-[100%] flex flex-col px-4 justify-start items-start 
                         text-[2vw]">
@@ -329,8 +211,6 @@ export default function RLSPage() {
                             overflow-hidden">
                                 
                                 <TiendaButton size={BigScreen ? 40 : 25} screen={BigScreen ? "xl" : "lg"}/>
-                            {/* <AsesoramietoButton screen={BigScreen ? "xl" : "lg"}
-                                link={"https://wa.me/5492236356756?text=Hola.%20Quiero%20más%20información%20sobre%20este%20Ventilador%20Centrífugo%20Multipala%20RLS"}/> */}
                             
 
                         </div>
@@ -390,7 +270,6 @@ export default function RLSPage() {
                     </div>
                     <div className="relative max-w-screen w-full z-10 overflow-y-hidde">
                         <Image
-                            // className="-top-16 left-1/2"
                             alt="Ventilador"
                             className="inline-block w-[320px] top-0  left- "
                             src="../img/solerpalau/rls/SolerPalauRls1.webp"
@@ -398,8 +277,6 @@ export default function RLSPage() {
                         />
                         <div className="mt-2 ml-auto w-full flex justify-end overflow-hidden">
                         <TiendaButton size={BigScreen ? 40 : 25} screen={BigScreen ? "xl" : "lg"}/>
-                        {/* <AsesoramietoButton screen={BigScreen ? "xl" : "lg"} 
-                            link={"https://wa.me/5492236356756?text=Hola.%20Quiero%20más%20información%20sobre%20este%20Ventilador%20Centrífugo%20Multipala%20RLS"}/> */}
                         </div>
                         
                     </div>
@@ -418,20 +295,13 @@ export default function RLSPage() {
     {/* --------------------------- FIN MOBILE --------------------------- */}
 
 
-            {/* <ScrollVideoPlayer/> */}
 
-            {/* <VideoScrollPlayer/> */}
-            {/* <FrameScrubber /> */}
             
     {/* --------------------------- VIDEO SCROLL --------------------------- */}
         <>
             {BigScreen ? 
                 <>   {/* ----- Web ----- */}
-                    {/* <VideoScrubber/> */}
                     
-                    {/* <ScrollyVideo src="../img/solerpalau/rls/video/original.mkv" transitionSpeed={1} /> */}
-                    {/* <ScrollVideoPlayer/> */}
-                    {/* <VideoScrollPlayer/> */}
                     <Suspense fallback={<div>Loading</div>}>
                         <FrameFanWeb />
                     </Suspense>
@@ -453,15 +323,6 @@ export default function RLSPage() {
                             <DiferencialStockPermanente size={70} customWith={250} />
                         </div>
                     </section>
-                    {/* <section className=" pb-[10vh]">
-                        <Button
-                            className="  z-10 bg-livered font-nunito text-white 2xl:text-2xl md:mr-3 xl:mr-[12vw]"
-                            radius="full"
-                            size={BigScreen ? "lg" : "sm"}
-                        >
-                            Manual <Download />
-                        </Button>
-                    </section> */}
                    
                     <section className="pb-[5vh] pt-[5vh] lg:pb-[10vh] lg:pt-[0vh] w-[40%] 3xl:w-[50%] ml-auto flex justify-end md:justify-center
                             
@@ -632,14 +493,6 @@ export default function RLSPage() {
                 </>
             }
 
-            {/* <section className="mt-32 mb-10 mx-auto lg:w-[80%] flex justify-end lg:items-end items-center">
-                <div className="flex flex-col gap-4">
-                    <DiferencialMaterialGalvanizado/>
-                    <DiferencialMultiposicion/>
-                    <DiferencialVolumenBajo/>
-                    <DiferencialStockPermanente/>
-                </div>
-            </section> */}
 
             
                                 
@@ -670,25 +523,6 @@ export default function RLSPage() {
                             <TiendaButton size={BigScreen ? 40 : 16} screen={BigScreen ? "xl" : "md"}/>
                         </div>    
                     </section>
-                    {/* <div className="flex justify-bettween items-center mt-10 md:mt-2  w-full">
-                       
-                        <div className="2xl:ml-[6%] me-auto flex justify-start items-start ">
-                        <a href="/soler&palau">
-                            <Image
-                                alt="Otam Logo"
-                                className="scale-1"
-                                src="../img/otamlogo.png"
-                                width={150}
-                            />
-                        </a>
-
-                        </div>
-                        <div className="w-full float-right flex justify-end items-end lg:pr-0 2xl:mr-[5%] md:pr-0">
-                            <TiendaButton size={BigScreen ? 40 : 25} screen={BigScreen ? "xl" : "lg"}/>
-                            <AsesoramietoButton screen={BigScreen ? "xl" : "lg"} 
-                                link={"https://wa.me/5492236356756?text=Hola.%20Quiero%20más%20información%20sobre%20este%20Ventilador%20Centrífugo%20Multipala%20RLS"}/>
-                        </div>
-                    </div> */}
                 </div>
             </section>
             {/* ----------------- FIN Imagenes DEMO + logos ----------------- */}
@@ -703,7 +537,6 @@ export default function RLSPage() {
                     
                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-4   "> 
                 {itemsNavSolerPalau?.map((item) => (
-                    // <p key={item.key}>{item.label}</p>
                     
                         <NextLink
                             className=""

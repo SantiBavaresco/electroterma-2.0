@@ -1,10 +1,7 @@
 "use client"
-import { title } from "@/components/primitives";
-import { solucionesGeneralData } from "@/public/data/soluciones/solucionesGeneralData";
 import { Button } from "@nextui-org/button";
 import { Image } from "@nextui-org/image";
 import { Avatar } from "@nextui-org/react";
-import {Link} from "@nextui-org/react";
 import { useEffect, useState } from "react";
 import { IoMailOutline } from "react-icons/io5";
 
@@ -19,10 +16,8 @@ export default function Soluciones_ductos_textiles_para_mejorar_la_distribucion_
             subject
         )}&body=${encodeURIComponent(body)}`;
     
-        // window.location.href = mailtoLink;
         window.open(mailtoLink, '_blank');
     };
-
 
 	const [BigScreen, setBigScreen] = useState(false);
 
@@ -93,7 +88,6 @@ export default function Soluciones_ductos_textiles_para_mejorar_la_distribucion_
 							className="p-6"
 							radius="none"
 							src="../../img/soluciones/ductos_textiles_para_mejorar_la_distribucion_del_aire/Soluciones1.webp"
-							// width="100%"
 							height="100%"
 							/> 
 							
@@ -146,15 +140,12 @@ export default function Soluciones_ductos_textiles_para_mejorar_la_distribucion_
 						{/* ------------- Contenido primario ------------- */}
 						<div className="w-full flex flex-col gap-6 text-[3.8vw] lg:text-[1.20vw] font-nunito items-center ">
 
-							
 							<p className="text-[3.8vw] lg:text-[1.20vw] font-nunito">
 							Una de las principales ventajas del conducto textil es que permite lograr una difusión más homogénea en comparación con el tradicional ducto metálico y rejas y podemos así obtener un mayor rendimiento de la capacidad instalada en equipos. Es decir, que con el mismo equipamiento, al instalar un conducto textil, podremos llegar con más precisión y de una forma más eficiente con el aire tratado, respecto de sistemas de conductos tradicionales.
 							</p>
 							<p>
 							Así por ejemplo, en una industria con instalaciones de equipos de HVAC de capacidad adecuada que continúa con elevada carga térmica en los puestos de trabajo, ya sea por zonas calientes del proceso que se realiza, inadecuada distribución del aire climatizado y/o con fuentes de calor puntuales, al instalar el ducto textil DTI nos permite, sin cambiar el equipamiento, lograr una mejor y más eficiente climatización en el interior.
 							</p>
-							
-							
 
 							<Image
 								alt="Imagen 2"
@@ -178,8 +169,6 @@ export default function Soluciones_ductos_textiles_para_mejorar_la_distribucion_
 							El mismo incluía <a className="text-[#EF771C] font-nunito-bold underline " href="/tempomatic/uta" target="_top">Unidades de Tratamiento de Aire TEMPOMATIC</a>, pero el sistema de ductos a nivel de techo (a 11 metros de altura e inyección por difusores tradicionales) no aseguraba la llegada de aire tratado a los puestos de los operarios, generando elevadas cargas térmicas en determinados momentos del año.  
 								 
 							</p>
-							
-
 
 						</div>
 						
@@ -203,7 +192,6 @@ export default function Soluciones_ductos_textiles_para_mejorar_la_distribucion_
 								src="../../img/soluciones/ductos_textiles_para_mejorar_la_distribucion_del_aire/Soluciones4.webp"
 								width="100%"
 							/>
-							
 
 							<Image
 								alt="Imagen 5"
@@ -213,7 +201,6 @@ export default function Soluciones_ductos_textiles_para_mejorar_la_distribucion_
 								width="100%"
 							/>
 
-							
 						</div>
 						
 						{BigScreen || 
@@ -252,8 +239,6 @@ export default function Soluciones_ductos_textiles_para_mejorar_la_distribucion_
 										<a href="/solucionesHVAC"> 
 											<button
 												className="  z-10 bg-[#EF771C] px-2 py-2 rounded-[12px] font-nunito text-white text-sm 2xl:text-xl shadow-xl"
-												// radius="full"
-												// size={BigScreen ? "sm" : "sm"}
 											>
 												Ver otras soluciones
 											</button>
@@ -266,8 +251,6 @@ export default function Soluciones_ductos_textiles_para_mejorar_la_distribucion_
 						
 					</div>
 
-					
-					
 				</div>
 			</article>
 
@@ -289,7 +272,6 @@ export default function Soluciones_ductos_textiles_para_mejorar_la_distribucion_
                                     group-hover:bg-gradient-to-r group-hover:from-orange-400 group-hover:to-[#fe694f]
                                     group-active:bg-gradient-to-r group-active:from-[#f37a7ae5] group-active:to-[#FFFFFF]
                                 "> 
-                                    {/* <MailSvg css=" group-active:text-livered text-white lg:text-3xl" size={40}/> */}
                                     <IoMailOutline className=" group-active:text-livered text-white lg:text-4xl"/>
                                     </div>
                                 <span className="ml-[30px] lg:ml-10">Escribinos</span>
@@ -297,7 +279,6 @@ export default function Soluciones_ductos_textiles_para_mejorar_la_distribucion_
                     </div>
                 </div>
             </section>
-
 
 		</main>
 	);

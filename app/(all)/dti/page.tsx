@@ -1,28 +1,11 @@
 "use client";
-import { Link } from "@nextui-org/link";
-import Lottie from "lottie-react";
 
-import { Snippet } from "@nextui-org/snippet";
-import { Code } from "@nextui-org/code";
-import { button as buttonStyles } from "@nextui-org/theme";
-import { siteConfig } from "@/config/site";
-import { title, subtitle } from "@/components/primitives";
-import { GithubIcon } from "@/components/icons";
 import { Image } from "@nextui-org/image";
-import { Button } from "@nextui-org/button";
-import CardDisplay from "@/components/navbar/cardDisplay";
-import SimpleSliderDemoImages from "@/components/imgslider/simpleSliderDemoImages";
-import { BsWhatsapp } from "react-icons/bs";
-import { itemsNavSolerPalauHome, itemsNavTempomatic } from "@/public/data/navbarData";
-import { SolerPalauSVG } from "@/public/svg/solerPalauSVG";
-import CardDisplaySypHome from "@/components/navbar/cardDisplaySypHome";
 import { AsesoramietoButton } from "@/components/custonButtons/asesoramiento";
-import { TiendaButton } from "@/components/custonButtons/tienda";
 import { useEffect, useState } from "react";
 import { EscribinosButton } from "@/components/custonButtons/escribinos";
 import { Divider } from "@nextui-org/react";
 import { VinietaNaranjaSVG } from "@/public/svg/vinietaNaranja";
-import { DiferencialMaterialGalvanizado } from "@/components/diferenciales/diferencialMaterialGalvanizado";
 import { DiferencialDisenioPersonalizado } from "@/components/diferenciales/diferencialDisenioPersonalizado";
 import { DiferencialDistribucionHomogenea } from "@/components/diferenciales/diferencialDistribucionHomogenea";
 import { DiferencialLavable } from "@/components/diferenciales/diferencialLavable";
@@ -33,10 +16,6 @@ import { DiferencialAmbienteCorrosivo } from "@/components/diferenciales/diferen
 import { DiferencialEficienciaEnergetica } from "@/components/diferenciales/diferencialEficienciaEnergetica";
 import { DiferencialMaterialesInmunes } from "@/components/diferenciales/diferencialMaterialesInmunes";
 
-
-
-// import ScrollVideoPlayer from "@/components/videoplayer/scrollVideo";
-// import VideoScrollPlayer from "@/components/videoplayer/videoplayer";
 interface ItemsNavbar {
     key: string;
     label: string[];
@@ -49,7 +28,6 @@ export default function DTIPage() {
 
     const TamanioDiferenciales = 100;
     const TamanioDiferencialesMobile = 70;
-
 
     const [BigScreen, setBigScreen] = useState(false);
     useEffect(() => {
@@ -73,7 +51,6 @@ export default function DTIPage() {
             subject
         )}&body=${encodeURIComponent(body)}`;
     
-        // window.location.href = mailtoLink;
         window.open(mailtoLink, '_blank');
     };
 
@@ -144,7 +121,6 @@ export default function DTIPage() {
 
                         </div>
 
-                    
                         <span className="">En Electroterma, hemos formado una alianza estratégica con <span className="font-nunito-bolder">DTI</span>,</span><br/>
                         <span className="">líder en ductos textiles, para ofrecer soluciones de distribución</span><br/>
                         <span className="">de aire que marcan la diferencia.</span><br/>
@@ -173,7 +149,6 @@ export default function DTIPage() {
 
                         </div>
 
-                    
                         <span className="">En Electroterma, hemos formado una alianza estratégica </span><br/>
                         <span className=""> con <span className="font-nunito-bolder">DTI</span>, líder en ductos textiles, para ofrecer soluciones </span><br/>
                         <span className="">de distribución de aire que marcan la diferencia.</span><br/>
@@ -187,8 +162,7 @@ export default function DTIPage() {
                         <div>
 
                         </div>
-                        
-                        
+
                     </div>
             </section>
 
@@ -227,9 +201,7 @@ export default function DTIPage() {
                     <DiferencialMaterialesInmunes size={TamanioDiferenciales} customWith={10} />
 
                 </div>
-                
-                
-                
+
             </section>
 
             </>
@@ -240,7 +212,6 @@ export default function DTIPage() {
                 <DiferencialLavable size={TamanioDiferencialesMobile} customWith={10} />
                 <DiferencialBajoCosto size={TamanioDiferencialesMobile} customWith={10} />
 
-                
             </section>
                 <Image
                 alt="Home banner 1 w-1/2"
@@ -256,7 +227,6 @@ export default function DTIPage() {
                 <DiferencialEficienciaEnergetica size={TamanioDiferencialesMobile} customWith={10} />
                 <DiferencialMaterialesInmunes size={TamanioDiferencialesMobile} customWith={10} />
 
-                
             </section>
             </>
             }       
@@ -295,7 +265,6 @@ export default function DTIPage() {
                 />
             </section>
 
-
             {/* ------------- Botonera ------------- */}
 
             <section className="w-full 2xl:w-2/3 mx-auto 2xl:mx-[3%] 2xl:-translate-x-10 lg:mb-10 lg:mt-10 font-nunito flex flex-col items-center lg:flex-row justify-center md:justify-around
@@ -314,14 +283,6 @@ export default function DTIPage() {
 						</div>
 
 						<Divider orientation="vertical" className="bg-[#EDEDED]" />
-						{/* <div>
-							<h1 className="w-mx px-1">Comprá en</h1>
-							<h1>nuestra tienda</h1><br/>
-
-                            <TiendaButton size={BigScreen ? 40 : 15} screen={BigScreen ? "xl" : "xs"}/>
-                            
-						</div>
-                        <Divider orientation="vertical" className="bg-[#EDEDED]" /> */}
 						<div>
                             <>
 							<h1 className="w- px-0.5">Escribinos a través</h1>
@@ -336,98 +297,11 @@ export default function DTIPage() {
             </section>
 
             {/* ------------- Asesoramiento ------------- */}
-            {/* <section className="w-full 2xl:w-2/3 mx-auto 2xl:mx-[3%] 2xl:-translate-x-10 lg:mb-10 lg:mt-10 font-nunito flex flex-col items-center lg:flex-row justify-center md:justify-around
-                overflow-hidden">
-                    
-                <section className=" 2xl:w-4/5 ">
-					<div className=" px-auto  flex h-[150px] md:h-[200px] lg:h-[250px] items-center mt-10 md:mt-2 space-x-1 md:space-x-5 lg:space-x-10  text-[12px] md:text-lg lg:text-3xl text-center text-[#4C4B4B]">
-						<div>
-							<h1>Contactá</h1>
-							<h1>a un vendedor</h1><br/>
-
-							<AsesoramietoButton size={BigScreen ? 42 : 15} screen={BigScreen ? "xl" : "xs"}
-                            link={"https://wa.me/5492236356756?text=Hola.%20visité%20tu%20página%20web%20y%20me%20gustaría%20más%20información."}
-                            />
-						</div>
-
-						<Divider orientation="vertical" className="bg-[#EDEDED]" />
-						<div>
-							<h1>Comprá en</h1>
-							<h1>nuestra tienda</h1><br/>
-
-                            <TiendaButton size={BigScreen ? 40 : 15} screen={BigScreen ? "xl" : "xs"}/>
-						</div>
-                        <Divider orientation="vertical" className="bg-[#EDEDED]" />
-						<div>
-							<h1 className="lg:w-max">Escribinos a través</h1>
-							<h1>de nuestro mail</h1><br/>
-
-                            <EscribinosButton size={BigScreen ? 40 : 15} screen={BigScreen ? "xl" : "xs"} />
-						</div>
-
-					</div>
-                        
-                </section>
-            </section> */}
-
-            {/* <section className="w-1/2 mx-[3%] mb-10 mt-16 font- font-nunito flex flex-col items-center lg:flex-row justify-center md:justify-around
-                overflow-hidden">
-                    
-                <section className=" w-3/4 ">
-					<div className=" px-auto  flex h-[250px] items-center mt-10 md:mt-2 space-x-10  text-2xl text-center text-white">
-						<div>
-							<h1>Contactá</h1>
-							<h1>a un vendedor</h1><br/>
-
-							<AsesoramietoButton size={BigScreen ? 42 : 20} screen={BigScreen ? "xl" : "lg"}
-                            link={"https://wa.me/5492236356756?text=Hola.%20visité%20tu%20página%20web%20y%20me%20gustaría%20más%20información."}   
-                            />
-						</div>
-
-						<Divider orientation="vertical" className="bg-white" />
-
-						<div>
-							<h1>Escribinos a través</h1>
-							<h1>de nuestro mail</h1><br/>
-
-                            <EscribinosButton size={BigScreen ? 40 : 25} screen={BigScreen ? "xl" : "lg"} />
-						</div>
-
-					</div>
-                        
-                </section>
-
-            </section> */}
 
             {/* ------------- Imagenes presentacion ------------- */}
             <section className="w-full flex items-center justify-center mx-auto p-0 bg-transparent space-x-0">
-                    {/* <Image
-                        alt="Otam Logo"
-                        radius="none"
-                        src="../img/tempomatic/home/1.png"
-                        width={1285}
-                    />
-                    <Image
-                        alt="Otam Logo"
-                        radius="none"
-                        src="../img/tempomatic/home/2.png"
-                        width={870}
-                    /> */}
-                    {/* <Image
-                        alt="Otam Logo"
-                        src="../img/home/imgHome/3.png"
-                        width={450}
-                    />
-                    <Image
-                        alt="Otam Logo"
-                        src="../img/home/imgHome/4.png"
-                        width={450}
-                    /> */}
                 </section>
         </main>
-        // 	<div className={'h-[5000px]'}>
-        // 		<VideoScrollPlayer/>
-        // </div>
     );
 }
 

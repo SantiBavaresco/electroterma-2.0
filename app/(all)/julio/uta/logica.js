@@ -1,4 +1,3 @@
-// import './style.css'; 
 
 const container = document.querySelector('.carousel');
 const slides = document.querySelectorAll('.carousel > div');

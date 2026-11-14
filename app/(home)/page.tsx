@@ -1,31 +1,14 @@
 "use client";
 import { Link } from "@nextui-org/link";
-import Lottie from "lottie-react";
-// import animationData from "../public/lottie/bulding-page.json";
-import { Snippet } from "@nextui-org/snippet";
-import { Code } from "@nextui-org/code";
-import { button as buttonStyles } from "@nextui-org/theme";
-import { siteConfig } from "@/config/site";
-import { title, subtitle } from "@/components/primitives";
-import { GithubIcon } from "@/components/icons";
 import { Image } from "@nextui-org/image";
-// import { Button } from "@nextui-org/button";
-import { BsWhatsapp } from "react-icons/bs";
-import { IoMailOutline } from "react-icons/io5";
 import {extendVariants, Button, Divider} from "@nextui-org/react";
-import { lazy, Suspense, useState, useEffect } from "react";
+import { lazy, useState, useEffect } from "react";
 
 import VideoAutoPlayer from "@/components/videoplayer/videoautoplayer";
 import { NavbarHome } from "@/components/navbar/navbarHome";
-import { ShoppingCart } from "@/public/svg/shoppingCart";
 import { AsesoramietoButton } from "@/components/custonButtons/asesoramiento";
 import { TiendaButton } from "@/components/custonButtons/tienda";
 import { EscribinosButton } from "@/components/custonButtons/escribinos";
-
-
-// import ScrollVideoPlayer from "@/components/videoplayer/scrollVideo";
-// import VideoScrollPlayer from "@/components/videoplayer/videoplayer";
-
 
 export default function Home() {
 
@@ -42,7 +25,6 @@ export default function Home() {
         mediaQuery.removeEventListener('change', handler);
         };
     }, []);
-
 
     const FrameFan = lazy(
         () => import("@/components/frameScrubber/homeFrameScrubber/frameScrubber")
@@ -61,10 +43,8 @@ export default function Home() {
             subject
         )}&body=${encodeURIComponent(body)}`;
     
-        // window.location.href = mailtoLink;
         window.open(mailtoLink, '_blank');
     };
-
 
     const handleAnchor = (link:string) => {
         window.open(link, '_top', 'noopener noreferrer');
@@ -75,11 +55,11 @@ export default function Home() {
           size: {      
             xs: "px-2 min-w-12 h-6 text-tiny gap-1 rounded-small",      
             md: "px-4 min-w-20 h-10 text-small gap-2 rounded-small",      
-            xl: "px-10 min-w-32 h-16 text-xl gap-6 rounded-full", // <- new size variant
+            xl: "px-10 min-w-32 h-16 text-xl gap-6 rounded-full",
           },  
         },  
         defaultVariants: { 
-          size: "xl",  // <- set new size variant as default
+          size: "xl",
         },
       });
 
@@ -89,15 +69,6 @@ export default function Home() {
                 <VideoAutoPlayer url="../img/home/video/homePresentacion.mp4"/>
                 
             </section>
-            {/* <section className="h-screen w-full flex items-center justify-center overflow-hidden bg-lowgray">
-                <Image
-                    className=" mt-0"
-                    alt="Background Tempomatic"
-                    radius="none"
-                    src="../../img/home/video.png"
-                    width="100%"
-                />
-            </section> */}
 
             <NavbarHome css="-mt-[25px] lg:-mt-3 "/>
 
@@ -147,17 +118,12 @@ export default function Home() {
                 }
             </section>
 
-            {/* <section>
-                <h1>Texto con comillas</h1>
-            </section> */}
-
             {/* ------------- Banners de prodcutos ------------- */}
             {BigScreen ? <section className="relative w-full h-[58vw] lg:h-[51vw] bg-gray-00 overflow-hidden">
                 <section className="z-10 mx-[3%] flex flex-row gap-[2%]">
                     {/* ------------- TEMPOMATIC ------------- */}
                     <a
 						className="z-10 cursor-pointer w-[30%] hover:opacity-80 hover:translate-y-1 " 
-                        // onClick={()=>handleAnchor("/tempomatic")}
                         href="/tempomatic"
 					>
                     <>
@@ -184,7 +150,6 @@ export default function Home() {
                     {/* ------------- SOLER Y PALAU ------------- */}
                     <a
 						className="z-10 cursor-pointer w-[30%] hover:opacity-80 hover:translate-y-1 " 
-                        // onClick={()=>handleAnchor("/soler&palau")}
                         href="/soler&palau"
 					>
                     <>
@@ -210,7 +175,6 @@ export default function Home() {
                 {/* ------------- DTI ------------- */}
                     <a
 						className="z-10 cursor-pointer w-[30%] hover:opacity-80 hover:translate-y-1 " 
-                        // onClick={()=>handleAnchor("/dti")}
                         href="/dti"
 					>
                     <>
@@ -236,7 +200,6 @@ export default function Home() {
                     {/* ------------- ZILA ------------- */}
                     <a
 						className="z-10 cursor-pointer w-[30%] hover:opacity-80 hover:translate-y-1 " 
-                        // onClick={()=>handleAnchor("/zila")}
                         href="/zila"
 					>
                     <>
@@ -282,7 +245,6 @@ export default function Home() {
                     </div>
                 </section>
 
-
                 {/* ------------- Consultanos ------------- */}
                 <section className="relative top-[9.5%] lg:top-[4.5%]  md:w-98% py-2  flex justify-center items-center rounded-tr-[24px] rounded-bl-[24px]">
                     <div className="ml-[35px] md:ml-12">
@@ -291,7 +253,6 @@ export default function Home() {
                             Conocé nuestras {" "}
                             <Link href="/solucionesHVAC">
                             <Button size={BigScreen ? "lg" : "sm"} radius="full" className="border-[2px] border-white bg-[#EF771C] xl:text-2xl  2xl:text-4xl lg:px-8 mr-[23px] lg:mr-0 text-[#FFFFFF]" 
-                                // onClick={handleEmailClick}
                                 >
                             Soluciones
                         </Button></Link>
@@ -312,7 +273,6 @@ export default function Home() {
                     {/* ------------- TEMPOMATIC ------------- */}
                     <a
                         className="z-10 cursor-pointer w-[45%] hover:opacity-80 hover:translate-y-1 " 
-                        // onClick={()=>handleAnchor("/tempomatic")}
                         href="/tempomatic"
                     >
                     <>
@@ -339,7 +299,6 @@ export default function Home() {
                     {/* ------------- SOLER Y PALAU ------------- */}
                     <a
                         className="z-10 cursor-pointer w-[45%] hover:opacity-80 hover:translate-y-1 " 
-                        // onClick={()=>handleAnchor("/soler&palau")}
                         href="/soler&palau"
                     >
                     <>
@@ -362,14 +321,12 @@ export default function Home() {
                     </>
                     </a>
 
-               
                 </section>
 
                 <section className="z-10 w-[95%] mx-[5%]  flex gap-[5%]">
                      {/* ------------- DTI ------------- */}
                      <a
                         className="z-10 cursor-pointer w-[45%] hover:opacity-80 hover:translate-y-1 " 
-                        // onClick={()=>handleAnchor("/dti")}
                         href="/dti"
                     >
                     <>
@@ -395,7 +352,6 @@ export default function Home() {
                     {/* ------------- ZILA ------------- */}
                     <a
                         className="z-10 cursor-pointer w-[45%] hover:opacity-80 hover:translate-y-1 " 
-                        // onClick={()=>handleAnchor("/zila")}
                         href="/zila"
                     >
                     <>
@@ -420,9 +376,6 @@ export default function Home() {
                     
                 </section>
 
-              
-                
-
             </section>
                 {/* ------------- Lineas curvas ------------- */}
                 <section className="z-10 mx-[3%] flex grid-col-2 gap-[2%]">
@@ -446,7 +399,6 @@ export default function Home() {
                 </div>
                 </section>
 
-
                 {/* ------------- Consultanos ------------- */}
                 <section className="relative z-20 bg-white top-[9.5%]  md:w-98% py-2  flex justify-center items-center">
                 <div className="ml-[10px] mr-[10px]">
@@ -455,7 +407,6 @@ export default function Home() {
                         Conocé nuestras {" "}
                         <Link href="/solucionesHVAC">
                         <Button size={BigScreen ? "lg" : "sm"} radius="full" className="border-[4px] border-white bg-[#EF771C]  2xl:text-3xl lg:px-8 -[23px] lg:mr-0 text-[#FFFFFF]" 
-                            // onClick={handleEmailClick}
                             >
                         Soluciones
                     </Button></Link>
@@ -465,12 +416,6 @@ export default function Home() {
                 </section>
             </>
             }
-
-
-
-
-
-
 
             {/* ------------- Foto Inicial ------------- */}
             <section className=" -mb-10 w-full h-full  mr-auto overflow-hidden">
@@ -482,49 +427,9 @@ export default function Home() {
                 />
             </section>
 
-            
-
-            
-
-            {/* <section className="h-[100%] w-full xl:px-[3%] flex items-center justify-center overflow-hidden bg-lowgrasy">
-                <VideoAutoPlayer url="../img/imgHome/mapa.mkv   "/>
-                
-            </section> */}
-
-
-
-
             {/* ------------- FRAME SCRUBBER ------------- */}
-            {/* {BigScreen ?  */}
-                {/* <>   {/* ----- Web ----- */}                        
-                 {/*   <Suspense fallback={<div>Loading</div>}>
-                        
-                        <FrameFanWeb />
-                        
-                    </Suspense>
-                    
-
-                </>  */}
-                
-                {/* : <div className="-mt-48 -mb-64 mt-"> 
-                    {/* ----- Mobile ----- */}
-                {/*    <Suspense fallback={<div>Loading</div>}>
-                        <FrameFan />
-                    </Suspense>
-
-                    
-                </div> 
-            }*/}
 
             {/* ------------- Diferenciales mobile ------------- */}
-                {/* <section className=" md:hidden mx-2 w-full h-full  mr-auto  overflow-hidden">
-                        <Image  
-                            classNames={{ wrapper: "pl-auto <-10 min-w-full h-full"}}
-                            alt="Imagen Inicio"
-                            src={`../../img/home/diferencialesMobile.png`}
-                            width={"95%"}
-                        />
-                    </section> */}
 
             {/* ------------- Foto Grupal ------------- */}
             <section className="-mt-4 lg:-mt-14 mx-0 w-full mr-auto  overflow-hidden">
@@ -547,9 +452,6 @@ export default function Home() {
                     width={"100%"}
                 />
             </section>
-
-
-            
 
             {/* ------------- Direccionamiento a los productos ------------- */}
             <section className="z-0 lg:my-0 pt-12 lg:pt-14 translate-y-[0px] lg:mt-0 lg:translate-y-[0px]  lg:min-h-[100px] overflow-hidden">
@@ -649,7 +551,6 @@ export default function Home() {
 							<h1>nuestra tienda</h1><br/>
 
                             <TiendaButton size={BigScreen ? 40 : 15} screen={BigScreen ? "xl" : "xs"}/>
-                            {/* <EscribinosButton size={BigScreen ? 40 : 25} screen={BigScreen ? "xl" : "lg"} /> */}
 						</div>
                         <Divider orientation="vertical" className="bg-[#EDEDED]" />
 						<div>
@@ -664,11 +565,6 @@ export default function Home() {
                 </section>
             </section>
 
-
-
         </main>
-        // 	<div className={'h-[5000px]'}>
-        // 		<VideoScrollPlayer/>
-        // </div>
     );
 }

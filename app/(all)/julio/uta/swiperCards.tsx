@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
-// import './logica.js'; // Importa el archivo de lógica
 import './style.css'; 
-
 
 // Importa el archivo de lógica
 
@@ -12,8 +10,6 @@ interface CarouselItemProps {
 const CarouselItem: React.FC<CarouselItemProps> = ({ index }) => {
   const colors = ['blue', 'purple', 'green', 'yellow', 'red', 'orange', 'teal'];
   const color = colors[index % colors.length];
-
-  
 
   return (
     <div
@@ -37,16 +33,10 @@ const Carousel: React.FC = () => {
     setCurrentIndex((prevIndex) => (prevIndex === 6 ? 0 : prevIndex + 1));
   };
 
-  // useEffect(() => {
-  //   // Lógica adicional del carrusel (opcional)
   //   // Puedes utilizar la función "updateCarousel" importada de logica.js
-    
-  //   require("./logica.js");
-  // }, [currentIndex]);
 
   useEffect(() => {
     require("./logica.js");
-    // return () => {};
 }, [currentIndex]);
 
   return (

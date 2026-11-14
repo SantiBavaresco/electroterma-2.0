@@ -1,44 +1,19 @@
 "use client";
-import { Link } from "@nextui-org/link";
-import Lottie from "lottie-react";
 import NextLink from "next/link";
 
-import { Snippet } from "@nextui-org/snippet";
-import { Code } from "@nextui-org/code";
-import { button as buttonStyles } from "@nextui-org/theme";
-import { siteConfig } from "@/config/site";
-import { title, subtitle } from "@/components/primitives";
-import { GithubIcon } from "@/components/icons";
 import { Image } from "@nextui-org/image";
-import { Button } from "@nextui-org/button";
 import CardDisplay from "@/components/navbar/cardDisplay";
-import SimpleSliderDemoImages from "@/components/imgslider/simpleSliderDemoImages";
-import { BsWhatsapp } from "react-icons/bs";
-import { itemsNavSolerPalauHome, itemsNavTempomatic } from "@/public/data/navbarData";
-import { SolerPalauSVG } from "@/public/svg/solerPalauSVG";
-import CardDisplaySypHome from "@/components/navbar/cardDisplaySypHome";
+import { itemsNavTempomatic } from "@/public/data/navbarData";
 import { AsesoramietoButton } from "@/components/custonButtons/asesoramiento";
-import { TiendaButton } from "@/components/custonButtons/tienda";
-import { Suspense, lazy, useEffect, useState } from "react";
-import { EscribinosButton } from "@/components/custonButtons/escribinos";
-import { Divider, Spinner } from "@nextui-org/react";
+import { lazy, useEffect, useState } from "react";
 import { VinietaNaranjaSVG } from "@/public/svg/vinietaNaranja";
 import { DiferencialConVentiladorSyP } from "@/components/diferenciales/diferencialConVentiladorSyP";
-import { DiferencialSerpentinaReforzada } from "@/components/diferenciales/diferencialSerpentinaReforzada";
-import { DiferencialEmplazamientoInteriorExterior } from "@/components/diferenciales/diferencialEmplazamientoInteriorExterior";
-import { DiferencialConstruccionRobusta } from "@/components/diferenciales/diferencialConstruccionRobusta";
-import { DiferencialOptimoRendimiento } from "@/components/diferenciales/diferencialOptimoRendimiento";
 import { ManualButtonNaranja } from "@/components/custonButtons/manual";
 import { Diferencial15Anio } from "@/components/diferenciales/diferencial15Anios";
 import { DiferencialUnicosEnElMercado } from "@/components/diferenciales/diferencialUnicosEnElMercado";
 import { DiferencialAltaConfiabilidad } from "@/components/diferenciales/diferencialAltaConfiabilidad";
 import { DiferencialElementosOpcionales } from "@/components/diferenciales/diferencialElementosOpcionales";
-// import Loading from "./loaging";
 
-
-
-// import ScrollVideoPlayer from "@/components/videoplayer/scrollVideo";
-// import VideoScrollPlayer from "@/components/videoplayer/videoplayer";
 interface ItemsNavbar {
     key: string;
     label: string[];
@@ -46,18 +21,6 @@ interface ItemsNavbar {
     img: string;
     href: string;
 }
-// interface LazySectionProps {
-//     children: React.ReactNode;
-//   }
-  
-//   const LazySection: React.FC<LazySectionProps> = ({ children }) => {
-//     const Section = lazy(() => Promise.resolve({ default: () => children }));
-//     return (
-//       <Suspense fallback={<Spinner color="warning" size="lg" className="w-full"/>}>
-//         <Section />
-//       </Suspense>
-//     );
-//   };
 
 export default function CalefactorElectricoPage() {
 
@@ -87,7 +50,6 @@ export default function CalefactorElectricoPage() {
             subject
         )}&body=${encodeURIComponent(body)}`;
     
-        // window.location.href = mailtoLink;
         window.open(mailtoLink, '_blank');
     };
 
@@ -97,10 +59,8 @@ export default function CalefactorElectricoPage() {
         <main className="flex flex-col h-full items-center justify-center gap-4 pb-4 md:pb-10 
          overflow-hidden">
 
-           
                 {/* ------------- Banner------------- */}
                 <section className="w-full px-[0%] mt-4">
-
 
                 <Image
                     alt="Home banner 1"
@@ -109,7 +69,6 @@ export default function CalefactorElectricoPage() {
                     src="../img/tempomatic/calefactor_electrico/calefactor_electrico-Banner.webp"
                     width="100%"
                 />
-
 
                 </section>
 
@@ -254,7 +213,6 @@ export default function CalefactorElectricoPage() {
             {/* -------------MEDIDAS ------------- */}
             <section className="w-full px-[6%] mt-16 ">
                 <h1 className="text-[#FF7800] md:text-3xl lg:text-4xl 2xl:text-5xl leading-non font-nunito-bolder">MEDIDAS</h1>
-                {/* <h1 className="font-nunito text-[#FF7800] text-[1.7vw] text-right w-4/5" >TOMA DE AIRE INTECCIÓN DE AIRE</h1> */}
 
                     <table className="table-auto font-nunito text-[1.3vw] w-3/4 text-black">
                         <thead >
@@ -269,7 +227,6 @@ export default function CalefactorElectricoPage() {
                                 <th className="p-2 w-[6.5vw] border-r-2 rounded-b-[1.7vw] border-white">G</th>
                                 <th className="p-2 w-[6.5vw] border-r-2 rounded-b-[1.7vw] border-white">H</th>
 
-                            
                             </tr>
                         </thead>
                         <tbody>
@@ -353,11 +310,9 @@ export default function CalefactorElectricoPage() {
                
             </section>
 
-            
             {/* -------------CARACTERÍSTICAS ------------- */}
             <section className="w-full px-[6%] mt-10 ">
                 <h1 className=" text-[#FF7800] md:text-3xl lg:text-4xl 2xl:text-5xl leading-none font-nunito-bolder ">CARACTERÍSTICAS</h1>
-                {/* <h1 className="font-nunito text-[#FF7800] text-[2.3vw] text-right">TOMA DE AIRE INTECCIÓN DE AIRE</h1> */}
 
                     <table className="table-auto font-nunito text-[1.3vw] w-3/4 text-black">
                         <thead >
@@ -368,8 +323,7 @@ export default function CalefactorElectricoPage() {
                                 <th className="p-2 w-[10.5vw] border-r-2 rounded-b-[1.7vw] border-white">ET 27</th>
                                 <th className="p-2 w-[10.5vw] border-r-2 rounded-b-[1.7vw] border-white">ET 40</th>
                                 <th className="p-2 w-[10.5vw] border-r-2 rounded-b-[1.7vw] border-white">ET 54</th>
-                            
-                            
+
                             </tr>
                         </thead>
                         <tbody>
@@ -398,8 +352,7 @@ export default function CalefactorElectricoPage() {
                                 <td>25</td>
                                 <td>25</td>
                                 <td>25</td>
-                                
-                            
+
                             </tr>
                             
                             <tr className="bg-[#e7e7e7] text-center">
@@ -418,8 +371,7 @@ export default function CalefactorElectricoPage() {
                                 <td>41</td>
                                 <td>61,6</td>
                                 <td>82,1</td>
-                                
-                               
+
                             </tr>
                             <tr className="bg-[#e7e7e7] text-center">
                                 <td className="p-2 pl-[1.7vw] text-left">Peso aproximado (KG)</td>
@@ -428,9 +380,7 @@ export default function CalefactorElectricoPage() {
                                 <td>112</td>
                                 <td>124</td>
                                 <td>170</td>
-                                
-                                
-                               
+
                             </tr>
                         </tbody>
                     </table>
@@ -483,13 +433,9 @@ export default function CalefactorElectricoPage() {
                         <h1 className="text-[#FF7800]">CALEFACTOR</h1>
                         <h1 className="text-[#FF7800]   ">ELÉCTRICO</h1>
 
-                        
-                            
                         </div>
                     </div>
-                    
-                        
-                
+
                 </section>
                 <section className="w-full px-[3%] -mt-2 flex
                     bg-[url('/svg/ondasTempomaticItemsMobile.svg')] bg-contain lg:bg-fill  bg-[center_bottom_8vw] md:bg-[center_top_0vw] lg:bg-[center_top_6vw] bg-no-repeat
@@ -521,7 +467,6 @@ export default function CalefactorElectricoPage() {
                         <AsesoramietoButton screen={BigScreen ? "xl" : "md"} size={BigScreen ? 40 : 16}
                                 link={"https://wa.me/5492236356756?text=Hola.%20Quiero%20más%20información%20sobre%20el%20Calefactor%20Eléctrico."}/>
                     </div>
-                    
 
                 </section> 
 
@@ -532,7 +477,6 @@ export default function CalefactorElectricoPage() {
                     <DiferencialConVentiladorSyP size={55} customWith={10} />
                     <DiferencialElementosOpcionales size={55} customWith={10} />
                 </section>
-
 
                 {/* -------------COMPONENTES ------------- */}
                 <section className="w-full px-[6%] mt-4 lg:-mt-10 ">
@@ -600,7 +544,6 @@ export default function CalefactorElectricoPage() {
                 </section>
             </>
             }
-            
 
             {/* -------------OTROS PRODUCTOS TEMPOMATIC ------------- */}
             <section className="w-full px-[6%] mt-4 lg:mt-10 flex justify-center">
@@ -625,48 +568,10 @@ export default function CalefactorElectricoPage() {
                         ))}  
                         </div>
                     </div>
-                    
-                
+
             </section>
 
             {/* ------------- Botonera ------------- */}
-{/* 
-            <section className="w-full 2xl:w-2/3 mx-auto 2xl:mx-[3%] 2xl:-translate-x-10 lg:mb-10 lg:mt-10 font-nunito flex flex-col items-center lg:flex-row justify-center md:justify-around
-                overflow-hidden">
-                    
-                <section className=" 2xl:w-4/5 ">
-					<div className=" px-auto  flex h-[150px] lg:h-[250px] items-center mt-10 md:mt-2 space-x-2 lg:space-x-10  text-[12px] lg:text-3xl text-center text-[#4C4B4B]">
-						<div>
-							<h1 className="w-mx px-1">Contactá</h1>
-							<h1>a un vendedor</h1><br/>
-
-							<AsesoramietoButton size={BigScreen ? 42 : 15} screen={BigScreen ? "xl" : "xs"}
-                            link={"https://wa.me/5492236356756?text=Hola.%20visité%20tu%20página%20web%20y%20me%20gustaría%20más%20información."}
-                            // Hola,%20visite%20tu%20pagina%20web%20y%20me%20gustaria%20mas%20informacion
-                            />
-						</div>
-
-						<Divider orientation="vertical" className="bg-[#EDEDED]" />
-						<div>
-							<h1 className="w-mx px-1">Comprá en</h1>
-							<h1>nuestra tienda</h1><br/>
-
-                            <TiendaButton size={BigScreen ? 40 : 15} screen={BigScreen ? "xl" : "xs"}/>
-                    
-						</div>
-                        <Divider orientation="vertical" className="bg-[#EDEDED]" />
-						<div>
-							<h1 className="w-max px-0.5">Escribinos a través</h1>
-							<h1>de nuestro mail</h1><br/>
-
-                            <EscribinosButton size={BigScreen ? 42 : 15} screen={BigScreen ? "xl" : "xs"} />
-						</div>
-
-					</div>
-                        
-                </section>
-            </section> */}
-
 
             {/* ------------- Imagenes presentacion ------------- */}
             <section className=" hidden w-full lg:flex items-center justify-center mx-auto p-0 bg-transparent space-x-0">
@@ -679,9 +584,6 @@ export default function CalefactorElectricoPage() {
                     
             </section>
         </main>
-        // 	<div className={'h-[5000px]'}>
-        // 		<VideoScrollPlayer/>
-        // </div>
     );
 }
 

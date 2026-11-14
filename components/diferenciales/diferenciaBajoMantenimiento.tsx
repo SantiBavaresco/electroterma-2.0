@@ -1,9 +1,7 @@
 "use client";
 import React from "react";
 
-
 import { BajoMantenimiento } from "@/public/svg/bajoMantenimiento";
-
 
 interface Props {
     svg?: string;
@@ -21,7 +19,6 @@ export const DiferencialBajoMantenimiento : React.FC<Props> =  ({size, text, tex
 
 				<BajoMantenimiento size={size || 70}/>		
 				
-				{/* <svg size={size || 70}/> */}
 				</span>
 				<p className={`z-0   h-2/3 pl-8 pr-1 md:px-10 py-1 -translate-x-8 
 					bg-white bg-opacity-100 border-2 border-[#FF7800] rounded-tr-2xl md:rounded-tr-3xl  

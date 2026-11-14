@@ -1,10 +1,7 @@
 "use client"
-import { title } from "@/components/primitives";
-import { solucionesGeneralData } from "@/public/data/soluciones/solucionesGeneralData";
 import { Button } from "@nextui-org/button";
 import { Image } from "@nextui-org/image";
 import { Avatar } from "@nextui-org/react";
-import {Link} from "@nextui-org/react";
 import { useEffect, useState } from "react";
 import { IoMailOutline } from "react-icons/io5";
 
@@ -19,10 +16,8 @@ export default function Soluciones_calefaccion_de_edificio_por_agua_caliente_Pag
             subject
         )}&body=${encodeURIComponent(body)}`;
     
-        // window.location.href = mailtoLink;
         window.open(mailtoLink, '_blank');
     };
-
 
 	const [BigScreen, setBigScreen] = useState(false);
 
@@ -93,7 +88,6 @@ export default function Soluciones_calefaccion_de_edificio_por_agua_caliente_Pag
 							className="p-6"
 							radius="none"
 							src="../../img/soluciones/calefaccion_de_edificio_por_agua_caliente/Soluciones1.webp"
-							// width="100%"
 							height="100%"
 							/> 
 							
@@ -140,7 +134,6 @@ export default function Soluciones_calefaccion_de_edificio_por_agua_caliente_Pag
 								<span className="underline">Nicolás Cabot</span>
 							</p>
 						</div>
-					
 
 					<div className="w-full mt-4 pl-2 pr-2 lg:pr-20 py-2 lg:py-10 grid lg:grid-cols-2 gap-10">
 
@@ -186,13 +179,11 @@ export default function Soluciones_calefaccion_de_edificio_por_agua_caliente_Pag
 								<br/> <br/>
 								Para alimentar todos los puntos de consumo de Agua Caliente de Calefacción (ACC), se dispusieron dos calderas marca TEMPOMATIC chequear link a caldera de agua caliente tempomatic, de alta confiabilidad, de 120.000 kcal/h cada una.
 							</p>
-														
-							
+
 							<h2 className="text-[#EF771C] text-[3.8vw] lg:text-[1.3vw] font-nunito-bold lg:mt-16">2. LOCACIÓN Y DISEÑO DE LA SALA DE MÁQUINAS (SMAQ)</h2>
 
 							<article className="w-full">
 								Para la locación de una sala de calderas, en este tipo de proyectos, se deben tener en cuenta varios factores, entre ellos podemos citar: <br/><br/>
-
 
 								<article className="pl-2">
 									<p className="flex ">
@@ -239,7 +230,6 @@ export default function Soluciones_calefaccion_de_edificio_por_agua_caliente_Pag
 									</p>
 								</article>
 
-								
 							</article>
 
 						</div>
@@ -269,7 +259,6 @@ export default function Soluciones_calefaccion_de_edificio_por_agua_caliente_Pag
 
 							</p>
 
-
 							<Image
 								alt="Imagen 3"
 								className="lg:mt-16"
@@ -277,9 +266,6 @@ export default function Soluciones_calefaccion_de_edificio_por_agua_caliente_Pag
 								src="../../img/soluciones/calefaccion_de_edificio_por_agua_caliente/Soluciones3.webp"
 								width="100%"
 							/>
-
-							
-							
 
 							<h2 className="pt-6 text-center font-nunito-bold text-[#9D9D9C] text-[3.8vw] lg:text-[1.3vw] lg:mt-16 mr-auto">RECOMENDACIÓN FINAL</h2>
 							<p className="w-full text-[#EF771C] text-[3.8vw] lg:text-[1.20vw] font-nunito ">
@@ -323,8 +309,6 @@ export default function Soluciones_calefaccion_de_edificio_por_agua_caliente_Pag
 										<a href="/solucionesHVAC"> 
 											<button
 												className="  z-10 bg-[#EF771C] px-2 py-2 rounded-[12px] font-nunito text-white text-sm 2xl:text-xl shadow-xl"
-												// radius="full"
-												// size={BigScreen ? "sm" : "sm"}
 											>
 												Ver otras soluciones
 											</button>
@@ -337,8 +321,6 @@ export default function Soluciones_calefaccion_de_edificio_por_agua_caliente_Pag
 
 					</div>
 
-					
-					
 				</div>
 			</article>
 
@@ -360,7 +342,6 @@ export default function Soluciones_calefaccion_de_edificio_por_agua_caliente_Pag
                                     group-hover:bg-gradient-to-r group-hover:from-orange-400 group-hover:to-[#fe694f]
                                     group-active:bg-gradient-to-r group-active:from-[#f37a7ae5] group-active:to-[#FFFFFF]
                                 "> 
-                                    {/* <MailSvg css=" group-active:text-livered text-white lg:text-3xl" size={40}/> */}
                                     <IoMailOutline className=" group-active:text-livered text-white lg:text-4xl"/>
                                     </div>
                             <span className="ml-[30px] lg:ml-10">Escribinos</span>
@@ -368,7 +349,6 @@ export default function Soluciones_calefaccion_de_edificio_por_agua_caliente_Pag
                     </div>
                 </div>
             </section>
-
 
 		</main>
 	);

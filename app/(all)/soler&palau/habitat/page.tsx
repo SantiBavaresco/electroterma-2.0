@@ -1,31 +1,14 @@
 "use client";
 import { useEffect, useState } from "react";
-import { Link } from "@nextui-org/link";
-import Lottie from "lottie-react";
-// import animationData from "../public/lottie/bulding-page.json";
-import { Snippet } from "@nextui-org/snippet";
-import { Code } from "@nextui-org/code";
-import { button as buttonStyles } from "@nextui-org/theme";
-import { siteConfig } from "@/config/site";
-import { title, subtitle } from "@/components/primitives";
-import { GithubIcon } from "@/components/icons";
 import {extendVariants, Button} from "@nextui-org/react";
 import { Image } from "@nextui-org/image";
 
-import { BsWhatsapp } from "react-icons/bs";
-import { IoMailOutline } from "react-icons/io5";
 import { DiferencialGranConfort } from "@/components/diferenciales/diferencialGranConfort";
-import { DiferencialCompuertaAntiretorno } from "@/components/diferenciales/diferencialCompuertaAntiretorno";
 import { DiferencialVolumenBajo } from "@/components/diferenciales/diferencialVolumenBajo";
-import { ShoppingCart } from "@/public/svg/shoppingCart";
 import YouTubePlayer from "@/components/youtubePlayer";
-import { MdKeyboardDoubleArrowRight } from "react-icons/md";
-
 
 import { habitatData } from "@/public/data/soler&palau/habitatData";
 import VideoAutoPlayer from "@/components/videoplayer/videoautoplayer";
-import SimpleSliderDemoImages from "@/components/imgslider/simpleSliderDemoImages";
-
 
 import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
@@ -33,36 +16,30 @@ import { TiendaButton } from "@/components/custonButtons/tienda";
 import { AsesoramietoButton } from "@/components/custonButtons/asesoramiento";
 
 import { DiferencialFacilInstalacion } from "@/components/diferenciales/diferencialFacilInstalacion";
-import { EscribinosButton } from "@/components/custonButtons/escribinos";
-
 
 export default function HabitatPage() {
     const images = [
         {
           original: "../img/solerpalau/habitat/imgDemo/1.jpg",
-        //   thumbnail: "https://picsum.photos/id/1018/250/150/",
         },
         {
           original: "../img/solerpalau/habitat/imgDemo/2.jpg",
-        //   thumbnail: "https://picsum.photos/id/1015/250/150/",
         },
         {
           original: "../img/solerpalau/habitat/imgDemo/3.jpg",
-        //   thumbnail: "https://picsum.photos/id/1019/250/150/",
         },
       ];
-
 
     const MyButton = extendVariants(Button, {  
         variants: {    
           size: {      
             xs: "px-2 min-w-12 h-6 text-tiny gap-1 rounded-small",      
             md: "px-4 min-w-20 h-10 text-small gap-2 rounded-small",      
-            xl: "px-10 min-w-32 h-16 text-xl gap-6 rounded-full", // <- new size variant
+            xl: "px-10 min-w-32 h-16 text-xl gap-6 rounded-full",
           },  
         },  
         defaultVariants: { 
-          size: "xl",  // <- set new size variant as default
+          size: "xl",
         },
       });
 
@@ -89,16 +66,13 @@ export default function HabitatPage() {
             subject
         )}&body=${encodeURIComponent(body)}`;
     
-        // window.location.href = mailtoLink;
         window.open(mailtoLink, '_blank');
     };
-
 
     return (
         <main className="flex flex-col items-center justify-center gap-4 pb-4 md:pb-10 overflow-hidden ">
             {/* ------------- VIDEO INTRO ------------- */}
 
-            {/* <section className="h-[100%] w-full 2xl:w-[90%] xl:px-[%] flex items-center justify-center overflow-hidden bg-lowgrasy"> */}
             <section className="max-h-[100vh] w-[119%] -translate-x-10 xl:-translate-x-16 2xl:w-[111%] xl:px-[0%] flex items-center justify-center overflow-hidden bg-lowgrasy">
             
                 <VideoAutoPlayer url="../img/solerpalau/habitat/video/habitatPresentacion.mp4" width="100%"/>
@@ -106,20 +80,6 @@ export default function HabitatPage() {
             </section>
 
             {/* ------------- Consultanos ------------- */}
-            {/* <section className="w-full xl:px-[3%] max-h-[50%] py-0 font-size overflow-hidden">
-                <div className="bg-[#E61E25]  md:w-98% py-3  flex justify-between items-center rounded-tr-[24px] rounded-bl-[24px]">
-                    <div className="ml-[35px] md:ml-24">
-                        <h2 className="text-white text-xs xm:text-base md:text-2xl 2xl:text-3xl font-nunito-bold">
-                            {" "}
-                            ¿Cuál es tu necesidad?{" "}
-                        </h2>
-                    </div>
-                    <div className="mr-4 md:mr-12  ">
-                        <EscribinosButton size={BigScreen ? 40 : 25} screen={BigScreen ? "xl" : "lg"} />
-
-                    </div>
-                </div>
-            </section> */}
 
             <section className="flex flex-col px-[3%] w-full">
 
@@ -173,7 +133,6 @@ export default function HabitatPage() {
                     </div>
                 </section>
 
-                
                 {/* ------------- 2 Vent Habitat ------------- */}
                 {BigScreen ? 
                     <>
@@ -311,7 +270,6 @@ export default function HabitatPage() {
                     
                     </>
                 }
-                
 
                 {/* ------------- Diferenciales ------------- */}
 
@@ -338,17 +296,6 @@ export default function HabitatPage() {
                     </> : 
                     <>
                     {/* ------------- MOBILE ------------- */}
-                    {/* <section className="flex flex-col mt-2 py-4 gap-6">
-                            <div className="w-max mx-auto text-center"> 
-                                <DiferencialGranConfort size={50} textSize={14} /> 
-                            </div>
-                            <div className="w-max mx-auto text-center">
-                                <DiferencialVolumenBajo size={50} textSize={14} text="Bajo nivel sonoro" /> 
-                            </div>
-                        <div className="w-max mx-auto text-center">
-                            <DiferencialFacilInstalacion  size={50} textSize={14} />
-                        </div>
-                    </section> */}
 
                     <section className=" mx-auto my-8 flex">
                         <div className="flex flex-col gap-4 w-4/ justify-center items-start align-center ">
@@ -359,26 +306,14 @@ export default function HabitatPage() {
                         </div>
                     </section>
 
-                    {/* <div className=" mx-[3%] flex flex-col justify-end items-end overflow-hidden">
-                    
-                    <section className=" my-4 md:flex">
-                        <div className="flex flex-col gap-4 w-full justify-center items-start align-center xl:mr-[10vw] ">
-                            <DiferencialGranConfort size={70} customWith={150} />
-                            <DiferencialVolumenBajo size={70} customWith={150}/>
-                            <DiferencialFacilInstalacion size={70} customWith={250} />
-                        </div>
-                    </section>
-                    </div> */}
                     </>
 
                 }
-               
 
                 {/* ------------- Youtube ------------- */}
                 <section className="flex flex-col xl:flex-row  items-start my-10 mx-[5%] gap-y-4 ">
                     <div className="w-full  ">
                         <YouTubePlayer
-                            // url={item.presentationVideoId}
                             id={habitatData.videoYoutubeId1}
                             url={habitatData.videoYoutubeId1}
                             height={BigScreen ? "500px" : "200px"}
@@ -388,7 +323,6 @@ export default function HabitatPage() {
                     </div>
                     <div className="w-full h-full  ">
                         <YouTubePlayer
-                            // url={item.presentationVideoId}
                             id={habitatData.videoYoutubeId2}
                             url={habitatData.videoYoutubeId2}
                             height={BigScreen ? "500px" : "200px"}
@@ -397,9 +331,7 @@ export default function HabitatPage() {
                         />
                     </div>
 
-
                 </section>
-
 
                 {/* -------------  TIENDA ------------- */}
                 <section className="flex  h-full ">
@@ -473,7 +405,6 @@ export default function HabitatPage() {
                     </div>
                 </section>
 
-                
             </section>
 
         </main>

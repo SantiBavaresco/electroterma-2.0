@@ -1,10 +1,7 @@
 "use client"
-import { title } from "@/components/primitives";
-import { solucionesGeneralData } from "@/public/data/soluciones/solucionesGeneralData";
 import { Button } from "@nextui-org/button";
 import { Image } from "@nextui-org/image";
 import { Avatar } from "@nextui-org/react";
-import {Link} from "@nextui-org/react";
 import { useEffect, useState } from "react";
 import { IoMailOutline } from "react-icons/io5";
 
@@ -19,10 +16,8 @@ export default function Soluciones_calefaccion_de_locales_comerciales_con_unidad
             subject
         )}&body=${encodeURIComponent(body)}`;
     
-        // window.location.href = mailtoLink;
         window.open(mailtoLink, '_blank');
     };
-
 
 	const [BigScreen, setBigScreen] = useState(false);
 
@@ -93,7 +88,6 @@ export default function Soluciones_calefaccion_de_locales_comerciales_con_unidad
 							className="p-6"
 							radius="none"
 							src="../../img/soluciones/calefaccion_de_locales_comerciales_con_unidades_manejadoras_de_aire/Soluciones1.webp"
-							// width="100%"
 							height="100%"
 							/> 
 							
@@ -146,7 +140,6 @@ export default function Soluciones_calefaccion_de_locales_comerciales_con_unidad
 						{/* ------------- Contenido primario ------------- */}
 						<div className="w-full flex flex-col gap-6 text-[3.8vw] lg:text-[1.20vw] font-nunito items-center ">
 
-							
 							<p className="text-[3.8vw] lg:text-[1.20vw] font-nunito">
 								La calefacción de locales comerciales es uno de los ejercicios mas demandantes de soluciones para la industria del HVAC, ya que el correcto y eficiente funcionamiento del mismo constituye un punto a favor del éxito del negocio.
 							</p>
@@ -174,14 +167,11 @@ export default function Soluciones_calefaccion_de_locales_comerciales_con_unidad
 								Realizado el balance térmico, se decide instalar 80.000 Kcal/hora de calefacción por planta, por lo cual se instalan 2 (dos) <a className="text-[#EF771C] font-nunito-bold underline " href="/tempomatic/unidad_manejadora_de_aire" target="_top">Unidades Manejadores de Aire</a> Caliente marca 
 								<a className="text-[#EF771C] font-nunito-bold underline " href="/tempomatic" target="_top"> TEMPOMATIC</a> chequear link a uma modelo UMA 10/40.
 							</p>
-							
-
 
 						</div>
 						
 						<div className="w-full flex flex-col gap-6">
-							
-							
+
 							<Image
 								alt="Imagen 3"
 								className="lg:mt-16"
@@ -211,9 +201,7 @@ export default function Soluciones_calefaccion_de_locales_comerciales_con_unidad
 								width="100%"
 							/>
 
-							
 						</div>
-						
 
 						{BigScreen || 
 						<>
@@ -251,8 +239,6 @@ export default function Soluciones_calefaccion_de_locales_comerciales_con_unidad
 										<a href="/solucionesHVAC"> 
 											<button
 												className="  z-10 bg-[#EF771C] px-2 py-2 rounded-[12px] font-nunito text-white text-sm 2xl:text-xl shadow-xl"
-												// radius="full"
-												// size={BigScreen ? "sm" : "sm"}
 											>
 												Ver otras soluciones
 											</button>
@@ -265,8 +251,6 @@ export default function Soluciones_calefaccion_de_locales_comerciales_con_unidad
 
 					</div>
 
-					
-					
 				</div>
 			</article>
 
@@ -288,7 +272,6 @@ export default function Soluciones_calefaccion_de_locales_comerciales_con_unidad
                                     group-hover:bg-gradient-to-r group-hover:from-orange-400 group-hover:to-[#fe694f]
                                     group-active:bg-gradient-to-r group-active:from-[#f37a7ae5] group-active:to-[#FFFFFF]
                                 "> 
-                                    {/* <MailSvg css=" group-active:text-livered text-white lg:text-3xl" size={40}/> */}
                                     <IoMailOutline className=" group-active:text-livered text-white lg:text-4xl"/>
                                     </div>
                                 <span className="ml-[30px] lg:ml-10">Escribinos</span>
@@ -296,7 +279,6 @@ export default function Soluciones_calefaccion_de_locales_comerciales_con_unidad
                     </div>
                 </div>
             </section>
-
 
 		</main>
 	);

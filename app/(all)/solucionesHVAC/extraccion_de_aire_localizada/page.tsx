@@ -1,10 +1,7 @@
 "use client"
-import { title } from "@/components/primitives";
-import { solucionesGeneralData } from "@/public/data/soluciones/solucionesGeneralData";
 import { Button } from "@nextui-org/button";
 import { Image } from "@nextui-org/image";
 import { Avatar } from "@nextui-org/react";
-import {Link} from "@nextui-org/react";
 import { useEffect, useState } from "react";
 import { IoMailOutline } from "react-icons/io5";
 
@@ -19,10 +16,8 @@ export default function Soluciones_extraccion_de_aire_localizada_Page() {
             subject
         )}&body=${encodeURIComponent(body)}`;
     
-        // window.location.href = mailtoLink;
         window.open(mailtoLink, '_blank');
     };
-
 
 	const [BigScreen, setBigScreen] = useState(false);
 
@@ -93,7 +88,6 @@ export default function Soluciones_extraccion_de_aire_localizada_Page() {
 							className="p-6"
 							radius="none"
 							src="../../img/soluciones/extraccion_de_aire_localizada/Soluciones1.webp"
-							// width="100%"
 							height="100%"
 							/> 
 							
@@ -146,7 +140,6 @@ export default function Soluciones_extraccion_de_aire_localizada_Page() {
 						{/* ------------- Contenido primario ------------- */}
 						<div className="w-full flex flex-col gap-6 text-[3.8vw] lg:text-[1.20vw] font-nunito items-center ">
 
-							
 							<p className="text-[3.8vw] lg:text-[1.20vw] font-nunito">
 								Cuando en una nave industrial, taller de soldadura, cocina de un restaurant u otro local se originan gases, vapores, olores y polvo, aplicar exclusivamente los principios de <span className="font-nunito-bolder">ventilación general</span>
 								{" "}puede generar alguna problemática, como por ejemplo, la extensión a todo el recinto, del contaminante que originalmente estaba localizado. Para estos casos con fuentes de contaminantes puntuales, la mejor solución suele ser una 
@@ -170,8 +163,6 @@ export default function Soluciones_extraccion_de_aire_localizada_Page() {
 								width="100%"
 							/>
 
-
-
 							<h2 className="text-[#EF771C] text-[3.8vw] lg:text-[1.3vw] font-nunito-bold lg:mt-16 mr-auto">ANÁLISIS DE SITUACIÓN Y SOLUCIÓN PROPUESTA POR EL EQUIPO DE INGENIERÍAS</h2>
 						    <p className="">
 								En este caso presentaremos un ejemplo de diseño de este tipo de instalaciones, para una industria de fraccionado y envasado de polvos (no inflamables, ni explosivos), cuyo informe de granulometría nos permitió clasificarlo como pesado y seco. En esta instalación se requería extraer sólidos en suspensión generados por procesos de carga de tolvas mezcladoras, descarga y envasado de mezclas, puesto de fraccionado y pesado.
@@ -194,7 +185,6 @@ export default function Soluciones_extraccion_de_aire_localizada_Page() {
 							<p className="">
 								Además, se deberá tener en cuenta que la ubicación de los dispositivos de captado sea lo más cerca posible de la zona de emisión de los contaminantes, que a su vez el operario no quede entre este y la fuente de contaminación.
 							</p>
-
 
 						</div>
 						
@@ -250,13 +240,6 @@ export default function Soluciones_extraccion_de_aire_localizada_Page() {
 									</tr>
 								</tbody>
 							</table>
-							{/* <Image
-								alt="Imagen 4"
-								className="lg:mt-"
-								radius="none"
-								src="../../img/soluciones/extraccion_de_aire_localizada/Soluciones4.webp"
-								width="100%"
-							/> */}
 
 							<p className="text-[3.8vw] lg:text-[1.20vw] font-nunito-bolder">La superficie total de captación (A) = 1.2 m 2</p>
 
@@ -285,7 +268,6 @@ export default function Soluciones_extraccion_de_aire_localizada_Page() {
 
 							</p>
 
-
 							<h2 className="text-[#EF771C] text-[3.8vw] lg:text-[1.3vw] font-nunito-bold lg:mt-16">VENTILADOR DE EXTRACCIÓN</h2>
 							<p className="text-[3.8vw] lg:text-[1.20vw] font-nunito">
 								En el caso de análisis 
@@ -296,7 +278,6 @@ export default function Soluciones_extraccion_de_aire_localizada_Page() {
 							<p className="text-[3.8vw] lg:text-[1.20vw] font-nunito">
 								Para el sistema separador de sólidos, existen diversas alternativas tecnológicas, según el contaminante que se busque retener. Además, cada una de ellas con sus ventajas y desventajas: costo de inversión, frecuencia de mantenimiento, costos operativos.
 							</p>
-							
 
 							<h2 className="pt-6 text-center font-nunito-bold text-[#9D9D9C] text-[3.8vw] lg:text-[1.3vw] lg:mt-16 mr-auto">RECOMENDACIÓN FINAL</h2>
 							<p className="w-full text-[#EF771C] text-[3.8vw] lg:text-[1.20vw] font-nunito ">
@@ -340,8 +321,6 @@ export default function Soluciones_extraccion_de_aire_localizada_Page() {
 										<a href="/solucionesHVAC"> 
 											<button
 												className="  z-10 bg-[#EF771C] px-2 py-2 rounded-[12px] font-nunito text-white text-sm 2xl:text-xl shadow-xl"
-												// radius="full"
-												// size={BigScreen ? "sm" : "sm"}
 											>
 												Ver otras soluciones
 											</button>
@@ -354,8 +333,6 @@ export default function Soluciones_extraccion_de_aire_localizada_Page() {
 
 					</div>
 
-					
-					
 				</div>
 			</article>
 
@@ -377,7 +354,6 @@ export default function Soluciones_extraccion_de_aire_localizada_Page() {
                                     group-hover:bg-gradient-to-r group-hover:from-orange-400 group-hover:to-[#fe694f]
                                     group-active:bg-gradient-to-r group-active:from-[#f37a7ae5] group-active:to-[#FFFFFF]
                                 "> 
-                                    {/* <MailSvg css=" group-active:text-livered text-white lg:text-3xl" size={40}/> */}
                                     <IoMailOutline className=" group-active:text-livered text-white lg:text-4xl"/>
                                     </div>
                                 <span className="ml-[30px] lg:ml-10">Escribinos</span>
@@ -385,7 +361,6 @@ export default function Soluciones_extraccion_de_aire_localizada_Page() {
                     </div>
                 </div>
             </section>
-
 
 		</main>
 	);

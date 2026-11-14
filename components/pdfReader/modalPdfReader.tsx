@@ -1,6 +1,5 @@
 "use client";
-import React, { useState } from "react";
-import { Document, Page } from "react-pdf";
+import React from "react";
 import {
     Modal,
     ModalContent,
@@ -11,12 +10,9 @@ import {
 } from "@nextui-org/modal";
 import { Button } from "@nextui-org/button";
 
-import { FaArrowRightToBracket } from "react-icons/fa6";
-import { pdfjs } from "react-pdf";
 import PdfReader from "./pdfReader";
 import { Download } from "@/public/svg/download";
 import DownloadPdfButton from "./donwloadPdfButton";
-// import { useDisclosure } from "@nextui-org/react";
 
 interface Props {
     url: string;
@@ -27,18 +23,9 @@ interface Props {
 
 const ModalPdf: React.FC<Props> = ({ url, title, layer, bigScreen, }) => {
     const { isOpen, onOpen, onOpenChange } = useDisclosure();
-    // const [scrollBehavior, setScrollBehavior] = React.useState("inside");
-
-    // const [numPages, setNumPages] = useState<number>();
-    // const [pageNumber, setPageNumber] = useState<number>(1);
-
-    // function onDocumentLoadSuccess({ numPages }: { numPages: number }): void {
-    //     setNumPages(numPages);
-    // }
 
     return (
         <div>
-            
 
             <Button  size={bigScreen ? "lg" : "sm"} radius="full" onClick={onOpen} className={`${layer} `}>
                 {title} <Download/> {" "}
@@ -49,7 +36,6 @@ const ModalPdf: React.FC<Props> = ({ url, title, layer, bigScreen, }) => {
                     {(onClose) => (
                         <>
                             <ModalHeader className="flex flex-col gap-1">
-                                {/* {title} */}
                                 <DownloadPdfButton/>
                             </ModalHeader>
                             <ModalBody>

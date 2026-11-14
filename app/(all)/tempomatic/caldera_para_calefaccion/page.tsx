@@ -1,50 +1,18 @@
 "use client";
-import { Link } from "@nextui-org/link";
-import Lottie from "lottie-react";
 import NextLink from "next/link";
 
-import { Snippet } from "@nextui-org/snippet";
-import { Code } from "@nextui-org/code";
-import { button as buttonStyles } from "@nextui-org/theme";
-import { siteConfig } from "@/config/site";
-import { title, subtitle } from "@/components/primitives";
-import { GithubIcon } from "@/components/icons";
 import { Image } from "@nextui-org/image";
-import { Button } from "@nextui-org/button";
 import CardDisplay from "@/components/navbar/cardDisplay";
-import SimpleSliderDemoImages from "@/components/imgslider/simpleSliderDemoImages";
-import { BsWhatsapp } from "react-icons/bs";
-import { itemsNavSolerPalauHome, itemsNavTempomatic } from "@/public/data/navbarData";
-import { SolerPalauSVG } from "@/public/svg/solerPalauSVG";
-import CardDisplaySypHome from "@/components/navbar/cardDisplaySypHome";
+import { itemsNavTempomatic } from "@/public/data/navbarData";
 import { AsesoramietoButton } from "@/components/custonButtons/asesoramiento";
-import { TiendaButton } from "@/components/custonButtons/tienda";
 import { useEffect, useState } from "react";
-import { EscribinosButton } from "@/components/custonButtons/escribinos";
-import { Divider } from "@nextui-org/react";
 import { VinietaNaranjaSVG } from "@/public/svg/vinietaNaranja";
-import { DiferencialConVentiladorSyP } from "@/components/diferenciales/diferencialConVentiladorSyP";
-import { DiferencialSerpentinaReforzada } from "@/components/diferenciales/diferencialSerpentinaReforzada";
-import { DiferencialEmplazamientoInteriorExterior } from "@/components/diferenciales/diferencialEmplazamientoInteriorExterior";
-import { DiferencialConstruccionRobusta } from "@/components/diferenciales/diferencialConstruccionRobusta";
-import { DiferencialOptimoRendimiento } from "@/components/diferenciales/diferencialOptimoRendimiento";
 import { ManualButtonNaranja } from "@/components/custonButtons/manual";
 import { Diferencial15Anio } from "@/components/diferenciales/diferencial15Anios";
-import { DiferencialUnicosEnElMercado } from "@/components/diferenciales/diferencialUnicosEnElMercado";
 import { DiferencialAltaConfiabilidad } from "@/components/diferenciales/diferencialAltaConfiabilidad";
-import { DiferencialElementosOpcionales } from "@/components/diferenciales/diferencialElementosOpcionales";
-import { DiferencialFiltreraIncorporada } from "@/components/diferenciales/diferencialFiltreraIncorporada";
-import { DiferencialBajoMantenimiento } from "@/components/diferenciales/diferenciaBajoMantenimiento";
-import { Diferencial45Anio } from "@/components/diferenciales/diferencial45Anios";
-import { DiferenciallMultiposicionTempomatic } from "@/components/diferenciales/diferencialMultiposicionTempomatic";
-import { DiferencialFabricacionNacional } from "@/components/diferenciales/diferencialFabricacionNacional";
 import { DiferencialDurabilidad } from "@/components/diferenciales/diferencialDurabilidad";
 import { DiferencialRecuperacionDeCalor } from "@/components/diferenciales/diferencialRecuperacionDeCalor";
 
-
-
-// import ScrollVideoPlayer from "@/components/videoplayer/scrollVideo";
-// import VideoScrollPlayer from "@/components/videoplayer/videoplayer";
 interface ItemsNavbar {
     key: string;
     label: string[];
@@ -81,7 +49,6 @@ export default function CalderaParaCalefaccionPage() {
             subject
         )}&body=${encodeURIComponent(body)}`;
     
-        // window.location.href = mailtoLink;
         window.open(mailtoLink, '_blank');
     };
 
@@ -150,10 +117,8 @@ export default function CalderaParaCalefaccionPage() {
                             width="100%"
                         />
                     </div>
-                    
-                
-            </section>
 
+            </section>
 
             <section className="w-full px-[3%] -mt-24 flex flex-row-reverse justify-around
             bg-[url('/svg/ondasTempomaticItems.svg')] h-[700px] 2xl:h-[750px] bg-fill  bg-[center_top_vw] md:bg-[center_top_0vw] lg:bg-[center_top_-1vw] 2xl:bg-[center_top_0vw] bg-no-repeat
@@ -238,7 +203,6 @@ export default function CalderaParaCalefaccionPage() {
                     </div>
             </section>
 
-
             {/* -------------MEDIDAS ------------- */}
             <section className="w-full px-[6%] mt-10 ">
             <h1 className="text-[#FF7800] md:text-3xl lg:text-4xl 2xl:text-5xl leading-non font-nunito-bolder">MEDIDAS</h1>
@@ -263,7 +227,6 @@ export default function CalderaParaCalefaccionPage() {
                                 <th className="p-2 w-[4.5vw] border-r-2 rounded-b-[1.7vw] border-white">&Oslash; P</th>
                                 <th className="p-2 w-[4.5vw] border-r-2 rounded-b-[1.7vw] border-white">&Oslash; R</th>
 
-                            
                             </tr>
                         </thead>
                         <tbody>
@@ -284,10 +247,7 @@ export default function CalderaParaCalefaccionPage() {
                                 <td>2&quot;</td>
                                 <td>1&quot;</td>
                                 <td>2&quot;</td>
-                                
 
-
-                            
                             </tr>
                                                         
                             <tr className="bg-[#f7f7f7] text-[1.4vw] text-center">
@@ -307,8 +267,7 @@ export default function CalderaParaCalefaccionPage() {
                                 <td>2&quot;</td>
                                 <td>1&quot;</td>
                                 <td>2&quot;</td>
-                                
-                            
+
                             </tr>
                             
                             <tr className="bg-[#e7e7e7] text-[1.4vw] text-center">
@@ -349,7 +308,6 @@ export default function CalderaParaCalefaccionPage() {
                                 <td>2 1/2&quot;</td>
                             </tr>
 
-                            
                         </tbody>
                     </table>
 
@@ -357,12 +315,9 @@ export default function CalderaParaCalefaccionPage() {
                 
             </section>
 
-            
             {/* -------------CARACTERÍSTICAS ------------- */}
             <section className="w-3/4 px-[6%] mt-10 mr-auto">
             <h1 className=" text-[#FF7800] md:text-3xl lg:text-4xl 2xl:text-5xl leading-none font-nunito-bolder ">CARACTERÍSTICAS</h1>
-
-                {/* <h1 className="font-nunito text-[#FF7800] text-[2.3vw] text-right">TOMA DE AIRE INTECCIÓN DE AIRE</h1> */}
 
                     <table className="table-auto font-nunito text-[1.5vw] w-full">  
                         <thead >
@@ -449,10 +404,7 @@ export default function CalderaParaCalefaccionPage() {
     {/* -------------------------- MOBILE------------------------ */}
 
                 <section className="px-[6%]">
-                    
-                    
-                        
-                
+
                 </section>
                 <section className="w-full pr-[3%] mt-[3%] flex
                     bg-[url('/svg/ondasTempomaticItemsMobile.svg')] bg-contain lg:bg-fill  bg-[center_bottom_20vw] md:bg-[center_top_0vw] lg:bg-[center_top_6vw] bg-no-repeat
@@ -499,7 +451,6 @@ export default function CalderaParaCalefaccionPage() {
                     <DiferencialDurabilidad size={55} customWith={10} />
                     <DiferencialRecuperacionDeCalor size={55} customWith={10} />
                 </section>
-
 
                 {/* -------------COMPONENTES ------------- */}
                 <section className="w-full px-[6%] mt-4 lg:-mt-10 ">
@@ -571,14 +522,12 @@ export default function CalderaParaCalefaccionPage() {
                 </section>
             </>
             }
-            
 
             {/* -------------OTROS PRODUCTOS TEMPOMATIC ------------- */}
             <section className="w-full px-[6%] mt-4 lg:mt-10 flex justify-center">
             <h1 className="font-nunito-bolder text-[#FF7800] text-[5.5vw] lg:text-[3.5vw]">Otros productos Tempomatic</h1>
             </section>
 
-			
 			{/* ------------- Barra de navegacion S&P ------------- */}
             <section className="z-0  h-full w-[100%]  md:mt-2 overflow-hidden ">
                 
@@ -598,48 +547,10 @@ export default function CalderaParaCalefaccionPage() {
                         ))}    
                         </div>
                     </div>
-                    
-                
+
             </section>
             
             {/* ------------- Botonera ------------- */}
-{/* 
-            <section className="w-full 2xl:w-2/3 mx-auto 2xl:mx-[3%] 2xl:-translate-x-10 lg:mb-10 lg:mt-10 font-nunito flex flex-col items-center lg:flex-row justify-center md:justify-around
-                overflow-hidden">
-                    
-                <section className=" 2xl:w-4/5 ">
-					<div className=" px-auto  flex h-[150px] lg:h-[250px] items-center mt-10 md:mt-2 space-x-2 lg:space-x-10  text-[12px] lg:text-3xl text-center text-[#4C4B4B]">
-						<div>
-							<h1 className="w-mx px-1">Contactá</h1>
-							<h1>a un vendedor</h1><br/>
-
-							<AsesoramietoButton size={BigScreen ? 42 : 15} screen={BigScreen ? "xl" : "xs"}
-                            link={"https://wa.me/5492236356756?text=Hola.%20visité%20tu%20página%20web%20y%20me%20gustaría%20más%20información."}
-                            // Hola,%20visite%20tu%20pagina%20web%20y%20me%20gustaria%20mas%20informacion
-                            />
-						</div>
-
-						<Divider orientation="vertical" className="bg-[#EDEDED]" />
-						<div>
-							<h1 className="w-mx px-1">Comprá en</h1>
-							<h1>nuestra tienda</h1><br/>
-
-                            <TiendaButton size={BigScreen ? 40 : 15} screen={BigScreen ? "xl" : "xs"}/>
-                    
-						</div>
-                        <Divider orientation="vertical" className="bg-[#EDEDED]" />
-						<div>
-							<h1 className="w-max px-0.5">Escribinos a través</h1>
-							<h1>de nuestro mail</h1><br/>
-
-                            <EscribinosButton size={BigScreen ? 42 : 15} screen={BigScreen ? "xl" : "xs"} />
-						</div>
-
-					</div>
-                        
-                </section>
-            </section> */}
-
 
             {/* ------------- Imagenes presentacion ------------- */}
             <section className=" hidden w-full lg:flex items-center justify-center mx-auto p-0 bg-transparent space-x-0">
@@ -652,9 +563,6 @@ export default function CalderaParaCalefaccionPage() {
                     
             </section>
         </main>
-        // 	<div className={'h-[5000px]'}>
-        // 		<VideoScrollPlayer/>
-        // </div>
     );
 }
 

@@ -1,5 +1,4 @@
 "use client"
-import { title } from "@/components/primitives";
 import { solucionesGeneralData } from "@/public/data/soluciones/solucionesGeneralData";
 import { Button } from "@nextui-org/button";
 import { Image } from "@nextui-org/image";
@@ -17,10 +16,8 @@ export default function SolucionesHVACPage() {
             subject
         )}&body=${encodeURIComponent(body)}`;
     
-        // window.location.href = mailtoLink;
         window.open(mailtoLink, '_blank');
     };
-
 
 	const [BigScreen, setBigScreen] = useState(false);
 
@@ -79,18 +76,6 @@ export default function SolucionesHVACPage() {
 							</p>
 							
 						</div>
-						{/* <div>
-							
-							<Button
-								
-									className="  z-10 bg-[#EF771C] px-10 font-nunito text-white text-xl 2xl:text-2xl shadow-xl"
-									radius="full"
-									size={BigScreen ? "lg" : "lg"}
-									onClick={()=>(window.open(item.href, '_top'))}
-								>
-									Saber más
-							</Button>
-						</div> */}
 
 					</button>
 				))
@@ -112,7 +97,6 @@ export default function SolucionesHVACPage() {
 									radius="none"
 									src={item.imgUrl}
 									width="100%"
-									// height="100%"
 								/>
 							</div>
 							<div className="w-[62%] my-1 p-1 mr-1 rounded-[12px] bg-white py-auto flex items-center">
@@ -143,7 +127,6 @@ export default function SolucionesHVACPage() {
                                     group-hover:bg-gradient-to-r group-hover:from-orange-400 group-hover:to-[#fe694f]
                                     group-active:bg-gradient-to-r group-active:from-[#f37a7ae5] group-active:to-[#FFFFFF]
                                 "> 
-                                    {/* <MailSvg css=" group-active:text-livered text-white lg:text-3xl" size={40}/> */}
                                     <IoMailOutline className=" group-active:text-livered text-white lg:text-4xl"/>
                                     </div>
                                 <span className="ml-[30px] lg:ml-10">Escribinos</span>

@@ -34,7 +34,7 @@ export default function VideoScrollPlayer() {
         scrollSection.style.height =
           Math.floor(duration) * playbackConst + "px";
       }
-      console.log(duration); // Output: video duration in seconds
+      console.log(duration);
     });
 
     return () => {
@@ -48,7 +48,6 @@ export default function VideoScrollPlayer() {
         <video ref={videoRef} id="v0" preload="preload">
           <source
             type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'
-            // src="../img/solerpalau/tda/SolerPalauVideo1.mkv"
             src="../img/solerpalau/rls/video/rls.mkv"
           ></source>
         </video>

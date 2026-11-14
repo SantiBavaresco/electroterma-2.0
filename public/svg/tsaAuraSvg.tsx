@@ -13,13 +13,10 @@ export const TsaAuraSVG: React.FC<Props> = ({
     ...props
 }) => {
     return (
-        // <svg width="1538" height="797" viewBox="0 0 1538 797" fill="none" xmlns="http://www.w3.org/2000/svg"></svg>
         <svg
             className={css}
-            // width="100%"
             width={size || width || 645}
 
-            // height="100%"
             height={size || height || 645}
 
             viewBox="0 0 632 645"

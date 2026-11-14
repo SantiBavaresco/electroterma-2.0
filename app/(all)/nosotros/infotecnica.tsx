@@ -9,14 +9,11 @@ import {
 } from "@nextui-org/table";
 import { Accordion, AccordionItem } from "@nextui-org/react";
 
-
-
 export default function InfoTecnica() {
 
     const defaultContent =
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
 
-        
     const itemClasses = {
         base: "py-4 bg-red-500 w-full opacity-95",
         title: "font-normal text-2xl",
@@ -28,7 +25,6 @@ export default function InfoTecnica() {
 
     return (
         <div className="flex flex-col gap-3 max-w-[320px] overflow-x-auto md:max-w-full">
-
 
                 <Accordion
                     variant="splitted"
@@ -64,7 +60,6 @@ export default function InfoTecnica() {
                                 </div>
                             </div>
                         }
-                        // indicator={<FacilInstalacion />}
                         title=""
                     >
                         <Table
@@ -157,8 +152,7 @@ export default function InfoTecnica() {
                     </AccordionItem>
                     
                 </Accordion>
-                
-            
+
         </div>
     );
 }

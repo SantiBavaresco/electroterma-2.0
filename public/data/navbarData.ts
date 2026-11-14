@@ -1,13 +1,4 @@
 import { ItemsNavbar } from "@/types/itemsNavbar";
-// interface ItemsNavbar {
-//     key: string;
-//     label: string[];
-//     labelShort: string;
-//     img: string;
-//     href: string;
-//     color: string;
-
-// }
 
 export const itemsNavSolerPalau: ItemsNavbar[] = [
         {
@@ -27,7 +18,6 @@ export const itemsNavSolerPalau: ItemsNavbar[] = [
             img: "../../img/navbar/NavBarTSA1SolerPalau.png",
             href: "/soler&palau/TSA",
             color: "bg-livered-title",
-
 
         },
         {
@@ -71,7 +61,6 @@ export const itemsNavSolerPalau: ItemsNavbar[] = [
             href: "/soler&palau/TSA",
             color: "bg-livered-title",
 
-
         },
         {
             key: "edit",
@@ -94,7 +83,6 @@ export const itemsNavSolerPalau: ItemsNavbar[] = [
 
         },
     ];
-
 
 export const itemsNavTempomatic: ItemsNavbar[] = [
 
@@ -177,7 +165,6 @@ export const itemsNavTempomatic: ItemsNavbar[] = [
             img: "../../img/navbar/NavBarTSA1SolerPalau.png",
             href: "/soler&palau/TSA",
             color: "bg-[#EF7916]",
-
 
         },
         {
