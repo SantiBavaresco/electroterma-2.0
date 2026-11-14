@@ -52,7 +52,7 @@ export const siteConfig = {
         {
             label: "Tienda Online",
             key: "TiendaOnline",
-            href: "https://www.tiendaelectroterma.com.ar/",
+            href: "https://www.mercadolibre.com.ar/pagina/electroterma",
 			dropdown: false,
 
         },
@@ -97,7 +97,7 @@ export const siteConfig = {
 
         {
             label: "Tienda Online",
-            href: "https://www.tiendaelectroterma.com.ar/",
+            href: "https://www.mercadolibre.com.ar/pagina/electroterma",
 			dropdown: false,
 
         },

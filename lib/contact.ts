@@ -7,3 +7,6 @@ export function openContactEmail() {
     const mailtoLink = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     window.open(mailtoLink, "_blank");
 }
+
+export const TIENDA_ONLINE_URL = "https://www.mercadolibre.com.ar/pagina/electroterma";
+export const CONTACT_PHONE = "+54 9 223 4649999";

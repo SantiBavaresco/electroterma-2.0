@@ -1,3 +1,4 @@
+import { TIENDA_ONLINE_URL } from "@/lib/contact";
 import React from "react";
 import { MyButton } from "./myButton";
 import { ShoppingCart } from "@/public/svg/shoppingCart";
@@ -13,7 +14,7 @@ export const TiendaButton: React.FC<Props> = ({ css, size, screen, label, link, 
 
     return (
         <>
-            <a href={link || "https://www.tiendaelectroterma.com.ar/"}
+            <a href={link || TIENDA_ONLINE_URL}
                 className={css || ""}
                 target="_blank" rel="noopener noreferrer ">
                 <MyButton

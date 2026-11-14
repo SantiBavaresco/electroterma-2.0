@@ -72,7 +72,7 @@ interface habitatDataType {
 
 export const habitatData: habitatDataType  = {
     email: "",
-    tiendaOnline: "https://www.tiendaelectroterma.com.ar/",
+    tiendaOnline: "https://www.mercadolibre.com.ar/pagina/electroterma",
     whatsappLink: "https://wa.me/",
     whatsappNumber: "5492235506880",
     whatsappNumber1: "5492235506880",

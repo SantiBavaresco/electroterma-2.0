@@ -2,7 +2,7 @@
 import { Link } from "@nextui-org/link";
 import { IoMailOutline } from "react-icons/io5";
 import { Image } from "@/components/ui/Image";
-import { openContactEmail } from "@/lib/contact";
+import { CONTACT_PHONE, openContactEmail } from "@/lib/contact";
 
 
 export default function Footer() {
@@ -12,7 +12,7 @@ export default function Footer() {
 		<span className="font-lexeng-bolder font-bold">Calle 5 entre 6 y 8</span>
 		<span className="font-lexeng-bold text-[10px] xm:text-xs lg:text-lg">Parque Industrial Mar del Plata - Batán</span>
 		<div className="my-1">
-			<span className="flex items-center justify-center font-lexeng-bolder font-bold text-center"> <h1 className="pr-4">+54 223 4649999</h1> 
+			<span className="flex items-center justify-center font-lexeng-bolder font-bold text-center"> <h1 className="pr-4">{CONTACT_PHONE}</h1> 
 
 			<a className="font-normal flex flex-row items-center justify-center rounded-md pr-2 hover:bg-midgray" onClick={openContactEmail} >
 				<IoMailOutline className="mx-2 text-orange-600 text-xl" /> 

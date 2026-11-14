@@ -231,7 +231,7 @@ export const Navbar: React.FC<Props> = ({ css, ...props }) => {
                 <NextLink
                 className="rounded-none"
                 color="foreground"
-                href="https://www.tiendaelectroterma.com.ar/"
+                href="https://www.mercadolibre.com.ar/pagina/electroterma"
                 target="_blank"
               >
                   <p className={`font-nunito text-white text-[1.1vw] ml-[30px]`}>
