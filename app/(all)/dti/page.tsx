@@ -238,11 +238,11 @@ export default function DTIPage() {
 
             {/* ------------- Botonera ------------- */}
 
-            <section className="w-full 2xl:w-2/3 mx-auto 2xl:mx-[3%] 2xl:-translate-x-10 lg:mb-10 lg:mt-10 font-nunito flex flex-col items-center lg:flex-row justify-center md:justify-around
+            <section className="w-full mx-auto lg:mb-10 lg:mt-10 font-nunito flex flex-col items-center lg:flex-row justify-center
                 overflow-hidden">
-                    
-                <section className=" 2xl:w-1/2 ">
-					<div className=" px-auto  flex h-[150px] lg:h-[250px] items-center mt-10 md:mt-2 space-x-2 lg:space-x-10  text-[12px] lg:text-3xl text-center text-[#4C4B4B]">
+
+                <section>
+					<div className="grid grid-cols-[1fr_auto_1fr] h-[150px] lg:h-[250px] items-center mt-10 md:mt-2 gap-x-2 lg:gap-x-10 text-[12px] lg:text-3xl text-center text-[#4C4B4B]">
 						<div>
 							<h1 className="w-mx px-1">Contactá</h1>
 							<h1>a un vendedor</h1><br/>
@@ -256,7 +256,7 @@ export default function DTIPage() {
 						<Divider orientation="vertical" className="bg-[#EDEDED]" />
 						<div>
                             <>
-							<h1 className="w- px-0.5">Escribinos a través</h1>
+							<h1 className="w-max px-0.5">Escribinos a través</h1>
 							<h1 className="pr-auto">de nuestro mail</h1><br/>
                             </>
                             <EscribinosButton size={BigScreen ? 42 : 14} screen={BigScreen ? "xl" : "md"} />
