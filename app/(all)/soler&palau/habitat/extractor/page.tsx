@@ -6,8 +6,6 @@ import { habitatData } from "@/public/data/soler&palau/habitatData";
 
 import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
-import "slick-carousel/slick/slick.css"; // estilos globales que antes llegaban vía @/components/imgslider/slickSlider
-import "slick-carousel/slick/slick-theme.css"; // estilos globales que antes llegaban vía @/components/imgslider/slickSlider
 import { AsesoramietoButton } from "@/components/custonButtons/asesoramiento";
 import { TiendaButton } from "@/components/custonButtons/tienda";
 import { ManualButton } from "@/components/custonButtons/manual";

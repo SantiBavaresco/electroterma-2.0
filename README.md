@@ -34,7 +34,6 @@ public/
   img/solerpalau/<producto>/frames/{web,mobile}/N.webp   frames de las animaciones
 styles/
   globals.css
-  legacy/            CSS global heredado que se conserva para no cambiar el diseño
 ```
 
 ## Animación de los ventiladores (RLS / TSA / TDA)

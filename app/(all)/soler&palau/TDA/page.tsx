@@ -1,6 +1,4 @@
 "use client";
-import "@/styles/legacy/soler-palau-productos.css";
-import "@/components/scrollFrames/scrollFrames.css";
 import ScrollFrames from "@/components/scrollFrames/ScrollFrames";
 
 

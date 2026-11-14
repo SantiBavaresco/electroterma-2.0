@@ -3,7 +3,6 @@
 import { Reveal } from "@/components/revealFramemotion";
 
 
-import "@/app/(all)/julio/uta/style.css"; // estilos globales que antes llegaban vía ./swiperCards
 
 export default function Uta() {
     return (
