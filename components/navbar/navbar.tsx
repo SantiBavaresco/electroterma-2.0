@@ -378,7 +378,7 @@ export const Navbar: React.FC<Props> = ({ css, ...props }) => {
 
             <NavbarContent className="hidden md:flex gap-4" justify="center">
 
-            <Dropdown menu={{ items }} placement="bottom" arrow={{ pointAtCenter: true }} 
+            <Dropdown menu={{ items, expandIcon: () => null }} placement="bottom" arrow={{ pointAtCenter: true }} 
                 overlayClassName=" bg-liverd rounded m- p- w-[22vw] 2xl:w-[15vw] "
                 className=' text-5xl '>
                 <div onClick={(e) => e.preventDefault()} className='w-[22vw] 2xl:w-[15vw] ml-auto -2 bg-livered h-16  rounded-3xl  '>

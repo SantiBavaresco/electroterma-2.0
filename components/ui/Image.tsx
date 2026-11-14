@@ -54,19 +54,25 @@ export const Image = forwardRef<HTMLImageElement, ImageProps>(function Image(
     ref,
 ) {
     const slots = image({ radius, shadow, isZoomed, showSkeleton: false });
+    const imgClass = slots.img({ class: clsx(className, classNames?.img) });
     const size = getImageSize(src);
+    // Con padding/borde en la imagen, `aspect-ratio` se aplicaría a la caja entera
+    // (border-box) y no a la foto: ahí sólo se usa la proporción natural ("auto").
+    const hasBox = /(^|\s)([\w-]+:)*(p[xytrbl]?|border(-[xytrbl])?)-\S/.test(imgClass);
 
     // `contain-intrinsic-size` + `contain: size` hacen que el navegador use el tamaño
     // real de la imagen desde antes de bajarla (también dentro de flex/columnas que se
     // ajustan al contenido), y `aspect-ratio` calcula el alto a partir del ancho.
-    const imgStyle: CSSProperties | undefined = size
-        ? {
-              aspectRatio: `${size[0]} / ${size[1]}`,
-              containIntrinsicSize: `${size[0]}px ${size[1]}px`,
-              contain: "size",
-              ...style,
-          }
-        : style;
+    const imgStyle: CSSProperties | undefined = !size
+        ? style
+        : hasBox
+          ? { aspectRatio: `auto ${size[0]} / ${size[1]}`, ...style }
+          : {
+                aspectRatio: `${size[0]} / ${size[1]}`,
+                containIntrinsicSize: `${size[0]}px ${size[1]}px`,
+                contain: "size",
+                ...style,
+            };
 
     const img = (
         // eslint-disable-next-line @next/next/no-img-element
@@ -74,7 +80,7 @@ export const Image = forwardRef<HTMLImageElement, ImageProps>(function Image(
             ref={ref}
             src={src}
             data-loaded="true"
-            className={slots.img({ class: clsx(className, classNames?.img) })}
+            className={imgClass}
             width={width ?? size?.[0]}
             height={height ?? size?.[1]}
             loading={loading}
