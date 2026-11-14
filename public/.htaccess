@@ -1,0 +1,33 @@
+# Configuración para el hosting (Apache) del sitio estático generado con `npm run export`
+
+Options -Indexes
+DirectoryIndex index.html
+ErrorDocument 404 /404.html
+
+<IfModule mod_expires.c>
+    ExpiresActive On
+    # Frames de las animaciones de los ventiladores: 1 semana
+    <If "%{REQUEST_URI} =~ m#/frames/#">
+        ExpiresDefault "access plus 7 days"
+    </If>
+    # Imágenes, videos, fuentes y PDFs
+    ExpiresByType image/webp "access plus 7 days"
+    ExpiresByType image/png "access plus 7 days"
+    ExpiresByType image/jpeg "access plus 7 days"
+    ExpiresByType video/mp4 "access plus 7 days"
+    ExpiresByType font/ttf "access plus 30 days"
+    ExpiresByType application/pdf "access plus 7 days"
+    # Las páginas siempre se revalidan, así los cambios se ven enseguida
+    ExpiresByType text/html "access plus 0 seconds"
+</IfModule>
+
+<IfModule mod_headers.c>
+    # JS/CSS de Next llevan un hash en el nombre: se pueden cachear para siempre
+    <If "%{REQUEST_URI} =~ m#^/_next/static/#">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </If>
+</IfModule>
+
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml
+</IfModule>

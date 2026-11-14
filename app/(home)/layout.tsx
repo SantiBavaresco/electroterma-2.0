@@ -4,5 +4,5 @@ export const metadata = rootMetadata;
 export const viewport = rootViewport;
 
 export default function HomeLayout({ children }: { children: React.ReactNode }) {
-    return <RootShell vercelInsights>{children}</RootShell>;
+    return <RootShell>{children}</RootShell>;
 }

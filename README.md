@@ -17,6 +17,18 @@ npm run lint
 
 Requiere Node 18.17 o superior (ver `.node-version`).
 
+## Publicar en el hosting
+
+El sitio oficial está en un hosting común (Apache), no en Vercel. Se publica como archivos estáticos:
+
+```bash
+npm run export   # genera la carpeta out/
+```
+
+Subir **todo el contenido** de `out/` a `public_html` (por FTP o el administrador de archivos),
+reemplazando lo que haya. Incluye el archivo oculto `.htaccess` (caché de imágenes y frames,
+página 404): si el programa de FTP no muestra archivos ocultos, activá esa opción.
+
 ## Estructura
 
 ```

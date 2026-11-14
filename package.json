@@ -8,6 +8,8 @@
     "dev": "next dev",
     "prebuild": "npm run images:sizes",
     "build": "next build",
+    "preexport": "npm run images:sizes",
+    "export": "node scripts/export.mjs",
     "start": "next start",
     "lint": "next lint"
   },
@@ -23,8 +25,6 @@
     "@nextui-org/system": "2.0.15",
     "@nextui-org/table": "^2.0.28",
     "@nextui-org/theme": "2.1.17",
-    "@vercel/analytics": "^1.2.2",
-    "@vercel/speed-insights": "^1.0.10",
     "antd": "^5.21.6",
     "autoprefixer": "10.4.16",
     "clsx": "^2.0.0",

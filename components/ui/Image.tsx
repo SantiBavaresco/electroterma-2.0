@@ -66,7 +66,13 @@ export const Image = forwardRef<HTMLImageElement, ImageProps>(function Image(
     const imgStyle: CSSProperties | undefined = !size
         ? style
         : hasBox
-          ? { aspectRatio: `auto ${size[0]} / ${size[1]}`, ...style }
+          ? {
+                // con padding: sólo se reserva el ancho real; el alto lo da la proporción natural
+                aspectRatio: `auto ${size[0]} / ${size[1]}`,
+                containIntrinsicInlineSize: `${size[0]}px`,
+                contain: "inline-size",
+                ...style,
+            }
           : {
                 aspectRatio: `${size[0]} / ${size[1]}`,
                 containIntrinsicSize: `${size[0]}px ${size[1]}px`,
