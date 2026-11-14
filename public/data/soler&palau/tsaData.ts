@@ -141,10 +141,6 @@ export const tsaData: ventDataType  = {
                     textLable:"por medio de inyección",
                     textColor:""
                 },
-                //     textLable:"en procesos de",
-                //     textColor:""
-                //     textLable:"industria",
-                //     textColor:""
             ],
         },
         {
@@ -158,10 +154,6 @@ export const tsaData: ventDataType  = {
                     textLable:"en lavaderos industriales",
                     textColor:""
                 },
-                //     textLable:"donde se requiera",
-                //     textColor:""
-                //     textLable:"renovación de aire",
-                //     textColor:""
             ],
         },
         {
@@ -179,8 +171,6 @@ export const tsaData: ventDataType  = {
                     textLable:"de industria",
                     textColor:""
                 },
-                //     textLable:"renovación de aire",
-                //     textColor:""
             ],
         }
 

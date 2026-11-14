@@ -5,7 +5,6 @@ import { Image } from "@nextui-org/image";
 import CardDisplay from "@/components/navbar/cardDisplay";
 import { itemsNavTempomatic } from "@/public/data/navbarData";
 import { AsesoramietoButton } from "@/components/custonButtons/asesoramiento";
-import { lazy, useEffect, useState } from "react";
 import { VinietaNaranjaSVG } from "@/public/svg/vinietaNaranja";
 import { DiferencialConVentiladorSyP } from "@/components/diferenciales/diferencialConVentiladorSyP";
 import { ManualButtonNaranja } from "@/components/custonButtons/manual";
@@ -13,6 +12,7 @@ import { Diferencial15Anio } from "@/components/diferenciales/diferencial15Anios
 import { DiferencialUnicosEnElMercado } from "@/components/diferenciales/diferencialUnicosEnElMercado";
 import { DiferencialAltaConfiabilidad } from "@/components/diferenciales/diferencialAltaConfiabilidad";
 import { DiferencialElementosOpcionales } from "@/components/diferenciales/diferencialElementosOpcionales";
+import { useIsDesktop } from "@/hooks/useIsDesktop";
 
 interface ItemsNavbar {
     key: string;
@@ -24,18 +24,7 @@ interface ItemsNavbar {
 
 export default function CalefactorElectricoPage() {
 
-    const [BigScreen, setBigScreen] = useState(false);
-    useEffect(() => {
-        const handler = (e:any) => setBigScreen(e.matches);
-        const mediaQuery = window.matchMedia('(min-width: 768px)');
-
-        mediaQuery.addEventListener('change', handler);
-        setBigScreen(mediaQuery.matches);
-
-        return () => {
-        mediaQuery.removeEventListener('change', handler);
-        };
-    }, []);
+    const BigScreen = useIsDesktop();
 
     const handleAnchor = (link:string) => {
         window.open(link, '_top', 'noopener noreferrer');
@@ -53,7 +42,6 @@ export default function CalefactorElectricoPage() {
         window.open(mailtoLink, '_blank');
     };
 
-    const Banner = lazy(() => import('./banner')); 
 
     return (
         <main className="flex flex-col h-full items-center justify-center gap-4 pb-4 md:pb-10 

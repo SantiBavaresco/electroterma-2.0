@@ -53,7 +53,6 @@ const CardDisplay: React.FC<dataProps> = ({ data, actual, ...props }) => {
                 </div>
             </div>
         </main>
-        //     isPressable
 
     );
 }

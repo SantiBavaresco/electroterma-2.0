@@ -1,6 +1,8 @@
 "use client";
-import Lottie from "lottie-react";
-import animationData from "../../../public/lottie/ventilador.json";
+import dynamic from "next/dynamic";
+import animationData from "@/public/lottie/ventilador.json";
+
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
 export default function Home() {
     return (
@@ -12,7 +14,7 @@ export default function Home() {
                         animationData={animationData}
                     />
                 </div>
-            
+
         </section>
     );
 }

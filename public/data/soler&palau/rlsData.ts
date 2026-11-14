@@ -129,10 +129,6 @@ export const rlsData: ventDataType  = {
                     textLable:"cocina restaurante",
                     textColor:""
                 },
-                //     textLable:"en procesos de",
-                //     textColor:""
-                //     textLable:"industria",
-                //     textColor:""
             ],
         },
         {
@@ -146,10 +142,6 @@ export const rlsData: ventDataType  = {
                     textLable:"almacenaje de granos",
                     textColor:""
                 },
-                //     textLable:"donde se requiera",
-                //     textColor:""
-                //     textLable:"renovaión de aire",
-                //     textColor:""
             ],
         },
         {
@@ -163,10 +155,6 @@ export const rlsData: ventDataType  = {
                     textLable:"en procesos industriales",
                     textColor:""
                 },
-                //     textLable:"donde se requiera",
-                //     textColor:""
-                //     textLable:"renovaión de aire",
-                //     textColor:""
             ],
         }
         

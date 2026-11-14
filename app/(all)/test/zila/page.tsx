@@ -1,21 +1,10 @@
 "use client"
-import { useEffect, useState } from "react";
 import { Image } from "@nextui-org/image";
 import { AsesoramietoButton } from "@/components/custonButtons/asesoramiento";
+import { useIsDesktop } from "@/hooks/useIsDesktop";
 
 export default function ZilaPage() {
-	const [BigScreen, setBigScreen] = useState(false);
-    useEffect(() => {
-        const handler = (e:any) => setBigScreen(e.matches);
-        const mediaQuery = window.matchMedia('(min-width: 768px)');
-
-        mediaQuery.addEventListener('change', handler);
-        setBigScreen(mediaQuery.matches);
-
-        return () => {
-        mediaQuery.removeEventListener('change', handler);
-        };
-    }, []);
+	const BigScreen = useIsDesktop();
 
 	return (
 		<main className="flex flex-col h-full items-center justify-center gap-4 pb-4 md:pb-10 
@@ -27,7 +16,7 @@ export default function ZilaPage() {
                     alt="Home banner 1"
                     className="rounded-[44-px]"
                     radius="none"
-                    src={`../img/zila/${BigScreen ? "webFija" : "mobileFija"}.png`}
+                    src={`../img/zila/${BigScreen ? "webFija" : "mobileFija"}.webp`}
                     width="100%"
                 />
             </section>
@@ -38,11 +27,4 @@ export default function ZilaPage() {
 		</main>
 	);
 }
-
-// "use client"
-
-// 		[images]
-
-// 				// backgroundColor: 'black',
-// 				// position: "sticky",
 

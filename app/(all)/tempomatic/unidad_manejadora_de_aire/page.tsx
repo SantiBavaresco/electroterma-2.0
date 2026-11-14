@@ -5,7 +5,6 @@ import { Image } from "@nextui-org/image";
 import CardDisplay from "@/components/navbar/cardDisplay";
 import { itemsNavTempomatic } from "@/public/data/navbarData";
 import { AsesoramietoButton } from "@/components/custonButtons/asesoramiento";
-import { useEffect, useState } from "react";
 import { VinietaNaranjaSVG } from "@/public/svg/vinietaNaranja";
 import { DiferencialConVentiladorSyP } from "@/components/diferenciales/diferencialConVentiladorSyP";
 import { DiferencialSerpentinaReforzada } from "@/components/diferenciales/diferencialSerpentinaReforzada";
@@ -13,6 +12,7 @@ import { DiferencialEmplazamientoInteriorExterior } from "@/components/diferenci
 import { DiferencialConstruccionRobusta } from "@/components/diferenciales/diferencialConstruccionRobusta";
 import { DiferencialOptimoRendimiento } from "@/components/diferenciales/diferencialOptimoRendimiento";
 import { ManualButtonNaranja } from "@/components/custonButtons/manual";
+import { useIsDesktop } from "@/hooks/useIsDesktop";
 
 interface ItemsNavbar {
     key: string;
@@ -24,18 +24,7 @@ interface ItemsNavbar {
 
 export default function UnidadManejadoraDeAirePage() {
 
-    const [BigScreen, setBigScreen] = useState(false);
-    useEffect(() => {
-        const handler = (e:any) => setBigScreen(e.matches);
-        const mediaQuery = window.matchMedia('(min-width: 768px)');
-
-        mediaQuery.addEventListener('change', handler);
-        setBigScreen(mediaQuery.matches);
-
-        return () => {
-        mediaQuery.removeEventListener('change', handler);
-        };
-    }, []);
+    const BigScreen = useIsDesktop();
 
     const handleEmailClick = () => {
         const email = 'info@electroterma.com.ar';

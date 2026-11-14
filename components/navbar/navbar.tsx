@@ -10,16 +10,13 @@ import { itemsNavSolerPalau as Soler, itemsNavTempomatic as Tempomatic } from "@
 import { Dropdown, Space } from 'antd';
 import type { MenuProps } from 'antd';
 
-
 import { BsArrowBarLeft } from "react-icons/bs";
 import { BsArrowBarRight } from "react-icons/bs";
-
 
 import { Image } from "@nextui-org/image";
 
 import { Kbd } from "@nextui-org/kbd";
 import { Input } from "@nextui-org/input";
-
 
 import { siteConfig } from "@/config/site";
 import NextLink from "next/link";
@@ -52,7 +49,6 @@ export const Navbar: React.FC<Props> = ({ css, ...props }) => {
 
     const handleAnchor = (link:string) => {
         setFirstDropdownOpen(false)
-        // setFirstFalse
         window.open(link, '_top', 'noopener noreferrer');
       };
 
@@ -479,7 +475,6 @@ export const Navbar: React.FC<Props> = ({ css, ...props }) => {
                                                     {dropdown.label}
                                                 </a>}
                                                 className="-mx-2  "
-                                                //         isBordered
                                                 >
                                                     <div className="grid grid-cols-2 gap-2 w-[100%]">
                                                         
@@ -569,7 +564,6 @@ export const Navbar: React.FC<Props> = ({ css, ...props }) => {
                                                 {dropdown.label}
                                             </a>}
                                             className="-mx-2  "
-                                            //         isBordered
                                             >
                                                 <div className="grid grid-cols-2 gap-2 w-[100%]">
                                                     

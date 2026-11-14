@@ -1,40 +1,55 @@
-# Next.js & NextUI Template
+# Electroterma 2.0
 
-This is a template for creating applications using Next.js 13 (app directory) and NextUI (v2).
+Sitio/catálogo de Electroterma (Tempomatic, Soler & Palau, DTI, Zila y Soluciones HVAC).
 
-## Technologies Used
+- **Next.js 14** (App Router) · **TypeScript** · **Tailwind CSS** · **NextUI**
+- **GSAP + ScrollTrigger** para las animaciones por frames de los ventiladores Soler & Palau
 
-- [Next.js 13](https://nextjs.org/docs/getting-started)
-- [NextUI v2](https://nextui.org/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Tailwind Variants](https://tailwind-variants.org)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Framer Motion](https://www.framer.com/motion/)
-- [next-themes](https://github.com/pacocoursey/next-themes)
-
-## How to Use
-
-
-### Use the template with create-next-app
-
-To create a new project based on this template using `create-next-app`, run the following command:
-
-```bash
-npx create-next-app -e https://github.com/nextui-org/next-app-template
-```
-
-### Install dependencies
+## Desarrollo
 
 ```bash
 npm install
+npm run dev      # http://localhost:3000
+npm run build    # build de producción
+npm run start    # sirve el build
+npm run lint
 ```
 
-### Run the development server
+Requiere Node 18.17 o superior (ver `.node-version`).
 
-```bash
-npm run dev
+## Estructura
+
+```
+app/
+  (home)/            Home (layout raíz propio, con Vercel Analytics)
+  (all)/             Resto de las páginas (Tempomatic, Soler & Palau, DTI, Zila, Soluciones…)
+components/
+  layout/            RootShell (html/body/footer/analytics comunes) y providers
+  scrollFrames/      Animación por frames ligada al scroll (GSAP ScrollTrigger)
+  navbar/ diferenciales/ custonButtons/ imgslider/ table/ …
+hooks/
+  useIsDesktop.ts    true a partir de 768px (reemplaza la lógica repetida en cada página)
+public/
+  data/              Textos y datos de cada producto
+  img/solerpalau/<producto>/frames/{web,mobile}/N.webp   frames de las animaciones
+styles/
+  globals.css
+  legacy/            CSS global heredado que se conserva para no cambiar el diseño
 ```
 
-## License
+## Animación de los ventiladores (RLS / TSA / TDA)
 
-Licensed under the [MIT license](https://github.com/nextui-org/next-app-template/blob/main/LICENSE).
+`components/scrollFrames/ScrollFrames.tsx` dibuja en un `<canvas>` el frame que
+corresponde a la posición del scroll dentro de la sección (sube y baja con el scroll).
+
+```tsx
+<ScrollFrames product="rls" variant="web" frameCount={{ web: 567, mobile: 508 }} />
+```
+
+- `product`: carpeta en `public/img/solerpalau/<product>/frames/`
+- `variant`: `"web"` (1920×1080) o `"mobile"` (400×711)
+- `frameCount`: cantidad de archivos en cada carpeta (`1.webp` … `N.webp`).
+  **Si se agregan o quitan frames, actualizar este número.**
+
+Los frames se descargan progresivamente (primero uno de cada 32, después cada 16, etc.)
+cuando la sección se acerca a la pantalla, y se cachean una semana (ver `next.config.js`).

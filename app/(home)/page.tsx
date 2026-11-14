@@ -2,37 +2,18 @@
 import { Link } from "@nextui-org/link";
 import { Image } from "@nextui-org/image";
 import {extendVariants, Button, Divider} from "@nextui-org/react";
-import { lazy, useState, useEffect } from "react";
 
 import VideoAutoPlayer from "@/components/videoplayer/videoautoplayer";
 import { NavbarHome } from "@/components/navbar/navbarHome";
 import { AsesoramietoButton } from "@/components/custonButtons/asesoramiento";
 import { TiendaButton } from "@/components/custonButtons/tienda";
 import { EscribinosButton } from "@/components/custonButtons/escribinos";
+import { useIsDesktop } from "@/hooks/useIsDesktop";
 
 export default function Home() {
 
-    const [BigScreen, setBigScreen] = useState(false);
+    const BigScreen = useIsDesktop();
 
-    useEffect(() => {
-        const handler = (e:any) => setBigScreen(e.matches);
-        const mediaQuery = window.matchMedia('(min-width: 768px)');
-
-        mediaQuery.addEventListener('change', handler);
-        setBigScreen(mediaQuery.matches);
-
-        return () => {
-        mediaQuery.removeEventListener('change', handler);
-        };
-    }, []);
-
-    const FrameFan = lazy(
-        () => import("@/components/frameScrubber/homeFrameScrubber/frameScrubber")
-    );
-
-    const FrameFanWeb = lazy(
-        () => import("@/components/frameScrubber/homeFrameScrubber/frameScrubberWeb")
-    );
 
     const handleEmailClick = () => {
         const email = 'info@electroterma.com.ar';
@@ -64,7 +45,7 @@ export default function Home() {
       });
 
     return (
-        <main id="vent" accessKey="home" className="flex flex-col items-center justify-center gap-4  pb-0 md:pb-0 ">
+        <div className="flex flex-col items-center justify-center gap-4  pb-0 md:pb-0 ">
             <section className="max-h-[90vh] w-full xl:px-[0%] flex items-center justify-center overflow-hidden bg-lowgrasy">
                 <VideoAutoPlayer url="../img/home/video/homePresentacion.mp4"/>
                 
@@ -565,6 +546,6 @@ export default function Home() {
                 </section>
             </section>
 
-        </main>
+        </div>
     );
 }

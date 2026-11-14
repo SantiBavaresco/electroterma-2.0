@@ -1,0 +1,65 @@
+
+@media (min-width: 720px) {
+    canvas {
+        z-index: 0;
+        object-fit: cover;
+        max-width: 99vw;
+        max-height: 100vh;
+        scale: 1;
+        margin-bottom:  160px;
+      }
+      section.frames {
+        z-index: 0;
+        height: 5000px;
+        position: relative;
+        background: #fefefe;
+        top: 0;
+      }
+      section.frames div.holder {
+        position: sticky;
+        top: 0;
+    }
+    section.frames div.story div {
+        height: 108vh;
+        position: relative;
+        top: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+}
+@media (max-width: 768px) {
+    canvas {
+        max-width: 97vw;
+        max-height: 99vh;
+        z-index: -20;
+        top: -100%;
+        padding-top:  -25vh;
+      }
+      section.frames {
+        z-index: 0;
+        height: 2700px;
+        position: relative;
+        background: #fefefe;
+        top: 0;
+      }
+      section.frames div.holder {
+        position: sticky;
+        top: 0;
+    }
+}
+@media (max-width: 768px) {
+    section.frames div.story {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        color: var(--primary-color);
+    }
+    section.frames div.story div {
+        top: 0;
+        left: 0;
+    }
+}

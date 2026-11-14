@@ -1,60 +1,46 @@
-import React, {useEffect, useRef} from "react";
-import {motion, useInView, useAnimation} from "framer-motion"
+"use client";
+import React, { useEffect, useRef } from "react";
+import { motion, useInView, useAnimation } from "framer-motion";
 
-interface Props{
+interface Props {
     children: JSX.Element;
     width?: "fit-content" | "100%";
     delay?: number;
     duration?: number;
-
 }
 
-export const Reveal: React.FC<Props> = ({ children, width = "fit-content", delay, duration  }) => {
+/** Aparece con un fade + desplazamiento cuando entra en pantalla (y se oculta al salir). */
+export const Reveal: React.FC<Props> = ({ children, width = "fit-content", delay, duration }) => {
     const ref = useRef(null);
-    const isInView = useInView(ref, { root: useRef(null), amount: "some" },  );
+    const isInView = useInView(ref, { amount: "some" });
+    const controls = useAnimation();
 
-    const mainControls = useAnimation();
-    const slideControls = useAnimation();
-
-    useEffect(()=>{
-        if(isInView){
-            mainControls.start("visible");
-            slideControls.start("visible");
+    useEffect(() => {
+        if (isInView) {
+            controls.start("visible");
+        } else {
+            controls.start({
+                opacity: 0,
+                translateY: "10%",
+                transition: { duration: 0.3, ease: "easeInOut" },
+            });
         }
-        else {
-            mainControls.start({ 
-                opacity: 0, 
-                translateY:"10%", 
-                transition: { duration: 0.3, ease: "easeInOut" } 
-                }); 
-            slideControls.start("hidden");
-        }
-    },[isInView])
+    }, [isInView, controls]);
 
-    return(
-        <div ref={ref} style={{ position: "relative", width, overflow: "hidden"}}>
+    return (
+        <div ref={ref} style={{ position: "relative", width, overflow: "hidden" }}>
             <motion.div
-                className=""
                 variants={{
-                    hidden: {opacity:0,  scale: 1,  translateY:"10%", },
-                    visible: {opacity:1,  scale: 1, translateY:"0%"},
+                    hidden: { opacity: 0, scale: 1, translateY: "10%" },
+                    visible: { opacity: 1, scale: 1, translateY: "0%" },
                 }}
                 exit="hidden"
                 initial="hidden"
-                animate={mainControls}
-                transition={{duration:duration , delay:delay, ease:"easeIn"}}
-
-                //     position:"absolute",
-                //     top:4,
-                //     bottom:4,
-                //     left:0,
-                //     right:0,
+                animate={controls}
+                transition={{ duration, delay, ease: "easeIn" }}
             >
-               
                 {children}
-
             </motion.div>
-
         </div>
-    )
-}
+    );
+};

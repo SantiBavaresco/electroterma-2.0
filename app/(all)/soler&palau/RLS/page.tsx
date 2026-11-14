@@ -1,12 +1,11 @@
 "use client";
-import "@/components/videoplayer/styles.css"; // estilos globales que antes llegaban vía @/components/videoplayer/videoplayer
-import "@/components/videoScrubber/styles.css"; // estilos globales que antes llegaban vía @/components/videoScrubber/videoScrubber
-import "@/components/frameScrubber/styles1.css"; // estilos globales que antes llegaban vía @/components/frameScrubber/frameScrubber
+import "@/styles/legacy/soler-palau-productos.css";
+import "@/components/scrollFrames/scrollFrames.css";
+import ScrollFrames from "@/components/scrollFrames/ScrollFrames";
 
 import { rlsData } from "@/public/data/soler&palau/rlsData";
 import { itemsNavSolerPalau } from "@/public/data/navbarData";
 
-import { lazy, Suspense, useState, useEffect } from "react";
 
 import { Image } from "@nextui-org/image";
 import NextLink from "next/link";
@@ -33,6 +32,7 @@ import { TiendaButton } from "@/components/custonButtons/tienda";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { useIsDesktop } from "@/hooks/useIsDesktop";
 
 
 export default function RLSPage() {
@@ -60,32 +60,11 @@ export default function RLSPage() {
         window.open(mailtoLink, '_blank');
     };
 
-    const [BigScreen, setBigScreen] = useState(false);
-
-    useEffect(() => {
-        const handler = (e:any) => setBigScreen(e.matches);
-        const mediaQuery = window.matchMedia('(min-width: 768px)');
-
-        mediaQuery.addEventListener('change', handler);
-        setBigScreen(mediaQuery.matches);
-
-        return () => {
-        mediaQuery.removeEventListener('change', handler);
-        };
-    }, []);
-
- 
-    const FrameFan = lazy(
-        () => import("@/components/frameScrubber/frameScrubber")
-    );
-
-    const FrameFanWeb = lazy(
-        () => import("@/components/frameScrubber/frameScrubberWeb")
-    );
+    const BigScreen = useIsDesktop();
 
 
     return (
-        <div id="vent" accessKey="rls" className="h-full flex flex-col items-center justify-center  ">
+        <div className="h-full flex flex-col items-center justify-center  ">
 
             <section className="relative top-0 w-full max-h-[50%] md:max-h-[93%] lg:max-h-[93%] py-0 font-size overflow-hidden">
                 <div className="h-[50%] md:h-[92%]">
@@ -138,7 +117,6 @@ export default function RLSPage() {
                                 <h1 className="absolute left-0 text-[#9D9D9C] font-nunito
                                     text-[3.2vw]
                                 "> 
-                                    {/* VENTILADOR */}
                                     {rlsData.pageData.preTitle} 
                                 </h1>
                             </span>
@@ -226,7 +204,6 @@ export default function RLSPage() {
                         <div className="absolute top-0 -left-6 mt-1 md:mt-2 ">
                             <VinietaNaranjaSVG css=" h-[20px] w-[20px] " />
                         </div>
-                        {/* VENTILADOR */}
                         {rlsData.pageData.preTitle} 
 
                         
@@ -302,16 +279,12 @@ export default function RLSPage() {
             {BigScreen ? 
                 <>   {/* ----- Web ----- */}
                     
-                    <Suspense fallback={<div>Loading</div>}>
-                        <FrameFanWeb />
-                    </Suspense>
+                    <ScrollFrames product="rls" variant="web" frameCount={{ web: 567, mobile: 508 }} />
                 </> 
                 
                 : <> {/* ----- Mobile ----- */}
 
-                    <Suspense fallback={<div>Loading</div>}>
-                        <FrameFan />
-                    </Suspense>
+                    <ScrollFrames product="rls" variant="mobile" frameCount={{ web: 567, mobile: 508 }} />
                 </>
             }
             <section className=" -mt-[40vh] lg:-mt-[80vh] w-full"> 

@@ -48,7 +48,6 @@ interface generalDataType {
             title: "EXTRACCIÓN DE AIRE LOCALIZADA",
             href: "/solucionesHVAC/extraccion_de_aire_localizada",
           },
-          //   imgUrl:"../../img/soluciones/home/Soluciones4.webp",
           {
             imgUrl:"../../img/soluciones/home/Soluciones5.webp",
             lable: "SOLUCIÓN ",

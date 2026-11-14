@@ -12,21 +12,18 @@ const totalSlidesCount = slides.length;
 let touchStartX = 0;
 let touchEndX = 0;
 
-// Previous
 prevBtn?.addEventListener('click', () => {
   container.scrollBy({ left: -slides[0].offsetWidth, behavior: 'smooth' });
   const centerSlideIndex = getCenterSlideIndex() - 1;
   updateActiveDot(centerSlideIndex);
 });
 
-// Next
 nextBtn?.addEventListener('click', () => {
   container.scrollBy({ left: slides[0].offsetWidth, behavior: 'smooth' });
   const centerSlideIndex = getCenterSlideIndex() + 1;
   updateActiveDot(centerSlideIndex);
 });
 
-// Mobile
 container?.addEventListener('touchstart', (event) => {
   touchStartX = event.touches[0].clientX;
 });

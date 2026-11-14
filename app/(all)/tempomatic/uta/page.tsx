@@ -1,22 +1,11 @@
 "use client"
-import { useEffect, useState } from "react";
 import { Image } from "@nextui-org/image";
 import { AsesoramietoButton } from "@/components/custonButtons/asesoramiento";
 import { ManualButton } from "@/components/custonButtons/manual";
+import { useIsDesktop } from "@/hooks/useIsDesktop";
 
 export default function UtaPage() {
-	const [BigScreen, setBigScreen] = useState(false);
-    useEffect(() => {
-        const handler = (e:any) => setBigScreen(e.matches);
-        const mediaQuery = window.matchMedia('(min-width: 768px)');
-
-        mediaQuery.addEventListener('change', handler);
-        setBigScreen(mediaQuery.matches);
-
-        return () => {
-        mediaQuery.removeEventListener('change', handler);
-        };
-    }, []);
+	const BigScreen = useIsDesktop();
 
 	return (
 		<main className="flex flex-col h-full items-center justify-center gap-4 pb-4 md:pb-10 
@@ -40,11 +29,4 @@ export default function UtaPage() {
 		</main>
 	);
 }
-
-// "use client"
-
-// 		[images]
-
-// 				// backgroundColor: 'black',
-// 				// position: "sticky",
 

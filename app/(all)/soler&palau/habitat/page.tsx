@@ -1,5 +1,4 @@
 "use client";
-import { useEffect, useState } from "react";
 import {extendVariants, Button} from "@nextui-org/react";
 import { Image } from "@nextui-org/image";
 
@@ -16,6 +15,7 @@ import { TiendaButton } from "@/components/custonButtons/tienda";
 import { AsesoramietoButton } from "@/components/custonButtons/asesoramiento";
 
 import { DiferencialFacilInstalacion } from "@/components/diferenciales/diferencialFacilInstalacion";
+import { useIsDesktop } from "@/hooks/useIsDesktop";
 
 export default function HabitatPage() {
     const images = [
@@ -43,19 +43,7 @@ export default function HabitatPage() {
         },
       });
 
-    const [BigScreen, setBigScreen] = useState(false);
-
-    useEffect(() => {
-        const handler = (e:any) => setBigScreen(e.matches);
-        const mediaQuery = window.matchMedia('(min-width: 768px)');
-
-        mediaQuery.addEventListener('change', handler);
-        setBigScreen(mediaQuery.matches);
-
-        return () => {
-        mediaQuery.removeEventListener('change', handler);
-        };
-    }, []);
+    const BigScreen = useIsDesktop();
 
     const handleEmailClick = () => {
         const email = 'info@electroterma.com.ar';

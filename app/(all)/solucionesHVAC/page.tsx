@@ -2,8 +2,8 @@
 import { solucionesGeneralData } from "@/public/data/soluciones/solucionesGeneralData";
 import { Button } from "@nextui-org/button";
 import { Image } from "@nextui-org/image";
-import { useEffect, useState } from "react";
 import { IoMailOutline } from "react-icons/io5";
+import { useIsDesktop } from "@/hooks/useIsDesktop";
 
 export default function SolucionesHVACPage() {
 
@@ -19,19 +19,7 @@ export default function SolucionesHVACPage() {
         window.open(mailtoLink, '_blank');
     };
 
-	const [BigScreen, setBigScreen] = useState(false);
-
-    useEffect(() => {
-        const handler = (e:any) => setBigScreen(e.matches);
-        const mediaQuery = window.matchMedia('(min-width: 768px)');
-
-        mediaQuery.addEventListener('change', handler);
-        setBigScreen(mediaQuery.matches);
-
-        return () => {
-        mediaQuery.removeEventListener('change', handler);
-        };
-    }, []);
+	const BigScreen = useIsDesktop();
 
 	return (
 		<main className="flex flex-col mt-4 items-center justify-center gap-1 md:gap-4 pb-4 md:pb-10 overflow-hidden ">

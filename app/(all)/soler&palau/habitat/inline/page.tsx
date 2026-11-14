@@ -1,5 +1,4 @@
 "use client";
-import { useEffect, useState } from "react";
 import {extendVariants, Button} from "@nextui-org/react";
 import { Image } from "@nextui-org/image";
 
@@ -13,6 +12,7 @@ import "slick-carousel/slick/slick-theme.css"; // estilos globales que antes lle
 import { AsesoramietoButton } from "@/components/custonButtons/asesoramiento";
 import { TiendaButton } from "@/components/custonButtons/tienda";
 import { ManualButton } from "@/components/custonButtons/manual";
+import { useIsDesktop } from "@/hooks/useIsDesktop";
 
 export default function HabitatInlinePage() {
     const images = [
@@ -42,19 +42,7 @@ export default function HabitatInlinePage() {
     
     const DobleFlechaRoja = <span className="text-livered">»</span>
 
-    const [BigScreen, setBigScreen] = useState(false);
-
-    useEffect(() => {
-        const handler = (e:any) => setBigScreen(e.matches);
-        const mediaQuery = window.matchMedia('(min-width: 768px)');
-
-        mediaQuery.addEventListener('change', handler);
-        setBigScreen(mediaQuery.matches);
-
-        return () => {
-        mediaQuery.removeEventListener('change', handler);
-        };
-    }, []);
+    const BigScreen = useIsDesktop();
 
     const handleEmailClick = () => {
         const email = 'info@electroterma.com.ar';
@@ -368,7 +356,7 @@ export default function HabitatInlinePage() {
                                     <Image
                                         alt="Electroterma Logo"
                                         className=""
-                                        src="../../img/solerpalau/habitat/SolerPalauHabitatPay.png"
+                                        src="../../img/solerpalau/habitat/SolerPalauHabitatPay.webp"
                                         width="100%"
                                     />
                         </section>

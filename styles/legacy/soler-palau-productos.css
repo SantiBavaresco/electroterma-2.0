@@ -1,0 +1,50 @@
+/*
+ * Reglas globales que las páginas RLS / TSA / TDA recibían "de rebote" al importar
+ * componentes viejos de video (videoScrubber / videoplayer) que ya no se usan.
+ * Se conservan tal cual para que esas páginas se vean exactamente igual.
+ * (Se quitaron sólo las reglas de clases que no existen en el sitio:
+ *  section.hero / .intro / .savvy / .vid, .App, .wrapper, #v0, #scrollSection)
+ */
+* {
+    margin: 0;
+}
+
+:root {
+    --highlight-color: #8cc63e;
+    --primary-color: #404040;
+    --secondary-color: #f1f1f1;
+}
+
+footer {
+    padding: 2rem;
+    background-color: var(--highlight-color);
+}
+
+footer img {
+    width: 100%;
+    vertical-align: bottom;
+}
+
+@media (max-width: 720px) {
+    header {
+        display: block;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    header h1 {
+        margin: 0 0 1rem 0;
+    }
+
+    header nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+    }
+}

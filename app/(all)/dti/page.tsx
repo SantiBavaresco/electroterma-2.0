@@ -2,7 +2,6 @@
 
 import { Image } from "@nextui-org/image";
 import { AsesoramietoButton } from "@/components/custonButtons/asesoramiento";
-import { useEffect, useState } from "react";
 import { EscribinosButton } from "@/components/custonButtons/escribinos";
 import { Divider } from "@nextui-org/react";
 import { VinietaNaranjaSVG } from "@/public/svg/vinietaNaranja";
@@ -15,6 +14,7 @@ import { DiferencialResistenteFuego } from "@/components/diferenciales/diferenci
 import { DiferencialAmbienteCorrosivo } from "@/components/diferenciales/diferencialAmbienteCorrosivo";
 import { DiferencialEficienciaEnergetica } from "@/components/diferenciales/diferencialEficienciaEnergetica";
 import { DiferencialMaterialesInmunes } from "@/components/diferenciales/diferencialMaterialesInmunes";
+import { useIsDesktop } from "@/hooks/useIsDesktop";
 
 interface ItemsNavbar {
     key: string;
@@ -29,18 +29,7 @@ export default function DTIPage() {
     const TamanioDiferenciales = 100;
     const TamanioDiferencialesMobile = 70;
 
-    const [BigScreen, setBigScreen] = useState(false);
-    useEffect(() => {
-        const handler = (e:any) => setBigScreen(e.matches);
-        const mediaQuery = window.matchMedia('(min-width: 768px)');
-
-        mediaQuery.addEventListener('change', handler);
-        setBigScreen(mediaQuery.matches);
-
-        return () => {
-        mediaQuery.removeEventListener('change', handler);
-        };
-    }, []);
+    const BigScreen = useIsDesktop();
 
     const handleEmailClick = () => {
         const email = 'info@electroterma.com.ar';
@@ -104,7 +93,7 @@ export default function DTIPage() {
                 {/* -------------PARRAFO CON COMILLAS WEB ------------- */}
 
                 {BigScreen ? 
-                    <p>
+                    <div>
                         
                         <div className="z-20 absolute 
                             top-[26%] xm:top-[24%] sm:top-[8%] md:top-[12%] lg:top-[5%] xl:top-[2.5%]  2xl:top-[0.5%] 
@@ -128,10 +117,10 @@ export default function DTIPage() {
                         <span className="">Nuestros equipos de diseño e ingeniería crean en conjunto <span className="font-nunito-bolder">sistemas de HVAC</span></span><br/>
                         <span className="">personalizados que responden a las necesidades más exigentes.</span><br/>
 
-                    </p>
+                    </div>
                 :
                 
-                    <p className="text-[3.0vw]">
+                    <div className="text-[3.0vw]">
                 {/* -------------PARRAFO CON COMILLAS MOBILE------------- */}
                         
                         <div className="z-20 absolute 
@@ -156,7 +145,7 @@ export default function DTIPage() {
                         <span className="">Nuestros equipos de diseño e ingeniería crean </span><br/>
                         <span className=""> en conjunto <span className="font-nunito-bolder">sistemas de HVAC</span> personalizados</span><br/>
                         <span className=""> que responden a las necesidades más exigentes.</span><br/>
-                    </p>
+                    </div>
                 }
                 <div className="">
                         <div>
@@ -260,7 +249,7 @@ export default function DTIPage() {
                     alt="Home banner 1"
                     className="rounded-[44-px]"
                     radius="none"
-                    src={`../img/dti/DtiDuctos${BigScreen ? "Textiles04" : "Textiles04Mobile"}.png`}
+                    src={`../img/dti/DtiDuctos${BigScreen ? "Textiles04.webp" : "Textiles04Mobile.png"}`}
                     width="100%"
                 />
             </section>

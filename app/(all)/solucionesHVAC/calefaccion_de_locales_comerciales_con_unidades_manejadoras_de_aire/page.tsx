@@ -2,8 +2,8 @@
 import { Button } from "@nextui-org/button";
 import { Image } from "@nextui-org/image";
 import { Avatar } from "@nextui-org/react";
-import { useEffect, useState } from "react";
 import { IoMailOutline } from "react-icons/io5";
+import { useIsDesktop } from "@/hooks/useIsDesktop";
 
 export default function Soluciones_calefaccion_de_locales_comerciales_con_unidades_manejadoras_de_aire_Page() {
 
@@ -19,19 +19,7 @@ export default function Soluciones_calefaccion_de_locales_comerciales_con_unidad
         window.open(mailtoLink, '_blank');
     };
 
-	const [BigScreen, setBigScreen] = useState(false);
-
-    useEffect(() => {
-        const handler = (e:any) => setBigScreen(e.matches);
-        const mediaQuery = window.matchMedia('(min-width: 768px)');
-
-        mediaQuery.addEventListener('change', handler);
-        setBigScreen(mediaQuery.matches);
-
-        return () => {
-        mediaQuery.removeEventListener('change', handler);
-        };
-    }, []);
+	const BigScreen = useIsDesktop();
 
 	const mobileImagesCol = [];
     for (let i = 0; i < 2; i++) {

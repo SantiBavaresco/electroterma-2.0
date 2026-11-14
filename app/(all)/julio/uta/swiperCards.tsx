@@ -33,8 +33,6 @@ const Carousel: React.FC = () => {
     setCurrentIndex((prevIndex) => (prevIndex === 6 ? 0 : prevIndex + 1));
   };
 
-  //   // Puedes utilizar la función "updateCarousel" importada de logica.js
-
   useEffect(() => {
     require("./logica.js");
 }, [currentIndex]);

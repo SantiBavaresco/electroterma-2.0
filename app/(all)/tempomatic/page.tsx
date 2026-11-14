@@ -5,9 +5,9 @@ import { itemsNavTempomatic } from "@/public/data/navbarData";
 import CardDisplaySypHome from "@/components/navbar/cardDisplaySypHome";
 import { AsesoramietoButton } from "@/components/custonButtons/asesoramiento";
 import { TiendaButton } from "@/components/custonButtons/tienda";
-import { useEffect, useState } from "react";
 import { EscribinosButton } from "@/components/custonButtons/escribinos";
 import { Divider } from "@nextui-org/react";
+import { useIsDesktop } from "@/hooks/useIsDesktop";
 
 interface ItemsNavbar {
     key: string;
@@ -19,18 +19,7 @@ interface ItemsNavbar {
 
 export default function TempomaticPage() {
 
-    const [BigScreen, setBigScreen] = useState(false);
-    useEffect(() => {
-        const handler = (e:any) => setBigScreen(e.matches);
-        const mediaQuery = window.matchMedia('(min-width: 768px)');
-
-        mediaQuery.addEventListener('change', handler);
-        setBigScreen(mediaQuery.matches);
-
-        return () => {
-        mediaQuery.removeEventListener('change', handler);
-        };
-    }, []);
+    const BigScreen = useIsDesktop();
 
     const handleEmailClick = () => {
         const email = 'info@electroterma.com.ar';
