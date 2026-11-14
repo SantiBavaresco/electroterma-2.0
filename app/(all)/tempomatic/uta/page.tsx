@@ -17,14 +17,14 @@ export default function UtaPage() {
                     alt="Home banner 1"
                     className="rounded-[44-px]"
                     radius="none"
-                    src={`../img/tempomatic/uta/provisorio/${BigScreen ? "webFija" : "mobileFija"}.webp`}
+                    src={`/img/tempomatic/uta/provisorio/${BigScreen ? "webFija" : "mobileFija"}.webp`}
                     width="100%"
                 />
             </section>
             <section className="w-full flex justify-center gap-4">
                 <AsesoramietoButton screen={BigScreen ? "xl" : "md"} size={BigScreen ? 40 : 16}
                     link={"https://wa.me/5492236356756?text=Hola.%20Quiero%20más%20información%20sobre%20UTA."}/>
-                <ManualButton size={BigScreen ? 40 : 16} screen={BigScreen ? "xl" : "md"} link={"../../manuales/uta.pdf"} dwName={"UTA Manual.pdf"}/>
+                <ManualButton size={BigScreen ? 40 : 16} screen={BigScreen ? "xl" : "md"} link={"/manuales/uta.pdf"} dwName={"UTA Manual.pdf"}/>
             </section>
 		</main>
 	);

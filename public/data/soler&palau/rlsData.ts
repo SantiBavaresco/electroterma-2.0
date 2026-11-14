@@ -100,10 +100,10 @@ export const rlsData: ventDataType  = {
         
     },
 
-    urltdaImageDemo: "../img/solerpalau/rls/imgDemo/",
+    urltdaImageDemo: "/img/solerpalau/rls/imgDemo/",
     demoImageNames: ["1", "2", "3",],
 
-    urlImageBanner: "../img/solerpalau/rls/imgbanner/",
+    urlImageBanner: "/img/solerpalau/rls/imgbanner/",
     bannerImageInfo: [
         {
             imgName:"1",

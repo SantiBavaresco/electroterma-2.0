@@ -1,7 +1,7 @@
 "use client";
 import { Link } from "@nextui-org/link";
 import { Image } from "@nextui-org/image";
-import {extendVariants, Button, Divider} from "@nextui-org/react";
+import { Button, Divider } from "@nextui-org/react";
 
 import VideoAutoPlayer from "@/components/videoplayer/videoautoplayer";
 import { NavbarHome } from "@/components/navbar/navbarHome";
@@ -15,39 +15,13 @@ export default function Home() {
     const BigScreen = useIsDesktop();
 
 
-    const handleEmailClick = () => {
-        const email = 'info@electroterma.com.ar';
-        const subject = 'Consulta sobre equipamiento';
-        const body = 'Hola! Me gustaria hacer una consulta sobre equipamiento de Electroterma';
-    
-        const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(
-            subject
-        )}&body=${encodeURIComponent(body)}`;
-    
-        window.open(mailtoLink, '_blank');
-    };
 
-    const handleAnchor = (link:string) => {
-        window.open(link, '_top', 'noopener noreferrer');
-      };
 
-    const MyButton = extendVariants(Button, {  
-        variants: {    
-          size: {      
-            xs: "px-2 min-w-12 h-6 text-tiny gap-1 rounded-small",      
-            md: "px-4 min-w-20 h-10 text-small gap-2 rounded-small",      
-            xl: "px-10 min-w-32 h-16 text-xl gap-6 rounded-full",
-          },  
-        },  
-        defaultVariants: { 
-          size: "xl",
-        },
-      });
 
     return (
         <div className="flex flex-col items-center justify-center gap-4  pb-0 md:pb-0 ">
             <section className="max-h-[90vh] w-full xl:px-[0%] flex items-center justify-center overflow-hidden bg-lowgrasy">
-                <VideoAutoPlayer url="../img/home/video/homePresentacion.mp4"/>
+                <VideoAutoPlayer url="/img/home/video/homePresentacion.mp4"/>
                 
             </section>
 
@@ -66,7 +40,7 @@ export default function Home() {
                             className=" mt-0"
                             alt="Background Tempomatic"
                             radius="none"
-                            src="../../img/home/homeBanner/comillas.png"
+                            src="/img/home/homeBanner/comillas.png"
                             width="100%"
                         />
                     </span>
@@ -86,7 +60,7 @@ export default function Home() {
                             className=" mt-0"
                             alt="Background Tempomatic"
                             radius="none"
-                            src="../../img/home/homeBanner/comillas.png"
+                            src="/img/home/homeBanner/comillas.png"
                             width="100%"
                         />
                     </span>
@@ -112,7 +86,7 @@ export default function Home() {
                             className=" mt-0"
                             alt="Background Tempomatic"
                             radius="none"
-                            src="../../img/home/homeBanner/h1.webp"
+                            src="/img/home/homeBanner/h1.webp"
                             width="100%"
                         />
 
@@ -121,7 +95,7 @@ export default function Home() {
                                 className=" "
                                 alt="Tempomatic"
                                 radius="none"
-                                src="../../img/home/homeBanner/1.png"
+                                src="/img/home/homeBanner/1.png"
                                 width="100%"
                             />
                         </div>
@@ -138,7 +112,7 @@ export default function Home() {
                             className=" mt-0"
                             alt="Background SyP"
                             radius="none"
-                            src="../../img/home/homeBanner/h2.webp"
+                            src="/img/home/homeBanner/h2.webp"
                             width="100%"
                         />
                         <div className="w-[60%] mx-auto -mt-10">
@@ -146,7 +120,7 @@ export default function Home() {
                                 className=" "
                                 alt="Syp"
                                 radius="none"
-                                src="../../img/home/homeBanner/2.png"
+                                src="/img/home/homeBanner/2.png"
                                 width="100%"
                             />
                         </div>
@@ -163,7 +137,7 @@ export default function Home() {
                             className=" mt-0"
                             alt="Background DTI"
                             radius="none"
-                            src="../../img/home/homeBanner/h3.webp"
+                            src="/img/home/homeBanner/h3.webp"
                             width="100%"
                         />
                         <div className="w-[60%] mx-auto -mt-10">
@@ -171,7 +145,7 @@ export default function Home() {
                                 className=" "
                                 alt="DTI"
                                 radius="none"
-                                src="../../img/home/homeBanner/3.png"
+                                src="/img/home/homeBanner/3.png"
                                 width="100%"
                             />
                         </div>
@@ -188,7 +162,7 @@ export default function Home() {
                             className=" mt-0"
                             alt="Background Zila"
                             radius="none"
-                            src="../../img/home/homeBanner/h4.webp"
+                            src="/img/home/homeBanner/h4.webp"
                             width="100%"
                         />
                         <div className="w-[60%] mx-auto -mt-10">
@@ -196,7 +170,7 @@ export default function Home() {
                                 className=" "
                                 alt="Zila"
                                 radius="none"
-                                src="../../img/home/homeBanner/4.png"
+                                src="/img/home/homeBanner/4.png"
                                 width="100%"
                             />
                         </div>
@@ -211,7 +185,7 @@ export default function Home() {
                             className="mt-0 "
                             alt="Linea Izquierda"
                             radius="none"
-                            src="../../img/home/homeBanner/l1.png"
+                            src="/img/home/homeBanner/l1.png"
                             width="100%"
                         />
                     </div>
@@ -220,7 +194,7 @@ export default function Home() {
                             className="mt-0"
                             alt="Linea Derecha"
                             radius="none"
-                            src="../../img/home/homeBanner/l2.png"
+                            src="/img/home/homeBanner/l2.png"
                             width="100%"
                         />
                     </div>
@@ -261,7 +235,7 @@ export default function Home() {
                             className=" mt-0"
                             alt="Background Tempomatic"
                             radius="none"
-                            src="../../img/home/homeBanner/h1.webp"
+                            src="/img/home/homeBanner/h1.webp"
                             width="100%"
                         />
 
@@ -270,7 +244,7 @@ export default function Home() {
                                 className=" "
                                 alt="Tempomatic"
                                 radius="none"
-                                src="../../img/home/homeBanner/1.png"
+                                src="/img/home/homeBanner/1.png"
                                 width="100%"
                             />
                         </div>
@@ -287,7 +261,7 @@ export default function Home() {
                             className=" mt-0"
                             alt="Background SyP"
                             radius="none"
-                            src="../../img/home/homeBanner/h2.webp"
+                            src="/img/home/homeBanner/h2.webp"
                             width="100%"
                         />
                         <div className="w-[60%] mx-auto -mt-10">
@@ -295,7 +269,7 @@ export default function Home() {
                                 className=" "
                                 alt="Syp"
                                 radius="none"
-                                src="../../img/home/homeBanner/2.png"
+                                src="/img/home/homeBanner/2.png"
                                 width="100%"
                             />
                         </div>
@@ -315,7 +289,7 @@ export default function Home() {
                             className=" mt-0"
                             alt="Background DTI"
                             radius="none"
-                            src="../../img/home/homeBanner/h3.webp"
+                            src="/img/home/homeBanner/h3.webp"
                             width="100%"
                         />
                         <div className="w-[60%] mx-auto -mt-10">
@@ -323,7 +297,7 @@ export default function Home() {
                                 className=" "
                                 alt="DTI"
                                 radius="none"
-                                src="../../img/home/homeBanner/3.png"
+                                src="/img/home/homeBanner/3.png"
                                 width="100%"
                             />
                         </div>
@@ -340,7 +314,7 @@ export default function Home() {
                             className=" mt-0"
                             alt="Background Zila"
                             radius="none"
-                            src="../../img/home/homeBanner/h4.webp"
+                            src="/img/home/homeBanner/h4.webp"
                             width="100%"
                         />
                         <div className="w-[60%] mx-auto -mt-10">
@@ -348,7 +322,7 @@ export default function Home() {
                                 className=" "
                                 alt="Zila"
                                 radius="none"
-                                src="../../img/home/homeBanner/4.png"
+                                src="/img/home/homeBanner/4.png"
                                 width="100%"
                             />
                         </div>
@@ -365,7 +339,7 @@ export default function Home() {
                         className="mt-0 "
                         alt="Linea Izquierda"
                         radius="none"
-                        src="../../img/home/homeBanner/l1.png"
+                        src="/img/home/homeBanner/l1.png"
                         width="100%"
                     />
                 </div>
@@ -374,7 +348,7 @@ export default function Home() {
                         className="mt-0"
                         alt="Linea Derecha"
                         radius="none"
-                        src="../../img/home/homeBanner/l2.png"
+                        src="/img/home/homeBanner/l2.png"
                         width="100%"
                     />
                 </div>
@@ -403,7 +377,7 @@ export default function Home() {
                 <Image  
                     classNames={{ wrapper: "pl-auto <-10 min-w-full h-full"}}
                     alt="Imagen Inicio"
-                    src={`../../img/home/${BigScreen ? "home.webp" : "homeMobile.webp"}`}
+                    src={`/img/home/${BigScreen ? "home.webp" : "homeMobile.webp"}`}
                     width={"100%"}
                 />
             </section>
@@ -417,7 +391,7 @@ export default function Home() {
                 <Image  
                     classNames={{ wrapper: "pl-auto <-10 min-w-full h-full"}}
                     alt="Imagen grupal"
-                    src={`../../img/home/${BigScreen ? "grupo.webp" : "grupoMobile.webp"}`}
+                    src={`/img/home/${BigScreen ? "grupo.webp" : "grupoMobile.webp"}`}
                     width={"100%"}
                     radius="none"
                 />
@@ -428,7 +402,7 @@ export default function Home() {
                 <Image  
                     classNames={{ wrapper: "<-10 min-w-full h-full"}}
                     alt="Imagen grupal"
-                    src="../../img/home/leyenda.png"
+                    src="/img/home/leyenda.png"
                     radius="none"
                     width={"100%"}
                 />
@@ -448,7 +422,7 @@ export default function Home() {
                             className=" "
                             alt="tempomatic"
                             radius="none"
-                            src="../../img/home/homeBanner/1.png"
+                            src="/img/home/homeBanner/1.png"
                             width="100%"
                         />
                     </div>
@@ -465,7 +439,7 @@ export default function Home() {
                             className=" "
                             alt="syp"
                             radius="none"
-                            src="../../img/home/homeBanner/2.png"
+                            src="/img/home/homeBanner/2.png"
                             width="100%"
                         />
                     </div>
@@ -482,7 +456,7 @@ export default function Home() {
                             className=" "
                             alt="dti"
                             radius="none"
-                            src="../../img/home/homeBanner/3.png"
+                            src="/img/home/homeBanner/3.png"
                             width="100%"
                         />
                     </div>
@@ -499,7 +473,7 @@ export default function Home() {
                             className=" "
                             alt="Zila"
                             radius="none"
-                            src="../../img/home/homeBanner/4.png"
+                            src="/img/home/homeBanner/4.png"
                             width="100%"
                         />
                     </div>

@@ -2,18 +2,8 @@
 import { Link } from "@nextui-org/link";
 import { IoMailOutline } from "react-icons/io5";
 import { Image } from "@nextui-org/image";
+import { openContactEmail } from "@/lib/contact";
 
-const handleEmailClick = () => {
-    const email = 'info@electroterma.com.ar';
-    const subject = 'Consulta sobre equipamiento';
-    const body = 'Hola! Me gustaria hacer una consulta sobre equipamiento de Electroterma';
-
-    const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(
-        subject
-    )}&body=${encodeURIComponent(body)}`;
-
-    window.open(mailtoLink, '_blank');
-};
 
 export default function Footer() {
 	return (
@@ -24,7 +14,7 @@ export default function Footer() {
 		<div className="my-1">
 			<span className="flex items-center justify-center font-lexeng-bolder font-bold text-center"> <h1 className="pr-4">+54 223 4649999</h1> 
 
-			<a className="font-normal flex flex-row items-center justify-center rounded-md pr-2 hover:bg-midgray" onClick={handleEmailClick} >
+			<a className="font-normal flex flex-row items-center justify-center rounded-md pr-2 hover:bg-midgray" onClick={openContactEmail} >
 				<IoMailOutline className="mx-2 text-orange-600 text-xl" /> 
 				info@electroterma.com.ar
 			</a>
@@ -75,7 +65,7 @@ export default function Footer() {
 		<div className=" -mt-20 absolute right-0 md:right-24 w-[45px] md:w-[90px]">
 			<Link href="/" target="_top">
 				<Image
-				src="../../electroterma-logo.png"
+				src="/electroterma-logo.png"
 
 				width="100%"
 				alt="hola"

@@ -4,20 +4,10 @@ import { Image } from "@nextui-org/image";
 import { Avatar } from "@nextui-org/react";
 import { IoMailOutline } from "react-icons/io5";
 import { useIsDesktop } from "@/hooks/useIsDesktop";
+import { openContactEmail } from "@/lib/contact";
 
 export default function Soluciones_ventilacion_nave_industrial_Page() {
 
-	const handleEmailClick = () => {
-        const email = 'info@electroterma.com.ar';
-        const subject = 'Consulta sobre equipamiento';
-        const body = 'Hola! Me gustaría hacer una consulta sobre equipamiento de Electroterma';
-    
-        const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(
-            subject
-        )}&body=${encodeURIComponent(body)}`;
-    
-        window.open(mailtoLink, '_blank');
-    };
 
 	const BigScreen = useIsDesktop();
 
@@ -29,7 +19,7 @@ export default function Soluciones_ventilacion_nave_industrial_Page() {
             alt="Electroterma Logo"
             className=""
 			radius="none"
-            src={`../../img/soluciones/ventilacion_nave_industrial/Soluciones${i+4}.webp`}
+            src={`/img/soluciones/ventilacion_nave_industrial/Soluciones${i+4}.webp`}
             width="100%"
             />
         );
@@ -45,7 +35,7 @@ export default function Soluciones_ventilacion_nave_industrial_Page() {
 						alt="Banner 1"
 						className="rounded-tl-[30px] "
 						radius="none"
-						src="../../img/soluciones/ventilacion_nave_industrial/SolucionesBanner1.webp"
+						src="/img/soluciones/ventilacion_nave_industrial/SolucionesBanner1.webp"
 						width="100%"
 					/>
 				</div>
@@ -58,7 +48,7 @@ export default function Soluciones_ventilacion_nave_industrial_Page() {
 			<section className="w-full h-[104%] z-0 rounded-tl-[0px] -mt-10 pt-10   bg-[#F7F6F6] ">
 				<div className="  ml-[0.5vw] mt-6  bg-gray-00">
 					<div className=" flex mr-auto ml-4 pl-10 text-white font-lexend-bold text-[2.5vw] bg-white- rounded-l-full border-1- border-lowgray- shadow-2xl-"> 
-					<Avatar  src="../../img/soluciones/ventilacion_nave_industrial/SolucionesAutor.webp" className="-ml-8 w- h-[5.0vw] my-2 text-large"/>
+					<Avatar  src="/img/soluciones/ventilacion_nave_industrial/SolucionesAutor.webp" className="-ml-8 w- h-[5.0vw] my-2 text-large"/>
 					<p className="my-auto ml-4 pt-4  pb-4  text-[#EF771C] font-lexend-bold text-[1.2vw]">Por: {" "}
 						<span className="underline">Juan Manuel de Porras</span>
 					</p>
@@ -75,7 +65,7 @@ export default function Soluciones_ventilacion_nave_industrial_Page() {
 							alt="Banner 1"
 							className="p-6 py-6"
 							radius="none"
-							src="../../img/soluciones/ventilacion_nave_industrial/Soluciones11.webp"
+							src="/img/soluciones/ventilacion_nave_industrial/Soluciones11.webp"
 							height="100%"
 							/> 
 							
@@ -104,7 +94,7 @@ export default function Soluciones_ventilacion_nave_industrial_Page() {
 							alt="Banner 1"
 							className="px-8"
 							radius="none"
-							src="../../img/soluciones/ventilacion_nave_industrial/Soluciones12.webp"
+							src="/img/soluciones/ventilacion_nave_industrial/Soluciones12.webp"
 							height="100%"
 							/> 
 							
@@ -133,7 +123,7 @@ export default function Soluciones_ventilacion_nave_industrial_Page() {
 							alt="Banner 1"
 							className="p- rounded-t-[30px]"
 							radius="none"
-							src="../../img/soluciones/ventilacion_nave_industrial/Soluciones13.webp"
+							src="/img/soluciones/ventilacion_nave_industrial/Soluciones13.webp"
 							height="100%"
 							/> 
 							
@@ -177,7 +167,7 @@ export default function Soluciones_ventilacion_nave_industrial_Page() {
 					<h1 className="lg:py-6 pl-2 lg:pl-12 py-2 text-white font-lexend-bold lg:text-[2.0vw] bg-[#EF771C] shadow-2xl">SOLUCIÓN VENTILACIÓN NAVE INDUSTRIAL</h1>
 
 					<div className="visible md:hidden flex mr-auto mt-1 text-white font-lexend-bold text-[2.5vw] bg-white- rounded-l-full border-1- border-lowgray- shadow-2xl-"> 
-							<Avatar  src="../../img/soluciones/ventilacion_nave_industrial/SolucionesAutor.webp" className="w- h-[10.0vw] my-2 text-large"/>
+							<Avatar  src="/img/soluciones/ventilacion_nave_industrial/SolucionesAutor.webp" className="w- h-[10.0vw] my-2 text-large"/>
 							<p className="my-auto ml-2 pt-4  pb-4  text-[#EF771C] font-lexend-bold text-[3.2vw]">Por: {" "}
 								<span className="underline">Juan Manuel de Porras</span>
 							</p>
@@ -210,7 +200,7 @@ export default function Soluciones_ventilacion_nave_industrial_Page() {
 								alt="Imagen 2"
 								className="pl-"
 								radius="none"
-								src="../../img/soluciones/ventilacion_nave_industrial/Soluciones2.webp"
+								src="/img/soluciones/ventilacion_nave_industrial/Soluciones2.webp"
 								width="100%"
 							/>
 
@@ -229,7 +219,7 @@ export default function Soluciones_ventilacion_nave_industrial_Page() {
 								alt="Imagen 4"
 								className="lg:mt-"
 								radius="none"
-								src="../../img/soluciones/ventilacion_nave_industrial/Soluciones3.webp"
+								src="/img/soluciones/ventilacion_nave_industrial/Soluciones3.webp"
 								width="100%"
 							/>
 
@@ -258,7 +248,7 @@ export default function Soluciones_ventilacion_nave_industrial_Page() {
 												alt="Banner 1"
 												className="p-2 px-	"
 												radius="none"
-												src="../../img/soluciones/ventilacion_nave_industrial/Soluciones11.webp"		
+												src="/img/soluciones/ventilacion_nave_industrial/Soluciones11.webp"		
 												height="100%"
 												/> 
 										</div>
@@ -286,7 +276,7 @@ export default function Soluciones_ventilacion_nave_industrial_Page() {
 												alt="Banner 1"
 												className="p-2 px-	"
 												radius="none"
-												src="../../img/soluciones/ventilacion_nave_industrial/Soluciones12.webp"		
+												src="/img/soluciones/ventilacion_nave_industrial/Soluciones12.webp"		
 												height="100%"
 												/> 
 										</div>
@@ -314,7 +304,7 @@ export default function Soluciones_ventilacion_nave_industrial_Page() {
 												alt="Banner 1"
 												className="rounded-2xl p- px-	"
 												radius="none"
-												src="../../img/soluciones/ventilacion_nave_industrial/Soluciones13.webp"		
+												src="/img/soluciones/ventilacion_nave_industrial/Soluciones13.webp"		
 												height="100%"
 												/> 
 										</div>
@@ -367,7 +357,7 @@ export default function Soluciones_ventilacion_nave_industrial_Page() {
                         </h2>
                     </div>
                     <div className="mr-0 md:mr-12  ">
-                        <Button size={BigScreen ? "lg" : "sm"} radius="full" className="2xl:text-2xl lg:px-8 mr-[23px] lg:mr-0 shadow-2xl" onClick={handleEmailClick}>
+                        <Button size={BigScreen ? "lg" : "sm"} radius="full" className="2xl:text-2xl lg:px-8 mr-[23px] lg:mr-0 shadow-2xl" onClick={openContactEmail}>
                             <div className="absolute rounded-full left-0 z-20 p-3   shadow-r-xl shadow-[rgba(29,29,27,0.24)] border- border-gray-200 
                                     bg-gradient-to-r from-[#EF771C] to-[#F4A86F]
                                     group-hover:bg-gradient-to-r group-hover:from-orange-400 group-hover:to-[#fe694f]

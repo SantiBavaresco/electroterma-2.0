@@ -112,10 +112,10 @@ export const tsaData: ventDataType  = {
         
     },
 
-    urltdaImageDemo: "../img/solerpalau/tsa/imgDemo/",
+    urltdaImageDemo: "/img/solerpalau/tsa/imgDemo/",
     demoImageNames: ["1", "2", "3",],
 
-    urlImageBanner: "../img/solerpalau/tsa/imgbanner/",
+    urlImageBanner: "/img/solerpalau/tsa/imgbanner/",
     bannerImageInfo: [
         {
             imgName:"1",

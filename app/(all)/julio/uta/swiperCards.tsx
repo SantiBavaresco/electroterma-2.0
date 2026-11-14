@@ -3,24 +3,7 @@ import './style.css';
 
 // Importa el archivo de lógica
 
-interface CarouselItemProps {
-  index: number;
-}
 
-const CarouselItem: React.FC<CarouselItemProps> = ({ index }) => {
-  const colors = ['blue', 'purple', 'green', 'yellow', 'red', 'orange', 'teal'];
-  const color = colors[index % colors.length];
-
-  return (
-    <div
-      className={`relative aspect-[1/1] w-[85%] shrink-0 snap-start snap-always rounded-xl bg-${color}-200 md:w-[calc(33.33%-(32px/3))]`}
-    >
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="text-8xl font-bold text-white">{index + 1}</div>
-      </div>
-    </div>
-  );
-};
 
 const Carousel: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);

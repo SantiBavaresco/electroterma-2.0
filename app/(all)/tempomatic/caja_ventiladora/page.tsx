@@ -15,33 +15,12 @@ import { DiferencialFiltreraIncorporada } from "@/components/diferenciales/difer
 import { DiferencialBajoMantenimiento } from "@/components/diferenciales/diferenciaBajoMantenimiento";
 import { useIsDesktop } from "@/hooks/useIsDesktop";
 
-interface ItemsNavbar {
-    key: string;
-    label: string[];
-    labelShort: string;
-    img: string;
-    href: string;
-}
 
 export default function CajaVentiladoraPage() {
 
     const BigScreen = useIsDesktop();
 
-    const handleAnchor = (link:string) => {
-        window.open(link, '_top', 'noopener noreferrer');
-      };
 
-    const handleEmailClick = () => {
-        const email = 'info@electroterma.com.ar';
-        const subject = 'Consulta sobre equipamiento';
-        const body = 'Hola! Me gustaria hacer una consulta sobre equipamiento de Electroterma';
-    
-        const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(
-            subject
-        )}&body=${encodeURIComponent(body)}`;
-    
-        window.open(mailtoLink, '_blank');
-    };
 
     return (
         <main className="flex flex-col h-full items-center justify-center gap-4 pb-4 md:pb-10 
@@ -53,7 +32,7 @@ export default function CajaVentiladoraPage() {
                     alt="Home banner 1"
                     className="rounded-[44-px]"
                     radius="none"
-                    src="../img/tempomatic/caja_ventiladora/caja_ventiladora-Banner.webp"
+                    src="/img/tempomatic/caja_ventiladora/caja_ventiladora-Banner.webp"
                     width="100%"
                 />
             </section>
@@ -63,7 +42,7 @@ export default function CajaVentiladoraPage() {
                     alt="Home banner 1"
                     className=""
                     radius="none"
-                    src="../img/tempomatic/caja_ventiladora/tempomatic-Logo.jpg"
+                    src="/img/tempomatic/caja_ventiladora/tempomatic-Logo.jpg"
                     width="100%"
                 />
             </section>  
@@ -95,7 +74,7 @@ export default function CajaVentiladoraPage() {
                             alt="Home banner 1"
                             className=""
                             radius="none"
-                            src="../img/tempomatic/caja_ventiladora/caja_ventiladora_01.webp"
+                            src="/img/tempomatic/caja_ventiladora/caja_ventiladora_01.webp"
                             width="100%"
                         />
                     </div>
@@ -125,7 +104,7 @@ export default function CajaVentiladoraPage() {
                         alt="Home banner 1"
                         className=""
                         radius="none"
-                        src="../img/tempomatic/caja_ventiladora/caja_ventiladora_02.webp"
+                        src="/img/tempomatic/caja_ventiladora/caja_ventiladora_02.webp"
                         width="100%"
                     />
                 </div>
@@ -169,7 +148,7 @@ export default function CajaVentiladoraPage() {
                             alt="Home banner 1"
                             className=""
                             radius="none"
-                            src="../img/tempomatic/caja_ventiladora/caja_ventiladora_03.webp"
+                            src="/img/tempomatic/caja_ventiladora/caja_ventiladora_03.webp"
                         />
                     </div>
                 </div>
@@ -184,7 +163,7 @@ export default function CajaVentiladoraPage() {
                             alt="Home banner 1"
                             className=""
                             radius="none"
-                            src="../img/tempomatic/caja_ventiladora/caja_ventiladora_04.webp"
+                            src="/img/tempomatic/caja_ventiladora/caja_ventiladora_04.webp"
                         />
                     </div>
                
@@ -496,12 +475,12 @@ export default function CajaVentiladoraPage() {
                             alt="Home banner 1"
                             className=""
                             radius="none"
-                            src="../img/home/homeBanner/2.png"
+                            src="/img/home/homeBanner/2.png"
                             width="100%"
                         />
                         </a>
                     
-                    <ManualButtonNaranja size={BigScreen ? 40 : 25} screen={BigScreen ? "xl" : "lg"} link={"../../manuales/04. Folleto Caja ventiladora.pdf"} dwName={"04. Folleto Caja ventiladora.pdf"}/>
+                    <ManualButtonNaranja size={BigScreen ? 40 : 25} screen={BigScreen ? "xl" : "lg"} link={"/manuales/04. Folleto Caja ventiladora.pdf"} dwName={"04. Folleto Caja ventiladora.pdf"}/>
             </section>
             </>
             :
@@ -536,7 +515,7 @@ export default function CajaVentiladoraPage() {
                                 alt="Home banner 1"
                                 className=""
                                 radius="none"
-                                src="../img/tempomatic/caja_ventiladora/caja_ventiladora_02.webp"
+                                src="/img/tempomatic/caja_ventiladora/caja_ventiladora_02.webp"
                                 width="100%"
                             />
                         </div>
@@ -594,7 +573,7 @@ export default function CajaVentiladoraPage() {
                                 alt="Home banner 1"
                                 className=""
                                 radius="none"
-                                src="../img/tempomatic/caja_ventiladora/caja_ventiladora_03.webp"
+                                src="/img/tempomatic/caja_ventiladora/caja_ventiladora_03.webp"
                             />
                         </div>
                     </div>
@@ -607,18 +586,18 @@ export default function CajaVentiladoraPage() {
                             alt="Home banner 1 "
                             className=""
                             radius="none"
-                            src="../img/home/homeBanner/2.png"
+                            src="/img/home/homeBanner/2.png"
                             width="100%"
                         />
                         </a>
-                        <ManualButtonNaranja size={BigScreen ? 40 : 25} screen={BigScreen ? "xl" : "lg"} link={"../../manuales/04. Folleto Caja ventiladora.pdf"} dwName={"04. Folleto Caja ventiladora.pdf"}/>
+                        <ManualButtonNaranja size={BigScreen ? 40 : 25} screen={BigScreen ? "xl" : "lg"} link={"/manuales/04. Folleto Caja ventiladora.pdf"} dwName={"04. Folleto Caja ventiladora.pdf"}/>
                 </section>
                 {/* ------------- Imagenes presentacion ------------- */}
                 <section className="w-full flex items-center justify-center mx-auto p-0 bg-transparent space-x-0">
                         <Image
                             alt="Otam Logo"
                             radius="none"
-                            src="../img/electrotermalogoletrasProducido.png"
+                            src="/img/electrotermalogoletrasProducido.png"
                             width={300}
                         />
                         
@@ -661,7 +640,7 @@ export default function CajaVentiladoraPage() {
                     <Image
                         alt="Otam Logo"
                         radius="none"
-                        src="../img/electrotermalogoletrasProducido.png"
+                        src="/img/electrotermalogoletrasProducido.png"
                         width={500}
                     />
                     

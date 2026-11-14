@@ -26,7 +26,7 @@ export default function Uta() {
                     <video
                         className="mx-auto"
                         muted autoPlay controls={false}
-                        src="../img/uta/1_Animación_3D_UTA_Presentacion_V6.mp4"
+                        src="/img/uta/1_Animación_3D_UTA_Presentacion_V6.mp4"
                         width="1920px"
                     />
                 </section> 
@@ -86,7 +86,7 @@ export default function Uta() {
                             <video
                                 className="mx-auto"
                                 muted autoPlay controls={false}
-                                src="../img/uta/2_Animación_3D_UTA_Diseño_Modular_V7.mp4"
+                                src="/img/uta/2_Animación_3D_UTA_Diseño_Modular_V7.mp4"
                                 width="1920px"
                             />
 
@@ -132,7 +132,7 @@ export default function Uta() {
                             <video
                                 className="mx-auto"
                                 muted autoPlay controls={false}
-                                src="../img/uta/3_Animación_3D_UTA_Eficiencia_Energetica_V5.mp4"
+                                src="/img/uta/3_Animación_3D_UTA_Eficiencia_Energetica_V5.mp4"
                                 width="1920px"
                             />
 
@@ -175,7 +175,7 @@ export default function Uta() {
                             <video
                                 className="mx-auto"
                                 muted autoPlay controls={false}
-                                src="../img/uta/4_Animación_3D_UTA_Panel_de_control_V5_1.mp4"
+                                src="/img/uta/4_Animación_3D_UTA_Panel_de_control_V5_1.mp4"
                                 width="1920px"
                             />
 
@@ -247,7 +247,7 @@ export default function Uta() {
                     <div className="carousel carousel-center  px-[5%] lg:px-[24%]  space-x-[8vw] lg:space-x-[2vw] lg:h-[800px]">
                         
                         <div id="slide1" className="carousel-item w-[400px] flex flex-col " >
-                            <img className="p-6 py-14 aspect-[7.25/10] rounded-3xl bg-white" src="../img/tempomatic/caldera_para_calefaccion/caldera_para_calefaccion_02.webp" alt="Pizza" />
+                            <img className="p-6 py-14 aspect-[7.25/10] rounded-3xl bg-white" src="/img/tempomatic/caldera_para_calefaccion/caldera_para_calefaccion_02.webp" alt="Pizza" />
                             <article className="px-3 mr-8 pt-6">
                                 
                                 <p className="text-midgray text-md">
@@ -261,7 +261,7 @@ export default function Uta() {
                         </div>
 
                         <div id="slide2" className="carousel-item w-[400px] flex flex-col " >
-                            <img className="p-6 py-14 aspect-[7.25/10] rounded-3xl bg-white" src="../img/tempomatic/caldera_para_calefaccion/caldera_para_calefaccion_01.webp" alt="Pizza" />
+                            <img className="p-6 py-14 aspect-[7.25/10] rounded-3xl bg-white" src="/img/tempomatic/caldera_para_calefaccion/caldera_para_calefaccion_01.webp" alt="Pizza" />
                             <article className="px-3 mr-8 pt-6">
                                 
                                 <p className="text-midgray text-md">
@@ -274,7 +274,7 @@ export default function Uta() {
                         </div>
 
                         <div id="slide3" className="carousel-item w-[400px] flex flex-col " >
-                            <img className="p-6 py-14 aspect-[7.25/10] rounded-3xl bg-white" src="../img/tempomatic/caldera_para_calefaccion/caldera_para_calefaccion_03.webp" alt="Pizza" />
+                            <img className="p-6 py-14 aspect-[7.25/10] rounded-3xl bg-white" src="/img/tempomatic/caldera_para_calefaccion/caldera_para_calefaccion_03.webp" alt="Pizza" />
                             <article className="px-3 mr-8 pt-6">
                                 
                                 <p className="text-midgray text-md">
@@ -287,7 +287,7 @@ export default function Uta() {
                         </div>
 
                         <div id="slide4" className="carousel-item w-[400px] flex flex-col " >
-                            <img className="p-2 py-24 aspect-[7.25/10]  rounded-3xl bg-white" src="../img/tempomatic/caldera_para_calefaccion/caldera_para_calefaccion_04.webp" alt="Pizza" />
+                            <img className="p-2 py-24 aspect-[7.25/10]  rounded-3xl bg-white" src="/img/tempomatic/caldera_para_calefaccion/caldera_para_calefaccion_04.webp" alt="Pizza" />
                             <article className="px-3 mr-8 pt-6">
                                 
                                 <p className="text-midgray text-md">
@@ -300,7 +300,7 @@ export default function Uta() {
                         </div>
 
                         <div id="slide5" className="carousel-item w-[400px] flex flex-col " >
-                            <img className="p-2 py-24 aspect-[7.25/10]  rounded-3xl bg-white" src="../img/tempomatic/caldera_para_calefaccion/caldera_para_calefaccion_04.webp" alt="Pizza" />
+                            <img className="p-2 py-24 aspect-[7.25/10]  rounded-3xl bg-white" src="/img/tempomatic/caldera_para_calefaccion/caldera_para_calefaccion_04.webp" alt="Pizza" />
                             <article className="px-3 mr-8 pt-6">
                                 
                                 <p className="text-midgray text-md">

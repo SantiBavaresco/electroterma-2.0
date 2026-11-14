@@ -2,6 +2,7 @@ import React from "react";
 import { MyButton } from "./myButton";
 
 import { EscribinosMail } from "@/public/svg/escribinosMail";
+import { openContactEmail } from "@/lib/contact";
 interface Props {
     css?: string;
     size?: number;
@@ -12,17 +13,6 @@ interface Props {
 
 export const EscribinosButton: React.FC<Props> = ({ css, size, screen, label, link, ...props}) => {
 
-    const handleEmailClick = () => {
-        const email = 'info@electroterma.com.ar';
-        const subject = 'Consulta sobre equipamiento';
-        const body = 'Hola! Me gustaria hacer una consulta sobre equipamiento de Electroterma';
-    
-        const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(
-            subject
-        )}&body=${encodeURIComponent(body)}`;
-    
-        window.open(mailtoLink, '_blank');
-    };
 
     return (
         <>
@@ -31,7 +21,7 @@ export const EscribinosButton: React.FC<Props> = ({ css, size, screen, label, li
                 className="z-10 mt-4 bg-[#EDEDED] min-w-[] font-nunito text-[#4C4B4B] 3xl:ml-0 2xl:text-2xl"
                 radius="full"
                 size={screen}
-                onClick={handleEmailClick} target="_blank"
+                onClick={openContactEmail} target="_blank"
             >
                 <div className={`absolute rounded-full left-0 z-20 p-0   shadow-r-xl shadow-[rgba(29,29,27,0.24)] border- border-gray-200
                      ${size===15 ? " p-1.5" : " p-3 "} 

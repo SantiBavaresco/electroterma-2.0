@@ -10,8 +10,6 @@ interface Props {
 }
 
 const SimpleSliderDemoImages: React.FC<Props> = ({ url, width, fileName }) => {
-    const wii = "300px";
-    const hii = "300px";
 
     const settings = {
         className: "center variable-width",

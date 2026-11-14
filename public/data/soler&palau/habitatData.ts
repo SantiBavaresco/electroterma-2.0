@@ -116,10 +116,10 @@ export const habitatData: habitatDataType  = {
     videoYoutubeId1: "uMn8YFVzBkE",
     videoYoutubeId2: "ea8KWDyYWcA",
 
-    urltdaImageDemo: "../img/solerpalau/habitat/imgDemo/",
+    urltdaImageDemo: "/img/solerpalau/habitat/imgDemo/",
     demoImageNames: ["1", "2", "3", "1", "2", "3"],
 
-    urlImageBanner: "../../img/solerpalau/imgbanner/",
+    urlImageBanner: "/img/solerpalau/imgbanner/",
     bannerImageInfo: [
         {
             imgName:"1",

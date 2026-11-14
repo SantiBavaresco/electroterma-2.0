@@ -37,28 +37,7 @@ import { useIsDesktop } from "@/hooks/useIsDesktop";
 
 export default function TDAPage() {
 
-    const settings = {
-        className:
-            "center variable-width  aspect[16/9] object-cover w-[100%] h-[90%] flex flex-nowrap overflow-hidden ",
-        infinite: true,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: true,
-        speed: 10000,
-        autoplaySpeed: 0,
-    }
 
-    const handleEmailClick = () => {
-        const email = 'info@electroterma.com.ar';
-        const subject = 'Consulta sobre equipamiento';
-        const body = 'Hola! Me gustaría hacer una consulta sobre equipamiento de Electroterma';
-    
-        const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(
-            subject
-        )}&body=${encodeURIComponent(body)}`;
-    
-        window.open(mailtoLink, '_blank');
-    };
 
     const BigScreen = useIsDesktop();
 
@@ -86,7 +65,7 @@ export default function TDAPage() {
                     <a href="/soler&palau">
                         <Image
                             alt="Otam Logo"
-                            src="../img/otamlogo.png"
+                            src="/img/otamlogo.png"
                             width="100%"
                         />
                     </a>
@@ -175,7 +154,7 @@ export default function TDAPage() {
                     <Image
                             alt="Ventilador"
                             className=" w-[500px] md:w-[100%]  top-[75px] lg:top-[65px] 2xl:top-[70px] left-4 md:left-12"
-                            src="../img/solerpalau/tda/SolerPalauTda0.png"
+                            src="/img/solerpalau/tda/SolerPalauTda0.png"
                             width={"100%"}
                             
 
@@ -252,7 +231,7 @@ export default function TDAPage() {
                         <Image
                             alt="Ventilador"
                             className="inline-block w-[320px] top-0  left-2 "
-                            src="../img/solerpalau/tda/SolerPalauTda1.png"
+                            src="/img/solerpalau/tda/SolerPalauTda1.png"
                             width={"100%"}
                         />
                         <div className="mt-2 ml-auto w-full flex justify-end overflow-hidden">
@@ -298,7 +277,7 @@ export default function TDAPage() {
                             
                             overflow-hidden">
                             
-                            <ManualButton size={BigScreen ? 40 : 25} screen={BigScreen ? "xl" : "lg"} link={"../../manuales/tda.pdf"} dwName={"TDA Manual.pdf"}/>
+                            <ManualButton size={BigScreen ? 40 : 25} screen={BigScreen ? "xl" : "lg"} link={"/manuales/tda.pdf"} dwName={"TDA Manual.pdf"}/>
                             
                     </section>
                 </div>
@@ -330,7 +309,7 @@ export default function TDAPage() {
                                     className="w-3/5"
                                     alt="Ventilador"
                                     
-                                    src="../img/solerpalau/tda/SolerPalauTda3.png"
+                                    src="/img/solerpalau/tda/SolerPalauTda3.png"
                                     width={"100%"}
                                 />
                                 <TableSolerPalau tableData={tdaData.tableData}/>
@@ -348,7 +327,7 @@ export default function TDAPage() {
                                         <Image
                                             alt="Otam Logo"
                                             className=""
-                                            src="../img/otamlogo.png"
+                                            src="/img/otamlogo.png"
                                             width={300}
                                         />
                                     </div>
@@ -360,7 +339,7 @@ export default function TDAPage() {
                                         <Image
                                             alt="Electroterma Logo"
                                             className=""
-                                            src="../img/electrotermalogoletras.png"
+                                            src="/img/electrotermalogoletras.png"
                                             width={340}
                                         />
                                         </a>
@@ -426,7 +405,7 @@ export default function TDAPage() {
                                         <Image
                                             alt="Otam Logo"
                                             className=""
-                                            src="../img/otamlogo.png"
+                                            src="/img/otamlogo.png"
                                             width={150}
                                         />
                                     </div>
@@ -438,7 +417,7 @@ export default function TDAPage() {
                                         <Image
                                             alt="Electroterma Logo"
                                             className=""
-                                            src="../img/electrotermalogoletras.png"
+                                            src="/img/electrotermalogoletras.png"
                                             width={140}
                                         />
                                         </a>

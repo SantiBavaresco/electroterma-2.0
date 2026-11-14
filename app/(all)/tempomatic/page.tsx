@@ -9,29 +9,11 @@ import { EscribinosButton } from "@/components/custonButtons/escribinos";
 import { Divider } from "@nextui-org/react";
 import { useIsDesktop } from "@/hooks/useIsDesktop";
 
-interface ItemsNavbar {
-    key: string;
-    label: string[];
-    labelShort: string;
-    img: string;
-    href: string;
-}
 
 export default function TempomaticPage() {
 
     const BigScreen = useIsDesktop();
 
-    const handleEmailClick = () => {
-        const email = 'info@electroterma.com.ar';
-        const subject = 'Consulta sobre equipamiento';
-        const body = 'Hola! Me gustaria hacer una consulta sobre equipamiento de Electroterma';
-    
-        const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(
-            subject
-        )}&body=${encodeURIComponent(body)}`;
-    
-        window.open(mailtoLink, '_blank');
-    };
 
     return (
         <main className="flex flex-col h-full items-center justify-center gap-4 pb-4 md:pb-10 bg-[url('/svg/ondasTempomatic.svg')] bg-fill
@@ -43,7 +25,7 @@ export default function TempomaticPage() {
                     alt="Home banner 1"
                     className="rounded-[44-px]"
                     radius="none"
-                    src="../img/tempomatic/imgbanner/SolerPalauHome1.webp"
+                    src="/img/tempomatic/imgbanner/SolerPalauHome1.webp"
                     width="100%"
                 />
             </section>
@@ -64,7 +46,7 @@ export default function TempomaticPage() {
                                 className="z-20 mt-0"
                                 alt="Background Tempomatic"
                                 radius="none"
-                                src="../../img/tempomatic/imgbanner/comillas.png"
+                                src="/img/tempomatic/imgbanner/comillas.png"
                                 width="100%"
                             />
 
@@ -90,7 +72,7 @@ export default function TempomaticPage() {
                                 className="z-20 mt-0"
                                 alt="Background Tempomatic"
                                 radius="none"
-                                src="../../img/tempomatic/imgbanner/comillas.png"
+                                src="/img/tempomatic/imgbanner/comillas.png"
                                 width="100%"
                             />
 
@@ -178,13 +160,13 @@ export default function TempomaticPage() {
                     <Image
                         alt="Otam Logo"
                         radius="none"
-                        src="../img/tempomatic/home/1.webp"
+                        src="/img/tempomatic/home/1.webp"
                         width={1285}
                     />
                     <Image
                         alt="Otam Logo"
                         radius="none"
-                        src="../img/tempomatic/home/2.webp"
+                        src="/img/tempomatic/home/2.webp"
                         width={870}
                     />
                 </section>

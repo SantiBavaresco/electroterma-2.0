@@ -16,13 +16,6 @@ import { DiferencialEficienciaEnergetica } from "@/components/diferenciales/dife
 import { DiferencialMaterialesInmunes } from "@/components/diferenciales/diferencialMaterialesInmunes";
 import { useIsDesktop } from "@/hooks/useIsDesktop";
 
-interface ItemsNavbar {
-    key: string;
-    label: string[];
-    labelShort: string;
-    img: string;
-    href: string;
-}
 
 export default function DTIPage() {
 
@@ -31,17 +24,6 @@ export default function DTIPage() {
 
     const BigScreen = useIsDesktop();
 
-    const handleEmailClick = () => {
-        const email = 'info@electroterma.com.ar';
-        const subject = 'Consulta sobre equipamiento';
-        const body = 'Hola! Me gustaria hacer una consulta sobre equipamiento de Electroterma';
-    
-        const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(
-            subject
-        )}&body=${encodeURIComponent(body)}`;
-    
-        window.open(mailtoLink, '_blank');
-    };
 
     return (
         <main className="flex flex-col h-full items-center justify-center gap-0 pb-4 md:pb-10 
@@ -53,7 +35,7 @@ export default function DTIPage() {
                     alt="Home banner 1"
                     className="rounded-[44-px]"
                     radius="none"
-                    src="../img/dti/DtiDuctosTextilesBanner.webp"
+                    src="/img/dti/DtiDuctosTextilesBanner.webp"
                     width="100%"
                 />
             </section>
@@ -64,14 +46,14 @@ export default function DTIPage() {
                     alt="Home banner 1"
                     className=" pt-8 lg:pt-24 pr-4 lg:pl-[12%]"
                     radius="none"
-                    src="../img/electrotermalogoletrasNoPadding.png"
+                    src="/img/electrotermalogoletrasNoPadding.png"
                     width={`${BigScreen ? 80 : 80}%`}
                 />
                 <Image
                     alt="Home banner 1"
                     className=" "
                     radius="none"
-                    src="../img/dti/DtiDuctosTextilesLogo.png"
+                    src="/img/dti/DtiDuctosTextilesLogo.png"
                     width={`${BigScreen ? 80 : 80}%`}
                 />
             </section>
@@ -104,7 +86,7 @@ export default function DTIPage() {
                                 className="z-20 mt-0"
                                 alt="Background Tempomatic"
                                 radius="none"
-                                src="../../img/dti/comillas.png"
+                                src="/img/dti/comillas.png"
                                 width="100%"
                             />
 
@@ -132,7 +114,7 @@ export default function DTIPage() {
                                 className="z-20 mt-0"
                                 alt="Background Tempomatic"
                                 radius="none"
-                                src="../../img/dti/comillas.png"
+                                src="/img/dti/comillas.png"
                                 width="100%"
                             />
 
@@ -161,7 +143,7 @@ export default function DTIPage() {
                     alt="Home banner 1"
                     className="rounded-[44-px]"
                     radius="none"
-                    src={`../img/dti/DtiDuctos${BigScreen ? "Textiles01.webp" : "Textiles01Mobile.png"}`}
+                    src={`/img/dti/DtiDuctos${BigScreen ? "Textiles01.webp" : "Textiles01Mobile.png"}`}
                     width="100%"
                 />
             </section>
@@ -177,7 +159,7 @@ export default function DTIPage() {
                         alt="Home banner 1"
                         className=""
                         radius="none"
-                        src="../img/dti/DtiDuctosTextiles02.png"
+                        src="/img/dti/DtiDuctosTextiles02.png"
                         width="100%"
                     />
                 </div>
@@ -206,7 +188,7 @@ export default function DTIPage() {
                 alt="Home banner 1 w-1/2"
                 className=""
                 radius="none"
-                src="../img/dti/DtiDuctosTextiles02Mobile.png"
+                src="/img/dti/DtiDuctosTextiles02Mobile.png"
                 width="100%"
                 />
              <section className="w-full px-[5%] z-10 -mt-8 mb-4 space-y-4">
@@ -225,7 +207,7 @@ export default function DTIPage() {
                     alt="Home banner 1"
                     className="rounded-[44-px]"
                     radius="none"
-                    src={`../img/dti/DtiDuctos${BigScreen ? "Textiles03" : "Textiles03Mobile"}.png`}
+                    src={`/img/dti/DtiDuctos${BigScreen ? "Textiles03" : "Textiles03Mobile"}.png`}
                     width="100%"
                 />
             </section>
@@ -237,7 +219,7 @@ export default function DTIPage() {
                         alt="Home banner 1"
                         className=""
                         radius="none"
-                        src="../img/electrotermalogoletrasNoPadding.png"
+                        src="/img/electrotermalogoletrasNoPadding.png"
                         width={BigScreen ? "40%" : "50%"}
                     />
                 </a>
@@ -249,7 +231,7 @@ export default function DTIPage() {
                     alt="Home banner 1"
                     className="rounded-[44-px]"
                     radius="none"
-                    src={`../img/dti/DtiDuctos${BigScreen ? "Textiles04.webp" : "Textiles04Mobile.png"}`}
+                    src={`/img/dti/DtiDuctos${BigScreen ? "Textiles04.webp" : "Textiles04Mobile.png"}`}
                     width="100%"
                 />
             </section>

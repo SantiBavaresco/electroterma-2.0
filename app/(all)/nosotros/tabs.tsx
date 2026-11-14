@@ -6,7 +6,6 @@ import { DotSVG } from "@/public/svg/dot";
 import { Tabs, Tab, Card, CardBody } from "@nextui-org/react";
 
 export default function Caracteristics() {
-    const [selected, setSelected] = React.useState("descripcion");
 
     return (
         <div className="flex flex-col  md:w-full lg:w-[900px]   mt-10">
@@ -115,7 +114,7 @@ const tabs = [
                     <Image
                         alt="Soler Palau Tda 2"
                         className=""
-                        src="../img/solerpalau/tda/SolerPalauTda2.png"
+                        src="/img/solerpalau/tda/SolerPalauTda2.png"
                         width={400}
                         loading="lazy"
                     />

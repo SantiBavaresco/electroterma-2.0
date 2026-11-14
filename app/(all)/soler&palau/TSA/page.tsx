@@ -38,35 +38,8 @@ import { useIsDesktop } from "@/hooks/useIsDesktop";
 
 export default function TSAPage() {
 
-    const settings = {
-        className:
-            "center variable-width  aspect[16/9] object-cover w-[100%] h-[90%] flex flex-nowrap overflow-hidden ",
-        infinite: true,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: true,
-        speed: 10000,
-        autoplaySpeed: 0,
-    }
 
-        const handleEmailClick = () => {
-        const email = 'info@electroterma.com.ar';
-        const subject = 'Consulta sobre equipamiento';
-        const body = 'Hola! Me gustaría hacer una consulta sobre equipamiento de Electroterma';
-    
-        const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(
-            subject
-        )}&body=${encodeURIComponent(body)}`;
-    
-        window.open(mailtoLink, '_blank');
-    };
 
-    const handlePdfDownload = () => {
-        const link = document.createElement('a');
-        link.href = '../../TSA.pdf'; // Ruta del archivo PDF en la carpeta public
-        link.download = 'tsa.pdf'; // Nombre con el que se descargará el archivo
-        link.click();
-      };
 
     const BigScreen = useIsDesktop();
 
@@ -92,7 +65,7 @@ export default function TSAPage() {
                     <a href="/soler&palau">
                         <Image
                             alt="Otam Logo"
-                            src="../img/otamlogo.png"
+                            src="/img/otamlogo.png"
                             width="100%"
                         />
                     </a>
@@ -184,7 +157,7 @@ export default function TSAPage() {
                     <Image
                             alt="Ventilador"
                             className="z-0 w-[520px] md:w-[100%]  mb-10 top-[75px] lg:top-[65px] 2xl:top-[70px] left-4 md:left-12"
-                            src="../img/solerpalau/tsa/SolerPalauTsa1.webp"
+                            src="/img/solerpalau/tsa/SolerPalauTsa1.webp"
                             width={"100%"}
                         />
                         
@@ -263,7 +236,7 @@ export default function TSAPage() {
                         <Image
                             alt="Ventilador"
                             className="inline-block w-[320px] top-0  left-2 "
-                            src="../img/solerpalau/tsa/SolerPalauTsa1.webp"
+                            src="/img/solerpalau/tsa/SolerPalauTsa1.webp"
                             width={"100%"}
                         />
                         <div className="mt-2 ml-auto w-full flex justify-end overflow-hidden">
@@ -311,7 +284,7 @@ export default function TSAPage() {
                             
                             overflow-hidden">
                             
-                            <ManualButton size={BigScreen ? 40 : 25} screen={BigScreen ? "xl" : "lg"} link={"../../manuales/tsa.pdf"} dwName={"TSA Manual.pdf"}/>
+                            <ManualButton size={BigScreen ? 40 : 25} screen={BigScreen ? "xl" : "lg"} link={"/manuales/tsa.pdf"} dwName={"TSA Manual.pdf"}/>
                             
                     </section>
                 </div>
@@ -375,7 +348,7 @@ export default function TSAPage() {
                                         <Image
                                             alt="Otam Logo"
                                             className=""
-                                            src="../img/otamlogo.png"
+                                            src="/img/otamlogo.png"
                                             width={300}
                                         />
                                     </div>
@@ -387,7 +360,7 @@ export default function TSAPage() {
                                         <Image
                                             alt="Electroterma Logo"
                                             className=""
-                                            src="../img/electrotermalogoletras.png"
+                                            src="/img/electrotermalogoletras.png"
                                             width={340}
                                         />
                                         </a>
@@ -457,7 +430,7 @@ export default function TSAPage() {
                                     <Image
                                             alt="Otam Logo"
                                             className=""
-                                            src="../img/otamlogo.png"
+                                            src="/img/otamlogo.png"
                                             width={150}
                                         />
                                     </div>
@@ -468,7 +441,7 @@ export default function TSAPage() {
                                         <Image
                                             alt="Electroterma Logo"
                                             className=""
-                                            src="../img/electrotermalogoletras.png"
+                                            src="/img/electrotermalogoletras.png"
                                             width={140}
                                         />
                                         </a>

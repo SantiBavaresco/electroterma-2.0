@@ -12,7 +12,7 @@ export default function TestPage() {
 						className="mt-0"
 						alt="Linea Izquierda"
 						radius="none"
-						src="../../img/home/homeBanner/r1.png"
+						src="/img/home/homeBanner/r1.png"
 						width="100%"
 					/>
 				</div>
@@ -21,7 +21,7 @@ export default function TestPage() {
 						className="mt-0"
 						alt="Linea Derecha"
 						radius="none"
-						src="../../img/home/homeBanner/r2.png"
+						src="/img/home/homeBanner/r2.png"
 						width="100%"
 					/>
 				</div>
@@ -39,7 +39,7 @@ export default function TestPage() {
 								className=" mt-0"
 								alt="Background Tempomatic"
 								radius="none"
-								src="../../img/home/homeBanner/bgTempomatic.png"
+								src="/img/home/homeBanner/bgTempomatic.png"
 								width="100%"
 							/>
 						
@@ -48,7 +48,7 @@ export default function TestPage() {
 								className="absolute w-[75%] -top-[0vw] left-[13%] -translate-y-[470%] "
 								alt="Tempomatic Logo"
 								radius="none"
-								src="../../img/home/homeBanner/tempomatic.png"
+								src="/img/home/homeBanner/tempomatic.png"
 								width="100%"
 							/>
 						</div>
@@ -64,7 +64,7 @@ export default function TestPage() {
 							className="mt-0"
 							alt="Background S&P"
 							radius="none"
-							src="../../img/home/homeBanner/bgSyp.png"
+							src="/img/home/homeBanner/bgSyp.png"
 							width="100%"
 						/>
 						</div>
@@ -72,7 +72,7 @@ export default function TestPage() {
 							className="absolute w-[70%] -top-[0vw] left-[16%] -translate-y-[250%] opacity-100"
 							alt="S&P Logo"
 							radius="none"
-							src="../../img/home/homeBanner/syp.png"
+							src="/img/home/homeBanner/syp.png"
 							width="100%"
 						/>
 
@@ -87,14 +87,14 @@ export default function TestPage() {
 							className="mt-0"
 							alt="Background DTI"
 							radius="none"
-							src="../../img/home/homeBanner/bgDti.png"
+							src="/img/home/homeBanner/bgDti.png"
 							width="100%"
 						/></div>
 						<Image  
 							className="absolute w-[70%] -top-[0vw] left-[16%] -translate-y-[185%] opacity-100"
 							alt="S&P Logo"
 							radius="none"
-							src="../../img/home/homeBanner/dti.png"
+							src="/img/home/homeBanner/dti.png"
 							width="100%"
 						/>
 					</div>
@@ -108,14 +108,14 @@ export default function TestPage() {
 							className="mt-0"
 							alt="Background Zila"
 							radius="none"
-							src="../../img/home/homeBanner/bgZila.png"
+							src="/img/home/homeBanner/bgZila.png"
 							width="100%"
 						/></div>
 						<Image  
 							className="absolute w-[37%] -top-[0vw] left-[30%] -translate-y-[142%] opacity-100"
 							alt="S&P Logo"
 							radius="none"
-							src="../../img/home/homeBanner/zila.png"
+							src="/img/home/homeBanner/zila.png"
 							width="100%"
 						/>
 					</div>
@@ -137,7 +137,7 @@ export default function TestPage() {
 								className=" mt-0 "
 								alt="Background Tempomatic"
 								radius="none"
-								src="../../img/home/homeBanner/bgTempomatic.png"
+								src="/img/home/homeBanner/bgTempomatic.png"
 								width="100%"
 							/>
 						
@@ -147,7 +147,7 @@ export default function TestPage() {
 								className="absolute w-[75%] -top-[0vw] left-[13%] -translate-y-[470%] transition ease-in-out  opacity-100 group-hover:opacity-0"
 								alt="Tempomatic Logo"
 								radius="none"
-								src="../../img/home/homeBanner/tempomatic.png"
+								src="/img/home/homeBanner/tempomatic.png"
 								width="100%"
 							/>
 						</div>

@@ -1,5 +1,5 @@
 "use client";
-import {extendVariants, Button} from "@nextui-org/react";
+import { Button } from "@nextui-org/react";
 import { Image } from "@nextui-org/image";
 
 import { DiferencialGranConfort } from "@/components/diferenciales/diferencialGranConfort";
@@ -20,42 +20,19 @@ import { useIsDesktop } from "@/hooks/useIsDesktop";
 export default function HabitatPage() {
     const images = [
         {
-          original: "../img/solerpalau/habitat/imgDemo/1.jpg",
+          original: "/img/solerpalau/habitat/imgDemo/1.jpg",
         },
         {
-          original: "../img/solerpalau/habitat/imgDemo/2.jpg",
+          original: "/img/solerpalau/habitat/imgDemo/2.jpg",
         },
         {
-          original: "../img/solerpalau/habitat/imgDemo/3.jpg",
+          original: "/img/solerpalau/habitat/imgDemo/3.jpg",
         },
       ];
 
-    const MyButton = extendVariants(Button, {  
-        variants: {    
-          size: {      
-            xs: "px-2 min-w-12 h-6 text-tiny gap-1 rounded-small",      
-            md: "px-4 min-w-20 h-10 text-small gap-2 rounded-small",      
-            xl: "px-10 min-w-32 h-16 text-xl gap-6 rounded-full",
-          },  
-        },  
-        defaultVariants: { 
-          size: "xl",
-        },
-      });
 
     const BigScreen = useIsDesktop();
 
-    const handleEmailClick = () => {
-        const email = 'info@electroterma.com.ar';
-        const subject = 'Consulta sobre equipamiento';
-        const body = 'Hola! Me gustaría hacer una consulta sobre equipamiento de Electroterma';
-    
-        const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(
-            subject
-        )}&body=${encodeURIComponent(body)}`;
-    
-        window.open(mailtoLink, '_blank');
-    };
 
     return (
         <main className="flex flex-col items-center justify-center gap-4 pb-4 md:pb-10 overflow-hidden ">
@@ -63,7 +40,7 @@ export default function HabitatPage() {
 
             <section className="max-h-[100vh] w-[119%] -translate-x-10 xl:-translate-x-16 2xl:w-[111%] xl:px-[0%] flex items-center justify-center overflow-hidden bg-lowgrasy">
             
-                <VideoAutoPlayer url="../img/solerpalau/habitat/video/habitatPresentacion.mp4" width="100%"/>
+                <VideoAutoPlayer url="/img/solerpalau/habitat/video/habitatPresentacion.mp4" width="100%"/>
                 
             </section>
 
@@ -78,7 +55,7 @@ export default function HabitatPage() {
                         <Image
                             alt="Electroterma Logo"
                             className=""
-                            src="../img/electrotermalogoletras.png"
+                            src="/img/electrotermalogoletras.png"
                             width="100%"
                         />
                         </a>
@@ -88,7 +65,7 @@ export default function HabitatPage() {
                         <a href="/soler&palau">
                             <Image
                                 alt="Otam Logo"
-                                src="../img/otamlogo.png"
+                                src="/img/otamlogo.png"
                                 width="100%"
                             />
                         </a>
@@ -136,7 +113,7 @@ export default function HabitatPage() {
                                     alt="Habitat 1"
                                     className=""
                                     radius="none"
-                                    src="../img/solerpalau/habitat/SolerPalauHabitat1.webp"
+                                    src="/img/solerpalau/habitat/SolerPalauHabitat1.webp"
                                     width="100%"
                                 />
                             </div>
@@ -146,7 +123,7 @@ export default function HabitatPage() {
                                     alt="Habitat inline 1"
                                     className="w"
                                     radius="none"
-                                    src="../img/solerpalau/habitat/SolerPalauHabitatInline1.webp"
+                                    src="/img/solerpalau/habitat/SolerPalauHabitatInline1.webp"
                                     width="100%"
                                 />
                                 <span className="h-[4px] my-4 w-full  bg-livered-title">{" "}</span>
@@ -166,7 +143,7 @@ export default function HabitatPage() {
                                     alt="Habitat 2"
                                     className=""
                                     radius="none"
-                                    src="../img/solerpalau/habitat/SolerPalauHabitat2.webp"
+                                    src="/img/solerpalau/habitat/SolerPalauHabitat2.webp"
                                     width="100%"
                                 />
                             </div>
@@ -176,7 +153,7 @@ export default function HabitatPage() {
                                     alt="Habitat extractor 1"
                                     className="w"
                                     radius="none"
-                                    src="../img/solerpalau/habitat/SolerPalauHabitatExtractor1.webp"
+                                    src="/img/solerpalau/habitat/SolerPalauHabitatExtractor1.webp"
                                     width="100%"
                                 />
                                 <span className="h-[4px] my-4 w-full  bg-livered-title">{" "}</span>
@@ -204,7 +181,7 @@ export default function HabitatPage() {
                                     alt="Habitat 1"
                                     className=""
                                     radius="none"
-                                    src="../img/solerpalau/habitat/SolerPalauHabitat1.webp"
+                                    src="/img/solerpalau/habitat/SolerPalauHabitat1.webp"
                                     width="100%"
                                 />
                             </div>
@@ -213,7 +190,7 @@ export default function HabitatPage() {
                                 <Image
                                     alt="Habitat inline 1"
                                     className="w"
-                                    src="../img/solerpalau/habitat/SolerPalauHabitatInline1.webp"
+                                    src="/img/solerpalau/habitat/SolerPalauHabitatInline1.webp"
                                     width="100%"
                                 />
                                 <span className="h-[4px] my-4 w-full  bg-livered-title">{" "}</span>
@@ -233,7 +210,7 @@ export default function HabitatPage() {
                                     alt="Habitat 2"
                                     className=""
                                     radius="none"
-                                    src="../img/solerpalau/habitat/SolerPalauHabitat2.webp"
+                                    src="/img/solerpalau/habitat/SolerPalauHabitat2.webp"
                                     width="100%"
                                 />
                             </div>
@@ -242,7 +219,7 @@ export default function HabitatPage() {
                                 <Image
                                     alt="Habitat extractor 1"
                                     className="w"
-                                    src="../img/solerpalau/habitat/SolerPalauHabitatExtractor1.webp"
+                                    src="/img/solerpalau/habitat/SolerPalauHabitatExtractor1.webp"
                                     width="100%"
                                 />
                                 <span className="h-[4px] my-4 w-full  bg-livered-title">{" "}</span>
@@ -345,7 +322,7 @@ export default function HabitatPage() {
                                     <Image
                                         alt="Payment"
                                         className=""
-                                        src="../img/solerpalau/habitat/SolerPalauHabitatPay.webp"
+                                        src="/img/solerpalau/habitat/SolerPalauHabitatPay.webp"
                                         width="100%"
                                     />
                         </section>
@@ -370,7 +347,7 @@ export default function HabitatPage() {
                         <Image
                             alt="Electroterma Logo"
                             className=""
-                            src="../img/electrotermalogoletras.png"
+                            src="/img/electrotermalogoletras.png"
                             width="100%"
                         />
                         </a>
@@ -385,7 +362,7 @@ export default function HabitatPage() {
                         <a href="/soler&palau">
                             <Image
                                 alt="Otam Logo"
-                                src="../img/otamlogo.png"
+                                src="/img/otamlogo.png"
                                 width="100%"
                             />
                         </a>

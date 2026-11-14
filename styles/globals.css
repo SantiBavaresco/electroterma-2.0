@@ -125,3 +125,15 @@
 
     
 }
+
+/* Ver PRE_DESKTOP_SCRIPT en components/layout/RootShell.tsx */
+html.pre-desktop main {
+    visibility: hidden;
+    animation: pre-desktop-reveal 0s linear 3s forwards;
+}
+
+@keyframes pre-desktop-reveal {
+    to {
+        visibility: visible;
+    }
+}

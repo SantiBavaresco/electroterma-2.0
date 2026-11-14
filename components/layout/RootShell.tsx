@@ -10,6 +10,14 @@ import { Providers } from "@/components/layout/providers";
 import Footer from "@/components/footer";
 
 const GA_ID = "G-YVFJLBCL2C";
+
+/**
+ * Las páginas eligen entre versión mobile y desktop con JavaScript, y el HTML del
+ * servidor sale con la mobile. En desktop, ocultamos el contenido hasta hidratar
+ * para que no se vea la versión mobile un instante y "salte" el layout.
+ * (Si el JS fallara, globals.css lo vuelve a mostrar a los 3 segundos.)
+ */
+const PRE_DESKTOP_SCRIPT = `if(window.matchMedia("(min-width: 768px)").matches)document.documentElement.classList.add("pre-desktop")`;
 const CLARITY_ID = "ojjh5gdoug";
 
 export const rootMetadata: Metadata = {
@@ -39,6 +47,9 @@ interface RootShellProps {
 export default function RootShell({ children, vercelInsights = false }: RootShellProps) {
     return (
         <html lang="es" suppressHydrationWarning style={{ scrollbarColor: "#EF771C #ffedd5", backgroundColor: "white" }}>
+            <head>
+                <script dangerouslySetInnerHTML={{ __html: PRE_DESKTOP_SCRIPT }} />
+            </head>
             <body className="min-h-screen bg-background font-lexend light-mode">
                 <Providers themeProps={{ attribute: "class", defaultTheme: "light" }}>
                     {vercelInsights && (

@@ -7,29 +7,11 @@ import { TiendaButton } from "@/components/custonButtons/tienda";
 import { EscribinosButton } from "@/components/custonButtons/escribinos";
 import { useIsDesktop } from "@/hooks/useIsDesktop";
 
-interface ItemsNavbar {
-    key: string;
-    label: string[];
-    labelShort: string;
-    img: string;
-    href: string;
-}
 
 export default function SolerPalauPage() {
 
     const BigScreen = useIsDesktop();
 
-    const handleEmailClick = () => {
-        const email = 'info@electroterma.com.ar';
-        const subject = 'Consulta sobre equipamiento';
-        const body = 'Hola! Me gustaría hacer una consulta sobre equipamiento de Electroterma';
-    
-        const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(
-            subject
-        )}&body=${encodeURIComponent(body)}`;
-    
-        window.open(mailtoLink, '_blank');
-    };
 
     return (
         <main className="flex flex-col h-full items-center justify-center gap-4 pb-4 md:pb-10 bg-[url('/svg/ondasSolerPalau.svg')] bg-fill
@@ -41,7 +23,7 @@ export default function SolerPalauPage() {
                     alt="Home banner 1"
                     className="rounded-[44-px]"
                     radius="none"
-                    src="../img/solerpalau/imgbanner/SolerPalauHome1.webp"
+                    src="/img/solerpalau/imgbanner/SolerPalauHome1.webp"
                     width="100%"
                 />
             </section>
@@ -56,7 +38,7 @@ export default function SolerPalauPage() {
                             className=" mt-0"
                             alt="Background Tempomatic"
                             radius="none"
-                            src="../../img/solerpalau/imgbanner/comillas.png"
+                            src="/img/solerpalau/imgbanner/comillas.png"
                             width="100%"
                         />
 
@@ -116,22 +98,22 @@ export default function SolerPalauPage() {
             {BigScreen ? <section className="w-full flex items-center justify-center mx-auto p-4 bg-transparent space-x-2">
                     <Image
                         alt="Otam Logo"
-                        src="../img/home/imgHome/1.webp"
+                        src="/img/home/imgHome/1.webp"
                         width={450}
                     />
                     <Image
                         alt="Otam Logo"
-                        src="../img/home/imgHome/2.webp"
+                        src="/img/home/imgHome/2.webp"
                         width={450}
                     />
                     <Image
                         alt="Otam Logo"
-                        src="../img/home/imgHome/3.webp"
+                        src="/img/home/imgHome/3.webp"
                         width={450}
                     />
                     <Image
                         alt="Otam Logo"
-                        src="../img/home/imgHome/4.webp"
+                        src="/img/home/imgHome/4.webp"
                         width={450}
                     />
                 </section>
@@ -139,12 +121,12 @@ export default function SolerPalauPage() {
             <section className="w-full flex items-center justify-center mx-auto p-4 bg-transparent space-x-2">
                     <Image
                         alt="Otam Logo"
-                        src="../img/home/imgHome/3.webp"
+                        src="/img/home/imgHome/3.webp"
                         width={450}
                     />
                     <Image
                         alt="Otam Logo"
-                        src="../img/home/imgHome/4.webp"
+                        src="/img/home/imgHome/4.webp"
                         width={450}
                     />
                 </section>

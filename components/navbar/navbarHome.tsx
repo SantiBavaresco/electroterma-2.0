@@ -15,13 +15,10 @@ import { BsArrowBarRight } from "react-icons/bs";
 
 import { Image } from "@nextui-org/image";
 
-import { Kbd } from "@nextui-org/kbd";
-import { Input } from "@nextui-org/input";
 
 import { siteConfig } from "@/config/site";
 import NextLink from "next/link";
 
-import { SearchIcon } from "@/components/icons";
 
 import CardDisplay from "./cardDisplay";
 import { ItemsNavbar } from "@/types/itemsNavbar";
@@ -32,24 +29,14 @@ interface Props {
 }
 
 export const NavbarHome: React.FC<Props> = ({ css, ...props }) => {
-    const [firstDropdownOpen, setFirstDropdownOpen] = useState(false);
-    const [secondDropdownOpen, setSecondDropdownOpen] = useState(false);
 
     const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false);
 
     const {isOpen, onOpen, onOpenChange} = useDisclosure();
 
-    const setFirstFalse = () => {
-        setFirstDropdownOpen(false);
-    };
 
-    const handleAnchor = (link:string) => {
-        setFirstDropdownOpen(false)
-        window.open(link, '_top', 'noopener noreferrer');
-      };
 
 //  items acordion para mobile, hay que cambiarlo
-    const [BigScreen, setBigScreen] = useState(false);
 
     const itemsTempomatic: ItemsNavbar[] = [
 
@@ -58,7 +45,7 @@ export const NavbarHome: React.FC<Props> = ({ css, ...props }) => {
             category: "tempomatic",
             label: ["Unidad de tratamiento de aire"],
             labelShort: "UTA",
-            img: "../../img/navbar/Tempomatic2.png",
+            img: "/img/navbar/Tempomatic2.png",
             href: "/tempomatic/uta",
             color : "bg-[#EF7916]",
 
@@ -68,7 +55,7 @@ export const NavbarHome: React.FC<Props> = ({ css, ...props }) => {
             category: "tempomatic",
             label: ["Generador de aire caliente"],
             labelShort: "GDAC",
-            img: "../../img/navbar/Tempomatic5.png",
+            img: "/img/navbar/Tempomatic5.png",
             href: "/tempomatic/generador_de_aire_caliente",
             color : "bg-[#EF7916]",
 
@@ -78,7 +65,7 @@ export const NavbarHome: React.FC<Props> = ({ css, ...props }) => {
             category: "tempomatic",
             label: ["Calefactor eléctrico"],
             labelShort: "CE",
-            img: "../../img/navbar/Tempomatic3.png",
+            img: "/img/navbar/Tempomatic3.png",
             href: "/tempomatic/calefactor_electrico",
             color : "bg-[#EF7916]",
 
@@ -88,7 +75,7 @@ export const NavbarHome: React.FC<Props> = ({ css, ...props }) => {
             category: "tempomatic",
             label: ["Unidad manejadora de aire"],
             labelShort: "UMDA",
-            img: "../../img/navbar/Tempomatic4.png",
+            img: "/img/navbar/Tempomatic4.png",
             href: "/tempomatic/unidad_manejadora_de_aire",
             color : "bg-[#EF7916]",
 
@@ -98,7 +85,7 @@ export const NavbarHome: React.FC<Props> = ({ css, ...props }) => {
             category: "tempomatic",
             label: ["Caja Ventiladora",],
             labelShort: "CV",
-            img: "../../img/navbar/Tempomatic1.png",
+            img: "/img/navbar/Tempomatic1.png",
             href: "/tempomatic/caja_ventiladora",
             color : "bg-[#EF7916]",
         },
@@ -107,7 +94,7 @@ export const NavbarHome: React.FC<Props> = ({ css, ...props }) => {
             category: "tempomatic",
             label: ["Caldera para calefacción"],
             labelShort: "CC",
-            img: "../../img/navbar/Tempomatic6.png",
+            img: "/img/navbar/Tempomatic6.png",
             href: "/tempomatic/caldera_para_calefaccion",
             color : "bg-[#EF7916]",
 
@@ -119,7 +106,7 @@ export const NavbarHome: React.FC<Props> = ({ css, ...props }) => {
             category: "soler&palau",
             label: ["Ventilador Centrífugo", "Autolimitante - RLS"],
             labelShort: "RLS",
-            img: "../../img/navbar/NavBarRLS1SolerPalau.png",
+            img: "/img/navbar/NavBarRLS1SolerPalau.png",
             href: "/soler&palau/RLS",
             color: "bg-livered-title",
         },
@@ -128,7 +115,7 @@ export const NavbarHome: React.FC<Props> = ({ css, ...props }) => {
             category: "soler&palau",
             label: ["Ventilador Centrífugo", "Multipala - TSA"],
             labelShort: "TSA",
-            img: "../img/navbar/NavBarTSA1SolerPalau.png",
+            img: "/img/navbar/NavBarTSA1SolerPalau.png",
             href: "/soler&palau/TSA",
             color: "bg-livered-title",
 
@@ -138,7 +125,7 @@ export const NavbarHome: React.FC<Props> = ({ css, ...props }) => {
             category: "soler&palau",
             label: ["Ventilador ","Centrífugo - TDA"],
             labelShort: "TDA",
-            img: "../img/navbar/NavBarTDA1SolerPalau.png",
+            img: "/img/navbar/NavBarTDA1SolerPalau.png",
             href: "/soler&palau/TDA",
             color: "bg-livered-title",
 
@@ -148,7 +135,7 @@ export const NavbarHome: React.FC<Props> = ({ css, ...props }) => {
             category: "soler&palau",
             label: ["Hábitat"],
             labelShort: "Hábitat",
-            img: "../img/navbar/NavBarHabitat1SolerPalau.png",
+            img: "/img/navbar/NavBarHabitat1SolerPalau.png",
             href: "/soler&palau/habitat",
             color: "bg-livered-title",
 
@@ -363,28 +350,7 @@ export const NavbarHome: React.FC<Props> = ({ css, ...props }) => {
         },
       ];  
 
-    const searchInput = (
-        <Input
-            aria-label="Buscar"
-            classNames={{
-                inputWrapper: "bg-default-100",
-                input: "text-sm",
-            }}
-            endContent={
-                <Kbd className="hidden lg:inline-block" keys={["command"]}>
-                    K
-                </Kbd>
-            }
-            labelPlacement="outside"
-            placeholder="Buscar..."
-            startContent={
-                <SearchIcon className="text-base text-default-400 pointer-events-none flex-shrink-0" />
-            }
-            type="search"
-        />
-    );
 
-    const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
     return (
         <NextUINavbar
@@ -392,7 +358,7 @@ export const NavbarHome: React.FC<Props> = ({ css, ...props }) => {
             className={`h-[42px] md:h-[64px] px- pt-[10px] lg:pt-0 lg:px-10  flex justify-center items-center font-nunito ${css}`}
             position="sticky"
             disableScrollHandler
-            height={BigScreen ? "42px" : "42px"}
+            height="42px"
 
             isMenuOpen={mobileDropdownOpen}
             onMenuOpenChange={setMobileDropdownOpen}
@@ -404,7 +370,7 @@ export const NavbarHome: React.FC<Props> = ({ css, ...props }) => {
                     href="/"
                 >
                     <Image
-                        src="../../img/electrotermalogoletrasNoPadding.png"
+                        src="/img/electrotermalogoletrasNoPadding.png"
                         width={240}
                         alt="hola"
                     />
@@ -430,8 +396,8 @@ export const NavbarHome: React.FC<Props> = ({ css, ...props }) => {
             <NavbarContent  className=" md:hidden font-nunito basis-1 w-screen h-full pl-4" justify="end">
             <div className="w-[150px] h-[80%] min-w-32 flex items-center justify-center bg-[#EF771C]" onClick={onOpen}>
                             <svg
-                                width={BigScreen ? "25" : "20"}
-                                height={BigScreen ? "25" : "20"}
+                                width="20"
+                                height="20"
                                 viewBox="0 0 40 37"
                                 fill="none"
                                 xmlns="http://www.w3.org/2000/svg"

@@ -25,19 +25,6 @@ interface Props {
 
 const SimpleSlider: React.FC<Props> = ({ url, width, imgInfo }) => {
 
-    const settings2 = {
-        className: "center variable-width aspect[16/9] object-cover w-[100%] h-[40%] md:h-[100%]",
-        dots: true,
-        infinite: true,
-        autoplay: true,
-        speed: 10000,
-        autoplaySpeed: 0,
-
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        adaptiveHeight: true,
-        variableWidth: true,
-    };
     const settings = {
         className:
             "center variable-width  ",
@@ -53,16 +40,6 @@ const SimpleSlider: React.FC<Props> = ({ url, width, imgInfo }) => {
         cssEase: "linear",
     };
 
-    const settingss = {
-        className:
-            "center variable-width  aspect[16/9] object-cover w-[100%] h-[90%] flex flex-nowrap overflow-hidden ",
-        infinite: true,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: true,
-        speed: 10000,
-        autoplaySpeed: 0,
-    }
 
     return (
         <div className="overflow-hidden flex flex-grow min-h-full pointer-events-none">

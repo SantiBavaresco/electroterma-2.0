@@ -14,29 +14,11 @@ import { DiferencialOptimoRendimiento } from "@/components/diferenciales/diferen
 import { ManualButtonNaranja } from "@/components/custonButtons/manual";
 import { useIsDesktop } from "@/hooks/useIsDesktop";
 
-interface ItemsNavbar {
-    key: string;
-    label: string[];
-    labelShort: string;
-    img: string;
-    href: string;
-}
 
 export default function UnidadManejadoraDeAirePage() {
 
     const BigScreen = useIsDesktop();
 
-    const handleEmailClick = () => {
-        const email = 'info@electroterma.com.ar';
-        const subject = 'Consulta sobre equipamiento';
-        const body = 'Hola! Me gustaria hacer una consulta sobre equipamiento de Electroterma';
-    
-        const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(
-            subject
-        )}&body=${encodeURIComponent(body)}`;
-    
-        window.open(mailtoLink, '_blank');
-    };
 
     return (
         <main className="flex flex-col h-full items-center justify-center gap-4 pb-4 md:pb-10 
@@ -48,7 +30,7 @@ export default function UnidadManejadoraDeAirePage() {
                     alt="Home banner 1"
                     className="rounded-[44-px]"
                     radius="none"
-                    src="../img/tempomatic/unidad_manejadora_de_aire/unidad_manejadora_de_aire-Banner.webp"
+                    src="/img/tempomatic/unidad_manejadora_de_aire/unidad_manejadora_de_aire-Banner.webp"
                     width="100%"
                 />
             </section>
@@ -58,7 +40,7 @@ export default function UnidadManejadoraDeAirePage() {
                     alt="Home banner 1"
                     className=""
                     radius="none"
-                    src="../img/tempomatic/unidad_manejadora_de_aire/tempomatic-Logo.jpg"
+                    src="/img/tempomatic/unidad_manejadora_de_aire/tempomatic-Logo.jpg"
                     width="100%"
                 />
             </section>  
@@ -90,7 +72,7 @@ export default function UnidadManejadoraDeAirePage() {
                             alt="Home banner 1"
                             className=""
                             radius="none"
-                            src="../img/tempomatic/unidad_manejadora_de_aire/unidad_manejadora_de_aire_01.webp"
+                            src="/img/tempomatic/unidad_manejadora_de_aire/unidad_manejadora_de_aire_01.webp"
                             width="100%"
                         />
                     </div>
@@ -121,7 +103,7 @@ export default function UnidadManejadoraDeAirePage() {
                         alt="Home banner 1"
                         className=""
                         radius="none"
-                        src="../img/tempomatic/unidad_manejadora_de_aire/unidad_manejadora_de_aire_02.webp"
+                        src="/img/tempomatic/unidad_manejadora_de_aire/unidad_manejadora_de_aire_02.webp"
                         width="100%"
                     />
                 </div>
@@ -162,7 +144,7 @@ export default function UnidadManejadoraDeAirePage() {
                             alt="Home banner 1"
                             className=""
                             radius="none"
-                            src="../img/tempomatic/unidad_manejadora_de_aire/unidad_manejadora_de_aire_03.webp"
+                            src="/img/tempomatic/unidad_manejadora_de_aire/unidad_manejadora_de_aire_03.webp"
                         />
                     </div>
                 </div>
@@ -177,7 +159,7 @@ export default function UnidadManejadoraDeAirePage() {
                             alt="Home banner 1"
                             className=""
                             radius="none"
-                            src="../img/tempomatic/unidad_manejadora_de_aire/unidad_manejadora_de_aire_04.webp"
+                            src="/img/tempomatic/unidad_manejadora_de_aire/unidad_manejadora_de_aire_04.webp"
                         />
                     </div>
                
@@ -405,7 +387,7 @@ export default function UnidadManejadoraDeAirePage() {
                             alt="Home banner 1"
                             className=""
                             radius="none"
-                            src="../img/tempomatic/unidad_manejadora_de_aire/unidad_manejadora_de_aire_05.webp"
+                            src="/img/tempomatic/unidad_manejadora_de_aire/unidad_manejadora_de_aire_05.webp"
                         />
                     </div>
             
@@ -413,7 +395,7 @@ export default function UnidadManejadoraDeAirePage() {
 
             {/* -------------BOTON MANUAL ------------- */}
             <section className="w-full px-[6%] mt-10 flex justify-end">
-                    <ManualButtonNaranja size={BigScreen ? 40 : 25} screen={BigScreen ? "xl" : "lg"} link={"../../manuales/05. Folleto unidad manejadora de aire.pdf"} dwName={"05. Folleto unidad manejadora de aire.pdf"}/>
+                    <ManualButtonNaranja size={BigScreen ? 40 : 25} screen={BigScreen ? "xl" : "lg"} link={"/manuales/05. Folleto unidad manejadora de aire.pdf"} dwName={"05. Folleto unidad manejadora de aire.pdf"}/>
             </section>
             </>
             :
@@ -445,7 +427,7 @@ export default function UnidadManejadoraDeAirePage() {
                                 alt="Home banner 1"
                                 className=""
                                 radius="none"
-                                src="../img/tempomatic/unidad_manejadora_de_aire/unidad_manejadora_de_aire_02.webp"
+                                src="/img/tempomatic/unidad_manejadora_de_aire/unidad_manejadora_de_aire_02.webp"
                                 width="100%"
                             />
                         </div>
@@ -501,7 +483,7 @@ export default function UnidadManejadoraDeAirePage() {
                                 alt="Home banner 1"
                                 className=""
                                 radius="none"
-                                src="../img/tempomatic/unidad_manejadora_de_aire/unidad_manejadora_de_aire_03.webp"
+                                src="/img/tempomatic/unidad_manejadora_de_aire/unidad_manejadora_de_aire_03.webp"
                             />
                         </div>
                     </div>
@@ -509,14 +491,14 @@ export default function UnidadManejadoraDeAirePage() {
 
                 {/* -------------BOTON MANUAL ------------- */}
                 <section className="w-full px-[6%] lg:mt-4 flex justify-center">
-                        <ManualButtonNaranja size={BigScreen ? 40 : 25} screen={BigScreen ? "xl" : "lg"} link={"../../manuales/05. Folleto unidad manejadora de aire.pdf"} dwName={"05. Folleto unidad manejadora de aire.pdf"}/>
+                        <ManualButtonNaranja size={BigScreen ? 40 : 25} screen={BigScreen ? "xl" : "lg"} link={"/manuales/05. Folleto unidad manejadora de aire.pdf"} dwName={"05. Folleto unidad manejadora de aire.pdf"}/>
                 </section>
                 {/* ------------- Imagenes presentacion ------------- */}
                 <section className="w-full flex items-center justify-center mx-auto p-0 bg-transparent space-x-0">
                         <Image
                             alt="Otam Logo"
                             radius="none"
-                            src="../img/electrotermalogoletrasProducido.png"
+                            src="/img/electrotermalogoletrasProducido.png"
                             width={300}
                         />
                         
@@ -557,7 +539,7 @@ export default function UnidadManejadoraDeAirePage() {
                     <Image
                         alt="Otam Logo"
                         radius="none"
-                        src="../img/electrotermalogoletrasProducido.png"
+                        src="/img/electrotermalogoletrasProducido.png"
                         width={500}
                     />
                     

@@ -14,33 +14,12 @@ import { DiferencialAltaConfiabilidad } from "@/components/diferenciales/diferen
 import { DiferencialElementosOpcionales } from "@/components/diferenciales/diferencialElementosOpcionales";
 import { useIsDesktop } from "@/hooks/useIsDesktop";
 
-interface ItemsNavbar {
-    key: string;
-    label: string[];
-    labelShort: string;
-    img: string;
-    href: string;
-}
 
 export default function CalefactorElectricoPage() {
 
     const BigScreen = useIsDesktop();
 
-    const handleAnchor = (link:string) => {
-        window.open(link, '_top', 'noopener noreferrer');
-      };
 
-    const handleEmailClick = () => {
-        const email = 'info@electroterma.com.ar';
-        const subject = 'Consulta sobre equipamiento';
-        const body = 'Hola! Me gustaria hacer una consulta sobre equipamiento de Electroterma';
-    
-        const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(
-            subject
-        )}&body=${encodeURIComponent(body)}`;
-    
-        window.open(mailtoLink, '_blank');
-    };
 
 
     return (
@@ -54,7 +33,7 @@ export default function CalefactorElectricoPage() {
                     alt="Home banner 1"
                     className="rounded-[44-px]"
                     radius="none"
-                    src="../img/tempomatic/calefactor_electrico/calefactor_electrico-Banner.webp"
+                    src="/img/tempomatic/calefactor_electrico/calefactor_electrico-Banner.webp"
                     width="100%"
                 />
 
@@ -66,7 +45,7 @@ export default function CalefactorElectricoPage() {
                     alt="Home banner 1"
                     className=""
                     radius="none"
-                    src="../img/tempomatic/calefactor_electrico/tempomatic-Logo.jpg"
+                    src="/img/tempomatic/calefactor_electrico/tempomatic-Logo.jpg"
                     width="100%"
                 />
 
@@ -100,7 +79,7 @@ export default function CalefactorElectricoPage() {
                             alt="Home banner 1"
                             className=""
                             radius="none"
-                            src="../img/tempomatic/calefactor_electrico/calefactor_electrico_01.webp"
+                            src="/img/tempomatic/calefactor_electrico/calefactor_electrico_01.webp"
                             width="100%"
                         />
                     </div>
@@ -128,7 +107,7 @@ export default function CalefactorElectricoPage() {
                         alt="Home banner 1"
                         className=""
                         radius="none"
-                        src="../img/tempomatic/calefactor_electrico/calefactor_electrico_02.webp"
+                        src="/img/tempomatic/calefactor_electrico/calefactor_electrico_02.webp"
                         width="100%"
                     />
                 </div>
@@ -177,7 +156,7 @@ export default function CalefactorElectricoPage() {
                             alt="Home banner 1"
                             className=""
                             radius="none"
-                            src="../img/tempomatic/calefactor_electrico/calefactor_electrico_03.webp"
+                            src="/img/tempomatic/calefactor_electrico/calefactor_electrico_03.webp"
                         />
                     </div>
                 </div>
@@ -192,7 +171,7 @@ export default function CalefactorElectricoPage() {
                             alt="Home banner 1"
                             className=""
                             radius="none"
-                            src="../img/tempomatic/calefactor_electrico/calefactor_electrico_04.webp"
+                            src="/img/tempomatic/calefactor_electrico/calefactor_electrico_04.webp"
                         />
                     </div>
                
@@ -385,7 +364,7 @@ export default function CalefactorElectricoPage() {
                             alt="Home banner 1"
                             className=""
                             radius="none"
-                            src="../img/tempomatic/calefactor_electrico/calefactor_electrico_05.webp"
+                            src="/img/tempomatic/calefactor_electrico/calefactor_electrico_05.webp"
                         />
                     </div>
             
@@ -399,12 +378,12 @@ export default function CalefactorElectricoPage() {
                             alt="Home banner 1"
                             className=""
                             radius="none"
-                            src="../img/home/homeBanner/2.png"
+                            src="/img/home/homeBanner/2.png"
                             width="100%"
                         />
                         </a>
                     
-                    <ManualButtonNaranja size={BigScreen ? 40 : 25} screen={BigScreen ? "xl" : "lg"} link={"../../manuales/01. Folleto calefactor electrico.pdf"} dwName={"01. Folleto calefactor electrico.pdf"}/>
+                    <ManualButtonNaranja size={BigScreen ? 40 : 25} screen={BigScreen ? "xl" : "lg"} link={"/manuales/01. Folleto calefactor electrico.pdf"} dwName={"01. Folleto calefactor electrico.pdf"}/>
             </section>
             </>
             :
@@ -434,7 +413,7 @@ export default function CalefactorElectricoPage() {
                                 alt="Home banner 1"
                                 className=""
                                 radius="none"
-                                src="../img/tempomatic/calefactor_electrico/calefactor_electrico_01-mobile.webp"
+                                src="/img/tempomatic/calefactor_electrico/calefactor_electrico_01-mobile.webp"
                                 width="90%"
                             />
                         </div>
@@ -501,7 +480,7 @@ export default function CalefactorElectricoPage() {
                                 alt="Home banner 1"
                                 className=""
                                 radius="none"
-                                src="../img/tempomatic/calefactor_electrico/calefactor_electrico_03.webp"
+                                src="/img/tempomatic/calefactor_electrico/calefactor_electrico_03.webp"
                             />
                         </div>
                     </div>
@@ -514,18 +493,18 @@ export default function CalefactorElectricoPage() {
                             alt="Home banner 1 "
                             className=""
                             radius="none"
-                            src="../img/home/homeBanner/2.png"
+                            src="/img/home/homeBanner/2.png"
                             width="100%"
                         />
                         </a>
-                        <ManualButtonNaranja size={BigScreen ? 40 : 25} screen={BigScreen ? "xl" : "lg"} link={"../../manuales/01. Folleto calefactor electrico.pdf"} dwName={"01. Folleto calefactor electrico.pdf"}/>
+                        <ManualButtonNaranja size={BigScreen ? 40 : 25} screen={BigScreen ? "xl" : "lg"} link={"/manuales/01. Folleto calefactor electrico.pdf"} dwName={"01. Folleto calefactor electrico.pdf"}/>
                 </section>
                 {/* ------------- Imagenes presentacion ------------- */}
                 <section className="w-full flex items-center justify-center mx-auto p-0 bg-transparent space-x-0">
                         <Image
                             alt="Otam Logo"
                             radius="none"
-                            src="../img/electrotermalogoletrasProducido.png"
+                            src="/img/electrotermalogoletrasProducido.png"
                             width={300}
                         />
                         
@@ -566,7 +545,7 @@ export default function CalefactorElectricoPage() {
                     <Image
                         alt="Otam Logo"
                         radius="none"
-                        src="../img/electrotermalogoletrasProducido.png"
+                        src="/img/electrotermalogoletrasProducido.png"
                         width={500}
                     />
                     

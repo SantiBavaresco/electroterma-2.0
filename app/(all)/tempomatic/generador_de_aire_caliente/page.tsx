@@ -15,33 +15,12 @@ import { DiferenciallMultiposicionTempomatic } from "@/components/diferenciales/
 import { DiferencialFabricacionNacional } from "@/components/diferenciales/diferencialFabricacionNacional";
 import { useIsDesktop } from "@/hooks/useIsDesktop";
 
-interface ItemsNavbar {
-    key: string;
-    label: string[];
-    labelShort: string;
-    img: string;
-    href: string;
-}
 
 export default function GeneradoDeAireCalientePage() {
 
     const BigScreen = useIsDesktop();
 
-    const handleAnchor = (link:string) => {
-        window.open(link, '_top', 'noopener noreferrer');
-      };
 
-    const handleEmailClick = () => {
-        const email = 'info@electroterma.com.ar';
-        const subject = 'Consulta sobre equipamiento';
-        const body = 'Hola! Me gustaria hacer una consulta sobre equipamiento de Electroterma';
-    
-        const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(
-            subject
-        )}&body=${encodeURIComponent(body)}`;
-    
-        window.open(mailtoLink, '_blank');
-    };
 
     return (
         <main className="flex flex-col h-full items-center justify-center gap-4 pb-4 md:pb-10 
@@ -53,7 +32,7 @@ export default function GeneradoDeAireCalientePage() {
                     alt="Home banner 1"
                     className="rounded-[44-px]"
                     radius="none"
-                    src="../img/tempomatic/generador_de_aire_caliente/generador_de_aire_caliente-Banner.webp"
+                    src="/img/tempomatic/generador_de_aire_caliente/generador_de_aire_caliente-Banner.webp"
                     width="100%"
                 />
             </section>
@@ -63,7 +42,7 @@ export default function GeneradoDeAireCalientePage() {
                     alt="Home banner 1"
                     className=""
                     radius="none"
-                    src="../img/tempomatic/generador_de_aire_caliente/tempomatic-Logo.jpg"
+                    src="/img/tempomatic/generador_de_aire_caliente/tempomatic-Logo.jpg"
                     width="100%"
                 />
             </section>  
@@ -95,7 +74,7 @@ export default function GeneradoDeAireCalientePage() {
                             alt="Home banner 1"
                             className=""
                             radius="none"
-                            src="../img/tempomatic/generador_de_aire_caliente/generador_de_aire_caliente_01.webp"
+                            src="/img/tempomatic/generador_de_aire_caliente/generador_de_aire_caliente_01.webp"
                             width="100%"
                         />
                     </div>
@@ -127,7 +106,7 @@ export default function GeneradoDeAireCalientePage() {
                         alt="Home banner 1"
                         className=""
                         radius="none"
-                        src="../img/tempomatic/generador_de_aire_caliente/generador_de_aire_caliente_02.webp"
+                        src="/img/tempomatic/generador_de_aire_caliente/generador_de_aire_caliente_02.webp"
                         width="100%"
                     />
                 </div>
@@ -177,7 +156,7 @@ export default function GeneradoDeAireCalientePage() {
                             alt="Home banner 1"
                             className=""
                             radius="none"
-                            src="../img/tempomatic/generador_de_aire_caliente/generador_de_aire_caliente_03.webp"
+                            src="/img/tempomatic/generador_de_aire_caliente/generador_de_aire_caliente_03.webp"
                         />
                     </div>
                 </div>
@@ -192,7 +171,7 @@ export default function GeneradoDeAireCalientePage() {
                             alt="Home banner 1"
                             className=""
                             radius="none"
-                            src="../img/tempomatic/generador_de_aire_caliente/generador_de_aire_caliente_04.webp"
+                            src="/img/tempomatic/generador_de_aire_caliente/generador_de_aire_caliente_04.webp"
                         />
                     </div>
             </section>
@@ -206,7 +185,7 @@ export default function GeneradoDeAireCalientePage() {
                             alt="Home banner 1"
                             className=""
                             radius="none"
-                            src="../img/tempomatic/generador_de_aire_caliente/generador_de_aire_caliente_05.webp"
+                            src="/img/tempomatic/generador_de_aire_caliente/generador_de_aire_caliente_05.webp"
                         />
                     </div>
             </section>
@@ -475,7 +454,7 @@ export default function GeneradoDeAireCalientePage() {
                             alt="Home banner 1"
                             className=""
                             radius="none"
-                            src="../img/tempomatic/generador_de_aire_caliente/generador_de_aire_caliente_06.webp"
+                            src="/img/tempomatic/generador_de_aire_caliente/generador_de_aire_caliente_06.webp"
                         />
                     </div>
                
@@ -484,7 +463,7 @@ export default function GeneradoDeAireCalientePage() {
             {/* -------------BOTON MANUAL ------------- */}
             <section className="w-full px-[6%] mt-10 flex justify-end">
 
-                    <ManualButtonNaranja size={BigScreen ? 40 : 25} screen={BigScreen ? "xl" : "lg"} link={"../../manuales/02. Folleto generador de aire caliente.pdf"} dwName={"02. Folleto generador de aire caliente.pdf"}/>
+                    <ManualButtonNaranja size={BigScreen ? 40 : 25} screen={BigScreen ? "xl" : "lg"} link={"/manuales/02. Folleto generador de aire caliente.pdf"} dwName={"02. Folleto generador de aire caliente.pdf"}/>
             </section>
             </>
             :
@@ -515,7 +494,7 @@ export default function GeneradoDeAireCalientePage() {
                                 alt="Home banner 1"
                                 className=""
                                 radius="none"
-                                src="../img/tempomatic/generador_de_aire_caliente/generador_de_aire_caliente_01.webp"
+                                src="/img/tempomatic/generador_de_aire_caliente/generador_de_aire_caliente_01.webp"
                                 width="100%"
                             />
                         </div>
@@ -581,7 +560,7 @@ export default function GeneradoDeAireCalientePage() {
                                 alt="Home banner 1"
                                 className=""
                                 radius="none"
-                                src="../img/tempomatic/generador_de_aire_caliente/generador_de_aire_caliente_03.webp"
+                                src="/img/tempomatic/generador_de_aire_caliente/generador_de_aire_caliente_03.webp"
                             />
                         </div>
                     </div>
@@ -589,14 +568,14 @@ export default function GeneradoDeAireCalientePage() {
 
                 {/* -------------BOTON MANUAL ------------- */}
                 <section className="w-full px-[6%] lg:mt-4 flex justify-center">
-                        <ManualButtonNaranja size={BigScreen ? 40 : 25} screen={BigScreen ? "xl" : "lg"} link={"../../manuales/02. Folleto generador de aire caliente.pdf"} dwName={"02. Folleto generador de aire caliente.pdf"}/>
+                        <ManualButtonNaranja size={BigScreen ? 40 : 25} screen={BigScreen ? "xl" : "lg"} link={"/manuales/02. Folleto generador de aire caliente.pdf"} dwName={"02. Folleto generador de aire caliente.pdf"}/>
                 </section>
                 {/* ------------- Imagenes presentacion ------------- */}
                 <section className="w-full flex items-center justify-center mx-auto p-0 bg-transparent space-x-0">
                         <Image
                             alt="Otam Logo"
                             radius="none"
-                            src="../img/electrotermalogoletrasProducido.png"
+                            src="/img/electrotermalogoletrasProducido.png"
                             width={300}
                         />
                         
@@ -637,7 +616,7 @@ export default function GeneradoDeAireCalientePage() {
                     <Image
                         alt="Otam Logo"
                         radius="none"
-                        src="../img/electrotermalogoletrasProducido.png"
+                        src="/img/electrotermalogoletrasProducido.png"
                         width={500}
                     />
                     
