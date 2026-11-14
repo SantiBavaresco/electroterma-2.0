@@ -1,10 +1,9 @@
 "use client";
-import React, { Component } from "react";
+import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import { Image } from "@nextui-org/image";
 
 interface ImgLable {
     textLable?: string;
@@ -26,42 +25,11 @@ interface Props {
 
 const SimpleSlider: React.FC<Props> = ({ url, width, imgInfo }) => {
 
-    const settings2 = {
-        className: "center variable-width aspect[16/9] object-cover w-[100%] h-[40%] md:h-[100%]",
-        dots: true,
-        infinite: true,
-        // speed: 500,
-        autoplay: true,
-        // autoplaySpeed: 2000,
-        speed: 10000,
-        autoplaySpeed: 0,
-        // pauseOnHover: true,
-
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        adaptiveHeight: true,
-        variableWidth: true,
-        // height: 800,
-        // width: 900,
-    };
-    // const wii = "500px";
     const settings = {
-        // dots: true,
         className:
             "center variable-width  ",
-            // "center variable-width  aspect[16/9] object-cover w-[100%] h-[90%] flex flex-nowrap overflow-hidden ",
 
-        // centerMode: true,
-        // display: "flex",
-        // flexDirection: "row",
-        // flexGrow: 1,
-        // height: "80%",
         infinite: true,
-        // centerPadding: "60px",
-        // variableWidth: true,
-        // width: 1200,
-        // adaptiveHeight: true,
-        // lazyLoad: true,
         slidesToShow: 3,
         slidesToScroll: 1,
         autoplay: true,
@@ -72,27 +40,6 @@ const SimpleSlider: React.FC<Props> = ({ url, width, imgInfo }) => {
         cssEase: "linear",
     };
 
-    const settingss = {
-        // dots: true,
-        className:
-            "center variable-width  aspect[16/9] object-cover w-[100%] h-[90%] flex flex-nowrap overflow-hidden ",
-        // centerMode: true,
-        // display: "flex",
-        // flexDirection: "row",
-        // flexGrow: 1,
-        // height: "80%",
-        infinite: true,
-        // centerPadding: "60px",
-        // variableWidth: true,
-        // width: 1200,
-        // adaptiveHeight: true,
-        // lazyLoad: true,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: true,
-        speed: 10000,
-        autoplaySpeed: 0,
-    }
 
     return (
         <div className="overflow-hidden flex flex-grow min-h-full pointer-events-none">

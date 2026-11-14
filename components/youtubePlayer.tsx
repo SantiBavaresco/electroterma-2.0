@@ -1,7 +1,5 @@
 "use client";
-import React, { useState, useRef } from "react";
-// import YouTube from "react-youtube";
-// import React from 'react';
+import React, { useRef } from "react";
 import YouTube, { YouTubeProps } from 'react-youtube';
 
 interface Props {
@@ -27,8 +25,6 @@ const YouTubePlayer: React.FC<Props> = ({ id, url, height, width, autoplay }) =>
         width: width,
         playerVars: {
           // https://developers.google.com/youtube/player_parameters
-        //   autoplay: autoplay,
-        //   controls: 0,
         },
       };
     

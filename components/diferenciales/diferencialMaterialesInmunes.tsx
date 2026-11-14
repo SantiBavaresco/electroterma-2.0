@@ -1,10 +1,7 @@
 "use client";
 import React from "react";
 
-import { AmbienteCorrosivo } from "@/public/svg/ambienteCorrosivo";
-import { EficienciaEnergeticaDti } from "@/public/svg/eficienciaEnergeticaDti";
 import { MaterialesInmunes } from "@/public/svg/materialesInmunes";
-
 
 interface Props {
     svg?: string;
@@ -21,10 +18,6 @@ export const DiferencialMaterialesInmunes : React.FC<Props> =  ({size, text, tex
 				<span className="z-10 ">
 					<MaterialesInmunes size={size || 70}/>
 
-				{/* <svg size={size || 70}/> 
-				
-				 }
-				*/}
 				</span>
 				<p className={`z-0  h-2/3 pl-8 pr-2 md:px-10 py-1 -translate-x-8 
 					bg-white bg-opacity-100 border-2 border-livered-title rounded-tr-2xl md:rounded-tr-3xl  

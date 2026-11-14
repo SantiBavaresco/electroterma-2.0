@@ -1,7 +1,6 @@
 
 import React from "react";
 import { MyButton } from "./myButton";
-import { BsWhatsapp } from "react-icons/bs";
 import { WhatsappLogo } from "@/public/svg/whatsappLogo";
 interface Props {
     css?: string;
@@ -33,9 +32,6 @@ export const AsesoramietoButton: React.FC<Props> = ({ css, size, screen, label, 
                             group-active:bg-gradient-to-r group-active:from-[#f37a7ae5] group-active:to-[#FFFFFF]
                         `}> 
                             <WhatsappLogo size={size} css="group-${}active:text-livered p- mx-0 lg:mx-1 lg:text-2xl "/>
-                            {/* <BsWhatsapp className={` text-white font-nunito  group-active:text-livered p- mx-1  lg:mx-2  
-                                ${size===15? "text-[3.8vw]" : "text-[4vw] "} 
-                                ${size===10? "text-[2.6vw]" : "text-[6vw] "} lg:text-[2.7vw] 2xl:text-[2.1vw] `} />  */}
                         </div>
                         <span className={`ml-[28px] xm:ml-[28px] lg:ml-14 ${screen==="xxl" && "text-5xl"} ${size===15? "text-[2.0vw] ml-[24px]" : " "} `}
                         >{label ? label : "Asesoramiento" }</span>

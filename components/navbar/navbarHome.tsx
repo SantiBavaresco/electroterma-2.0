@@ -1,99 +1,42 @@
 "use client";
 import React from "react";
-import {
-    Navbar as NextUINavbar,
-    NavbarContent,
-    NavbarMenu,
-    NavbarMenuToggle,
-    NavbarBrand,
-    NavbarItem,
-    NavbarMenuItem,
-} from "@nextui-org/navbar";
-import {
-    // Dropdown,
-    DropdownTrigger,
-    DropdownMenu,
-    DropdownSection,
-    DropdownItem,
-} from "@nextui-org/dropdown";
-
+import { Navbar as NextUINavbar, NavbarContent, NavbarMenu, NavbarBrand, NavbarMenuItem } from "@nextui-org/navbar";
 
 import { useState } from "react";
 import {Accordion, AccordionItem, useDisclosure} from "@nextui-org/react";
 import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter} from "@nextui-org/modal"
 
-
 import { itemsNavSolerPalau as Soler, itemsNavTempomatic as Tempomatic } from "@/public/data/navbarData";
-import { Dropdown, Space, Menu, Button, Divider, theme  } from 'antd';
+import { Dropdown, Space } from 'antd';
 import type { MenuProps } from 'antd';
-
-import { Avatar, AvatarGroup, AvatarIcon } from "@nextui-org/avatar";
-
 
 import { BsArrowBarLeft } from "react-icons/bs";
 import { BsArrowBarRight } from "react-icons/bs";
 
-import icono from "../electroterma-logo.png";
-
-import { Card, CardBody, CardFooter } from "@nextui-org/card";
 import { Image } from "@nextui-org/image";
 
-// import { Button } from "@nextui-org/button";
-import { Kbd } from "@nextui-org/kbd";
-import { Link } from "@nextui-org/link";
-import { Input } from "@nextui-org/input";
-
-import { link as linkStyles } from "@nextui-org/theme";
 
 import { siteConfig } from "@/config/site";
 import NextLink from "next/link";
-import clsx from "clsx";
 
-import { ThemeSwitch } from "@/components/theme-switch";
-import {
-    TwitterIcon,
-    GithubIcon,
-    DiscordIcon,
-    HeartFilledIcon,
-    SearchIcon,
-    // Menu,
-} from "@/components/icons";
 
-import { Logo } from "@/components/icons";
-import ImgDisplay from "./imgdisplay(deprecated)";
-import { Children } from "react";
 import CardDisplay from "./cardDisplay";
 import { ItemsNavbar } from "@/types/itemsNavbar";
-import { itemsNavSolerPalau } from "@/public/data/navbarData";
 
 interface Props {
     css?: string;
 
 }
 
-
-// export const Navbar = () => {
 export const NavbarHome: React.FC<Props> = ({ css, ...props }) => {
-    const [firstDropdownOpen, setFirstDropdownOpen] = useState(false);
-    const [secondDropdownOpen, setSecondDropdownOpen] = useState(false);
 
     const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false);
 
     const {isOpen, onOpen, onOpenChange} = useDisclosure();
 
-    const setFirstFalse = () => {
-        setFirstDropdownOpen(false);
-    };
 
-    const handleAnchor = (link:string) => {
-        // setSecondDropdownOpen(false)
-        setFirstDropdownOpen(false)
-        // setFirstFalse
-        window.open(link, '_top', 'noopener noreferrer');
-      };
 
 //  items acordion para mobile, hay que cambiarlo
-    const [BigScreen, setBigScreen] = useState(false);
 
     const itemsTempomatic: ItemsNavbar[] = [
 
@@ -102,7 +45,7 @@ export const NavbarHome: React.FC<Props> = ({ css, ...props }) => {
             category: "tempomatic",
             label: ["Unidad de tratamiento de aire"],
             labelShort: "UTA",
-            img: "../../img/navbar/Tempomatic2.png",
+            img: "/img/navbar/Tempomatic2.png",
             href: "/tempomatic/uta",
             color : "bg-[#EF7916]",
 
@@ -112,7 +55,7 @@ export const NavbarHome: React.FC<Props> = ({ css, ...props }) => {
             category: "tempomatic",
             label: ["Generador de aire caliente"],
             labelShort: "GDAC",
-            img: "../../img/navbar/Tempomatic5.png",
+            img: "/img/navbar/Tempomatic5.png",
             href: "/tempomatic/generador_de_aire_caliente",
             color : "bg-[#EF7916]",
 
@@ -122,7 +65,7 @@ export const NavbarHome: React.FC<Props> = ({ css, ...props }) => {
             category: "tempomatic",
             label: ["Calefactor eléctrico"],
             labelShort: "CE",
-            img: "../../img/navbar/Tempomatic3.png",
+            img: "/img/navbar/Tempomatic3.png",
             href: "/tempomatic/calefactor_electrico",
             color : "bg-[#EF7916]",
 
@@ -132,7 +75,7 @@ export const NavbarHome: React.FC<Props> = ({ css, ...props }) => {
             category: "tempomatic",
             label: ["Unidad manejadora de aire"],
             labelShort: "UMDA",
-            img: "../../img/navbar/Tempomatic4.png",
+            img: "/img/navbar/Tempomatic4.png",
             href: "/tempomatic/unidad_manejadora_de_aire",
             color : "bg-[#EF7916]",
 
@@ -142,7 +85,7 @@ export const NavbarHome: React.FC<Props> = ({ css, ...props }) => {
             category: "tempomatic",
             label: ["Caja Ventiladora",],
             labelShort: "CV",
-            img: "../../img/navbar/Tempomatic1.png",
+            img: "/img/navbar/Tempomatic1.png",
             href: "/tempomatic/caja_ventiladora",
             color : "bg-[#EF7916]",
         },
@@ -151,7 +94,7 @@ export const NavbarHome: React.FC<Props> = ({ css, ...props }) => {
             category: "tempomatic",
             label: ["Caldera para calefacción"],
             labelShort: "CC",
-            img: "../../img/navbar/Tempomatic6.png",
+            img: "/img/navbar/Tempomatic6.png",
             href: "/tempomatic/caldera_para_calefaccion",
             color : "bg-[#EF7916]",
 
@@ -163,7 +106,7 @@ export const NavbarHome: React.FC<Props> = ({ css, ...props }) => {
             category: "soler&palau",
             label: ["Ventilador Centrífugo", "Autolimitante - RLS"],
             labelShort: "RLS",
-            img: "../../img/navbar/NavBarRLS1SolerPalau.png",
+            img: "/img/navbar/NavBarRLS1SolerPalau.png",
             href: "/soler&palau/RLS",
             color: "bg-livered-title",
         },
@@ -172,10 +115,9 @@ export const NavbarHome: React.FC<Props> = ({ css, ...props }) => {
             category: "soler&palau",
             label: ["Ventilador Centrífugo", "Multipala - TSA"],
             labelShort: "TSA",
-            img: "../img/navbar/NavBarTSA1SolerPalau.png",
+            img: "/img/navbar/NavBarTSA1SolerPalau.png",
             href: "/soler&palau/TSA",
             color: "bg-livered-title",
-
 
         },
         {
@@ -183,7 +125,7 @@ export const NavbarHome: React.FC<Props> = ({ css, ...props }) => {
             category: "soler&palau",
             label: ["Ventilador ","Centrífugo - TDA"],
             labelShort: "TDA",
-            img: "../img/navbar/NavBarTDA1SolerPalau.png",
+            img: "/img/navbar/NavBarTDA1SolerPalau.png",
             href: "/soler&palau/TDA",
             color: "bg-livered-title",
 
@@ -193,7 +135,7 @@ export const NavbarHome: React.FC<Props> = ({ css, ...props }) => {
             category: "soler&palau",
             label: ["Hábitat"],
             labelShort: "Hábitat",
-            img: "../img/navbar/NavBarHabitat1SolerPalau.png",
+            img: "/img/navbar/NavBarHabitat1SolerPalau.png",
             href: "/soler&palau/habitat",
             color: "bg-livered-title",
 
@@ -250,7 +192,6 @@ export const NavbarHome: React.FC<Props> = ({ css, ...props }) => {
         {
           key: '2',
           type: "submenu",
-          // popupClassName: "flex flex-row",
           popupOffset:[0,0],
           
           style: { backgroundColor: "#EF771C", margin:-4 },
@@ -272,7 +213,6 @@ export const NavbarHome: React.FC<Props> = ({ css, ...props }) => {
                     color="foreground"
                     href={element.href}
                     target="_top"
-                    // onClick={setFirstFalse}
                     >
                       <CardDisplay  data={element} />
                   </NextLink>
@@ -280,9 +220,7 @@ export const NavbarHome: React.FC<Props> = ({ css, ...props }) => {
                 ))}
                 
               </div>,
-              
-              // style: { backgroundColor: "blue" },
-      
+
             },
            
           ],
@@ -311,7 +249,6 @@ export const NavbarHome: React.FC<Props> = ({ css, ...props }) => {
                     color="foreground"
                     href={element.href}
                     target="_top"
-                    // onClick={setFirstFalse}
                     >
                       <CardDisplay  data={element} />
                   </NextLink>
@@ -348,9 +285,6 @@ export const NavbarHome: React.FC<Props> = ({ css, ...props }) => {
           key: '5',
           type: 'group',
           style: { backgroundColor: "#EF771C", margin:-4 },
-          // mode: "horizontal",
-          // label: <div className='bg-green-500 mx-2 w-full -m -trans- -mt-2 overflow-hidden '></div>,
-          // label: 'Group title',
           children: [
             {
               key: '5-1',
@@ -415,30 +349,8 @@ export const NavbarHome: React.FC<Props> = ({ css, ...props }) => {
           
         },
       ];  
-      
 
-    const searchInput = (
-        <Input
-            aria-label="Buscar"
-            classNames={{
-                inputWrapper: "bg-default-100",
-                input: "text-sm",
-            }}
-            endContent={
-                <Kbd className="hidden lg:inline-block" keys={["command"]}>
-                    K
-                </Kbd>
-            }
-            labelPlacement="outside"
-            placeholder="Buscar..."
-            startContent={
-                <SearchIcon className="text-base text-default-400 pointer-events-none flex-shrink-0" />
-            }
-            type="search"
-        />
-    );
 
-    const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
     return (
         <NextUINavbar
@@ -446,9 +358,8 @@ export const NavbarHome: React.FC<Props> = ({ css, ...props }) => {
             className={`h-[42px] md:h-[64px] px- pt-[10px] lg:pt-0 lg:px-10  flex justify-center items-center font-nunito ${css}`}
             position="sticky"
             disableScrollHandler
-            height={BigScreen ? "42px" : "42px"}
+            height="42px"
 
-            // height={"100%"}
             isMenuOpen={mobileDropdownOpen}
             onMenuOpenChange={setMobileDropdownOpen}
             
@@ -459,13 +370,10 @@ export const NavbarHome: React.FC<Props> = ({ css, ...props }) => {
                     href="/"
                 >
                     <Image
-                        // className="sm:w-[180px]"
-                        src="../../img/electrotermalogoletrasNoPadding.png"
-                        // height={50}
+                        src="/img/electrotermalogoletrasNoPadding.png"
                         width={240}
                         alt="hola"
                     />
-                    {/* <p className="font-bold text-inherit">Electroterma</p> */}
                 </NextLink>
             </NavbarBrand>
 
@@ -476,7 +384,6 @@ export const NavbarHome: React.FC<Props> = ({ css, ...props }) => {
                     className=' text-5xl '>
                     <div onClick={(e) => e.preventDefault()} className='w-[22vw] 2xl:w-[15vw] ml-auto -2 bg-livered h-16  rounded-3xl  '>
                     <Space>
-                        {/* <DownOutlined /> */}
                         {Burger}
                     </Space>
                     </div>
@@ -489,8 +396,8 @@ export const NavbarHome: React.FC<Props> = ({ css, ...props }) => {
             <NavbarContent  className=" md:hidden font-nunito basis-1 w-screen h-full pl-4" justify="end">
             <div className="w-[150px] h-[80%] min-w-32 flex items-center justify-center bg-[#EF771C]" onClick={onOpen}>
                             <svg
-                                width={BigScreen ? "25" : "20"}
-                                height={BigScreen ? "25" : "20"}
+                                width="20"
+                                height="20"
                                 viewBox="0 0 40 37"
                                 fill="none"
                                 xmlns="http://www.w3.org/2000/svg"
@@ -509,32 +416,7 @@ export const NavbarHome: React.FC<Props> = ({ css, ...props }) => {
                                 />
                             </svg>
                         </div>
-                
-            {/* <div className="w-[100px] h-[80%] lg:h-[80%] min-w-32 flex items-center justify-center bg-[#EF771C]"
-                onClick={onOpen}
-            >
-                            <svg
-                                width="25"
-                                height="25"
-                                viewBox="0 0 40 37"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path
-                                    d="M0 7C0 3.13401 3.13401 0 7 0H40C40 3.86599 36.866 7 33 7H0Z"
-                                    fill="white"
-                                />
-                                <path
-                                    d="M0 22C0 18.134 3.13401 15 7 15H40C40 18.866 36.866 22 33 22H0Z"
-                                    fill="white"
-                                />
-                                <path
-                                    d="M0 37C0 33.134 3.13401 30 7 30H40C40 33.866 36.866 37 33 37H0Z"
-                                    fill="white"
-                                />
-                            </svg>
-                </div > */}
-               
+
             </NavbarContent>
 
             <Modal isOpen={isOpen} onOpenChange={onOpenChange} size="full" isDismissable={false} scrollBehavior="inside">
@@ -543,7 +425,6 @@ export const NavbarHome: React.FC<Props> = ({ css, ...props }) => {
                     <>
                     <ModalHeader className="flex flex-col gap-1"></ModalHeader>
                     <ModalBody className="mx-4 mt-2 flex flex-col gap-4 ">
-                        {/* <div className="mx-4 mt-2 flex flex-col gap-2 "> */}
                         
                         {siteConfig.navMenuItems.map((dropdown, index) => (
                             <>
@@ -558,14 +439,6 @@ export const NavbarHome: React.FC<Props> = ({ css, ...props }) => {
                                                     {dropdown.label}
                                                 </a>}
                                                 className="-mx-2  "
-                                                // startContent={
-                                                //     <Avatar
-                                                //         isBordered
-                                                //         color={`${dropdown.label==="Tempomatic" ? `warning`: "danger"}`}
-                                                //         radius="lg"
-                                                //         src={`../img/navbar/${dropdown.label}.png`}
-                                                //     />
-                                                // }
                                                 >
                                                     <div className="grid grid-cols-2 gap-2 w-[100%]">
                                                         
@@ -626,15 +499,8 @@ export const NavbarHome: React.FC<Props> = ({ css, ...props }) => {
                             </>
                             
                         ))}
-                    {/* </div> */}
                     </ModalBody>
                     <ModalFooter>
-                        {/* <Button color="warning" variant="light" onPress={onClose}>
-                        Cerrar
-                        </Button> */}
-                        {/* <Button color="primary" onPress={onClose}>
-                        Action
-                        </Button> */}
                     </ModalFooter>
                     </>
                 )}
@@ -644,18 +510,13 @@ export const NavbarHome: React.FC<Props> = ({ css, ...props }) => {
             <NavbarMenu
             
             >
-                {/* {searchInput} */}
 
-               
-                
                 <div className="mx-4 mt-2 flex flex-col gap-2 ">
                     
                     {siteConfig.navMenuItems.map((dropdown, index) => (
                         <NavbarMenuItem key={`${dropdown}-${index}`}
                         onClick={() => setMobileDropdownOpen(false)} 
                         >
-                            
-                            
 
                                 {dropdown.dropdown ? 
                                     <div className="py-0">
@@ -667,14 +528,6 @@ export const NavbarHome: React.FC<Props> = ({ css, ...props }) => {
                                                 {dropdown.label}
                                             </a>}
                                             className="-mx-2  "
-                                            // startContent={
-                                            //     <Avatar
-                                            //         isBordered
-                                            //         color={`${dropdown.label==="Tempomatic" ? `warning`: "danger"}`}
-                                            //         radius="lg"
-                                            //         src={`../img/navbar/${dropdown.label}.png`}
-                                            //     />
-                                            // }
                                             >
                                                 <div className="grid grid-cols-2 gap-2 w-[100%]">
                                                     

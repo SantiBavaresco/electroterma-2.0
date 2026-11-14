@@ -1,8 +1,6 @@
 "use client";
 import React from "react";
 import Slider from "react-slick";
-// import "slick-carousel/slick/slick.css";
-// import "slick-carousel/slick/slick-theme.css";
 import { Image } from "@nextui-org/image";
 
 interface Props {
@@ -12,8 +10,6 @@ interface Props {
 }
 
 const SimpleSliderDemoImages: React.FC<Props> = ({ url, width, fileName }) => {
-    const wii = "300px";
-    const hii = "300px";
 
     const settings = {
         className: "center variable-width",
@@ -22,7 +18,6 @@ const SimpleSliderDemoImages: React.FC<Props> = ({ url, width, fileName }) => {
         speed: 500,
         autoplay: true,
         autoplaySpeed: 2000,
-        // pauseOnHover: true,
 
         slidesToShow: 2,
         slidesToScroll: 1,
@@ -63,10 +58,6 @@ const SimpleSliderDemoImages: React.FC<Props> = ({ url, width, fileName }) => {
         <div className="slider-container w-[100%]">
             <div
                 className="w-[300px] md:w-[90vw] 2xl:w-[90vw]"
-                // style={{
-                //     width: 400 + "px",
-                //     height: 350 + "px",
-                // }}
             >
                 <Slider {...settings}>
                     {fileName?.map((item, index) => (
@@ -81,81 +72,6 @@ const SimpleSliderDemoImages: React.FC<Props> = ({ url, width, fileName }) => {
                             />
                         </div>
                     ))}
-                    {/* <div
-                        style={{ width: wii, height: hii }}
-                        className="px-[2px]"
-                    >
-                       
-
-                        <Image
-                            alt="Imagen 1"
-                            src="../img/solerpalau/tda/imgbanner/1.jpg"
-                            isZoomed
-                            radius="none"
-                            loading="lazy"
-                        />
-                    </div>
-                    <div
-                        style={{ width: wii, height: hii }}
-                        className="px-[2px]"
-                    >
-                        <Image
-                            alt="Imagen 2"
-                            src="../img/solerpalau/tda/imgbanner/2.jpg"
-                            isZoomed
-                            radius="none"
-                            loading="lazy"
-                        />
-                    </div>
-                    <div
-                        style={{ width: wii, height: hii }}
-                        className="px-[2px]"
-                    >
-                        <Image
-                            alt="Imagen 3"
-                            src="../img/solerpalau/tda/imgbanner/3.jpg"
-                            isZoomed
-                            radius="none"
-                            loading="lazy"
-                        />
-                    </div>
-
-                    <div
-                        style={{ width: wii, height: hii }}
-                        className="px-[2px]"
-                    >
-                        <Image
-                            alt="Imagen 1"
-                            src="../img/solerpalau/tda/imgbanner/1.jpg"
-                            isZoomed
-                            radius="none"
-                            loading="lazy"
-                        />
-                    </div>
-                    <div
-                        style={{ width: wii, height: hii }}
-                        className="px-[2px]"
-                    >
-                        <Image
-                            alt="Imagen 2"
-                            src="../img/solerpalau/tda/imgbanner/2.jpg"
-                            isZoomed
-                            radius="none"
-                            loading="lazy"
-                        />
-                    </div>
-                    <div
-                        style={{ width: wii, height: hii }}
-                        className="px-[2px]"
-                    >
-                        <Image
-                            alt="Imagen 3"
-                            src="../img/solerpalau/tda/imgbanner/3.jpg"
-                            isZoomed
-                            radius="none"
-                            loading="lazy"
-                        />
-                    </div> */}
                 </Slider>
             </div>
         </div>

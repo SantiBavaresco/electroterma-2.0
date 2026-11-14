@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 interface Props {
   url: string;
   height?: string;
@@ -10,13 +10,11 @@ interface Props {
 
 const VideoAutoPlayer: React.FC<Props> = ({ url, height, width, autoplay }) => {
 
-
   return (
     <video
       loop muted autoPlay 
       src={url}
       width={width || "100%"}
-      // height="100%"
     />
   );
 };

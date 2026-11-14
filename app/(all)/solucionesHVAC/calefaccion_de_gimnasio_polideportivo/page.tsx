@@ -1,42 +1,15 @@
 "use client"
-import { title } from "@/components/primitives";
-import { solucionesGeneralData } from "@/public/data/soluciones/solucionesGeneralData";
 import { Button } from "@nextui-org/button";
 import { Image } from "@nextui-org/image";
 import { Avatar } from "@nextui-org/react";
-import {Link} from "@nextui-org/react";
-import { useEffect, useState } from "react";
 import { IoMailOutline } from "react-icons/io5";
+import { useIsDesktop } from "@/hooks/useIsDesktop";
+import { openContactEmail } from "@/lib/contact";
 
 export default function Soluciones_calefaccion_de_gimnasio_polideportivo_Page() {
 
-	const handleEmailClick = () => {
-        const email = 'info@electroterma.com.ar';
-        const subject = 'Consulta sobre equipamiento';
-        const body = 'Hola! Me gustaría hacer una consulta sobre equipamiento de Electroterma';
-    
-        const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(
-            subject
-        )}&body=${encodeURIComponent(body)}`;
-    
-        // window.location.href = mailtoLink;
-        window.open(mailtoLink, '_blank');
-    };
 
-
-	const [BigScreen, setBigScreen] = useState(false);
-
-    useEffect(() => {
-        const handler = (e:any) => setBigScreen(e.matches);
-        const mediaQuery = window.matchMedia('(min-width: 768px)');
-
-        mediaQuery.addEventListener('change', handler);
-        setBigScreen(mediaQuery.matches);
-
-        return () => {
-        mediaQuery.removeEventListener('change', handler);
-        };
-    }, []);
+	const BigScreen = useIsDesktop();
 
 	const mobileImagesCol = [];
     for (let i = 0; i < 2; i++) {
@@ -46,7 +19,7 @@ export default function Soluciones_calefaccion_de_gimnasio_polideportivo_Page() 
             alt="Electroterma Logo"
             className=""
 			radius="none"
-            src={`../../img/soluciones/calefaccion_de_gimnasio_polideportivo/Soluciones${i+4}.webp`}
+            src={`/img/soluciones/calefaccion_de_gimnasio_polideportivo/Soluciones${i+4}.webp`}
             width="100%"
             />
         );
@@ -62,7 +35,7 @@ export default function Soluciones_calefaccion_de_gimnasio_polideportivo_Page() 
 						alt="Banner 1"
 						className="rounded-tl-[30px] "
 						radius="none"
-						src="../../img/soluciones/calefaccion_de_gimnasio_polideportivo/SolucionesBanner1.webp"
+						src="/img/soluciones/calefaccion_de_gimnasio_polideportivo/SolucionesBanner1.webp"
 						width="100%"
 					/>
 				</div>
@@ -75,7 +48,7 @@ export default function Soluciones_calefaccion_de_gimnasio_polideportivo_Page() 
 			<section className="w-full h-[104%] z-0 rounded-tl-[0px] -mt-10 pt-10   bg-[#F7F6F6] ">
 				<div className="  ml-[0.5vw] mt-6  bg-gray-00">
 					<div className=" flex mr-auto ml-4 pl-10 text-white font-lexend-bold text-[2.5vw] bg-white- rounded-l-full border-1- border-lowgray- shadow-2xl-"> 
-					<Avatar  src="../../img/soluciones/calefaccion_de_gimnasio_polideportivo/SolucionesAutor.webp" className="-ml-8 w- h-[5.0vw] my-2 text-large"/>
+					<Avatar  src="/img/soluciones/calefaccion_de_gimnasio_polideportivo/SolucionesAutor.webp" className="-ml-8 w- h-[5.0vw] my-2 text-large"/>
 					<p className="my-auto ml-4 pt-4  pb-4  text-[#EF771C] font-lexend-bold text-[1.2vw]">Por: {" "}
 						<span className="underline">Juan Manuel de Porras</span>
 					</p>
@@ -92,8 +65,7 @@ export default function Soluciones_calefaccion_de_gimnasio_polideportivo_Page() 
 							alt="Banner 1"
 							className="p-6"
 							radius="none"
-							src="../../img/soluciones/calefaccion_de_gimnasio_polideportivo/Soluciones1.webp"
-							// width="100%"
+							src="/img/soluciones/calefaccion_de_gimnasio_polideportivo/Soluciones1.webp"
 							height="100%"
 							/> 
 							
@@ -135,19 +107,17 @@ export default function Soluciones_calefaccion_de_gimnasio_polideportivo_Page() 
 					<h1 className="lg:py-6 pl-2 lg:pl-12 py-2 text-white font-lexend-bold lg:text-[2.0vw] bg-[#EF771C] shadow-2xl">SOLUCIÓN CALEFACCIÓN DE GIMNASIO POLIDEPORTIVO</h1>
 
 						<div className="visible md:hidden flex mr-auto mt-1 text-white font-lexend-bold text-[2.5vw] bg-white- rounded-l-full border-1- border-lowgray- shadow-2xl-"> 
-							<Avatar  src="../../img/soluciones/calefaccion_de_gimnasio_polideportivo/SolucionesAutor.webp" className="w- h-[10.0vw] my-2 text-large"/>
+							<Avatar  src="/img/soluciones/calefaccion_de_gimnasio_polideportivo/SolucionesAutor.webp" className="w- h-[10.0vw] my-2 text-large"/>
 							<p className="my-auto ml-2 pt-4  pb-4  text-[#EF771C] font-lexend-bold text-[3.2vw]">Por: {" "}
 								<span className="underline">Juan Manuel de Porras</span>
 							</p>
 						</div>
-					
 
 					<div className="w-full mt-4 pl-2 pr-2 lg:pr-20 py-2 lg:py-10 grid lg:grid-cols-2 gap-10">
 
 						{/* ------------- Contenido primario ------------- */}
 						<div className="w-full flex flex-col gap-6 text-[3.8vw] lg:text-[1.20vw] font-nunito items-center ">
 
-							
 							<p className="text-[3.8vw] lg:text-[1.20vw] font-nunito">
 							La <span className="font-nunito-bolder">calefacción de gimnasios polideportivos,</span> es clave para el normal desarrollo de las actividades deportivas y sociales que allí se realizan. De la correcta selección del sistema de calefacción, dependerá contar o no con un sistema energéticamente eficiente, durable y de bajo costo de mantenimiento.
 							</p>
@@ -156,13 +126,11 @@ export default function Soluciones_calefaccion_de_gimnasio_polideportivo_Page() 
 								En la búsqueda de esos objetivos, <span className="font-nunito-bolder">los sistemas de calefacción por aire caliente industriales a gas</span> (natural o envasado) son la opción ideal para calefaccionar estos espacios, por rendimiento y confiabilidad.
 							</p>
 
-							
-
 							<Image
 								alt="Imagen 2"
 								className=""
 								radius="none"
-								src="../../img/soluciones/calefaccion_de_gimnasio_polideportivo/Soluciones2.webp"
+								src="/img/soluciones/calefaccion_de_gimnasio_polideportivo/Soluciones2.webp"
 								width="100%"
 							/>
 							<h2 className="text-[#EF771C] text-[3.8vw] lg:text-[1.8vw] font-nunito-bold lg:mt-16 mr-auto">Desarrollo de proyecto de <span className="font-nunito-bolder">calefacción de gimnasio polideportivo</span> de 1250m2 ubicado en la provincia de Tierra del Fuego.</h2>
@@ -170,13 +138,6 @@ export default function Soluciones_calefaccion_de_gimnasio_polideportivo_Page() 
 							<p className="text-[3.8vw] lg:text-[1.20vw] font-nunito">
 								Se trata de un gimnasio de 50m de largo x 25m de ancho, con techo a dos aguas, de 9m de altura promedio, con paredes de doble chapa con 100mm de lana de vidrio mineral y techo de chapa con aislacion de lana de vidrio de 50mm.
 							</p>
-
-						    {/* <p className="">
-								Realizado el balance térmico, se decide instalar 80.000 Kcal/hora de calefacción por planta, por lo cual se instalan 2 (dos) <a className="text-[#EF771C] font-nunito-bold underline " href="https://electroterma.com.ar/producto/unidad-manejadora-de-aire-tempomatic/" target="_blank">Unidades Manejadores de Aire</a> Caliente marca 
-								<a className="text-[#EF771C] font-nunito-bold underline " href="/tempomatic" target="_blank"> TEMPOMATIC</a> chequear link a uma modelo UMA 10/40.
-							</p> */}
-							
-
 
 						</div>
 						
@@ -193,7 +154,7 @@ export default function Soluciones_calefaccion_de_gimnasio_polideportivo_Page() 
 								alt="Imagen 3"
 								className="lg:mt-16"
 								radius="none"
-								src="../../img/soluciones/calefaccion_de_gimnasio_polideportivo/Soluciones3.webp"
+								src="/img/soluciones/calefaccion_de_gimnasio_polideportivo/Soluciones3.webp"
 								width="100%"
 							/>
 							<p className="text-[3.8vw] lg:text-[1.20vw] font-nunito">
@@ -203,11 +164,10 @@ export default function Soluciones_calefaccion_de_gimnasio_polideportivo_Page() 
 								alt="Imagen 4"
 								className="lg:mt-"
 								radius="none"
-								src="../../img/soluciones/calefaccion_de_gimnasio_polideportivo/Soluciones4.webp"
+								src="/img/soluciones/calefaccion_de_gimnasio_polideportivo/Soluciones4.webp"
 								width="100%"
 							/>
-							
-							
+
 						</div>
 
 						{BigScreen || 
@@ -221,7 +181,7 @@ export default function Soluciones_calefaccion_de_gimnasio_polideportivo_Page() 
 												alt="Banner 1"
 												className="p-2 px-	"
 												radius="none"
-												src="../../img/soluciones/calefaccion_de_gimnasio_polideportivo/Soluciones1.webp"	
+												src="/img/soluciones/calefaccion_de_gimnasio_polideportivo/Soluciones1.webp"	
 												height="100%"
 												/> 
 										</div>
@@ -246,8 +206,6 @@ export default function Soluciones_calefaccion_de_gimnasio_polideportivo_Page() 
 										<a href="/solucionesHVAC"> 
 											<button
 												className="  z-10 bg-[#EF771C] px-2 py-2 rounded-[12px] font-nunito text-white text-sm 2xl:text-xl shadow-xl"
-												// radius="full"
-												// size={BigScreen ? "sm" : "sm"}
 											>
 												Ver otras soluciones
 											</button>
@@ -260,8 +218,6 @@ export default function Soluciones_calefaccion_de_gimnasio_polideportivo_Page() 
 						
 					</div>
 
-					
-					
 				</div>
 			</article>
 
@@ -277,13 +233,12 @@ export default function Soluciones_calefaccion_de_gimnasio_polideportivo_Page() 
                         </h2>
                     </div>
                     <div className="mr-0 md:mr-12  ">
-                        <Button size={BigScreen ? "lg" : "sm"} radius="full" className="2xl:text-2xl lg:px-8 mr-[23px] lg:mr-0 shadow-2xl" onClick={handleEmailClick}>
+                        <Button size={BigScreen ? "lg" : "sm"} radius="full" className="2xl:text-2xl lg:px-8 mr-[23px] lg:mr-0 shadow-2xl" onClick={openContactEmail}>
                             <div className="absolute rounded-full left-0 z-20 p-3   shadow-r-xl shadow-[rgba(29,29,27,0.24)] border- border-gray-200 
                                     bg-gradient-to-r from-[#EF771C] to-[#F4A86F]
                                     group-hover:bg-gradient-to-r group-hover:from-orange-400 group-hover:to-[#fe694f]
                                     group-active:bg-gradient-to-r group-active:from-[#f37a7ae5] group-active:to-[#FFFFFF]
                                 "> 
-                                    {/* <MailSvg css=" group-active:text-livered text-white lg:text-3xl" size={40}/> */}
                                     <IoMailOutline className=" group-active:text-livered text-white lg:text-4xl"/>
                                     </div>
                                 <span className="ml-[30px] lg:ml-10">Escribinos</span>

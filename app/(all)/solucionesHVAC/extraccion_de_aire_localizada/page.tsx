@@ -1,42 +1,15 @@
 "use client"
-import { title } from "@/components/primitives";
-import { solucionesGeneralData } from "@/public/data/soluciones/solucionesGeneralData";
 import { Button } from "@nextui-org/button";
 import { Image } from "@nextui-org/image";
 import { Avatar } from "@nextui-org/react";
-import {Link} from "@nextui-org/react";
-import { useEffect, useState } from "react";
 import { IoMailOutline } from "react-icons/io5";
+import { useIsDesktop } from "@/hooks/useIsDesktop";
+import { openContactEmail } from "@/lib/contact";
 
 export default function Soluciones_extraccion_de_aire_localizada_Page() {
 
-	const handleEmailClick = () => {
-        const email = 'info@electroterma.com.ar';
-        const subject = 'Consulta sobre equipamiento';
-        const body = 'Hola! Me gustaría hacer una consulta sobre equipamiento de Electroterma';
-    
-        const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(
-            subject
-        )}&body=${encodeURIComponent(body)}`;
-    
-        // window.location.href = mailtoLink;
-        window.open(mailtoLink, '_blank');
-    };
 
-
-	const [BigScreen, setBigScreen] = useState(false);
-
-    useEffect(() => {
-        const handler = (e:any) => setBigScreen(e.matches);
-        const mediaQuery = window.matchMedia('(min-width: 768px)');
-
-        mediaQuery.addEventListener('change', handler);
-        setBigScreen(mediaQuery.matches);
-
-        return () => {
-        mediaQuery.removeEventListener('change', handler);
-        };
-    }, []);
+	const BigScreen = useIsDesktop();
 
 	const mobileImagesCol = [];
     for (let i = 0; i < 2; i++) {
@@ -46,7 +19,7 @@ export default function Soluciones_extraccion_de_aire_localizada_Page() {
             alt="Electroterma Logo"
             className=""
 			radius="none"
-            src={`../../img/soluciones/extraccion_de_aire_localizada/Soluciones${i+4}.webp`}
+            src={`/img/soluciones/extraccion_de_aire_localizada/Soluciones${i+4}.webp`}
             width="100%"
             />
         );
@@ -62,7 +35,7 @@ export default function Soluciones_extraccion_de_aire_localizada_Page() {
 						alt="Banner 1"
 						className="rounded-tl-[30px] "
 						radius="none"
-						src="../../img/soluciones/extraccion_de_aire_localizada/SolucionesBanner1.webp"
+						src="/img/soluciones/extraccion_de_aire_localizada/SolucionesBanner1.webp"
 						width="100%"
 					/>
 				</div>
@@ -75,7 +48,7 @@ export default function Soluciones_extraccion_de_aire_localizada_Page() {
 			<section className="w-full h-[144%] z-0 rounded-tl-[0px] -mt-10 pt-10   bg-[#F7F6F6] ">
 				<div className="  ml-[0.5vw] mt-6  bg-gray-00">
 					<div className=" flex mr-auto ml-4 pl-10 text-white font-lexend-bold text-[2.5vw] bg-white- rounded-l-full border-1- border-lowgray- shadow-2xl-"> 
-					<Avatar  src="../../img/soluciones/extraccion_de_aire_localizada/SolucionesAutor.webp" className="-ml-8 w- h-[5.0vw] my-2 text-large"/>
+					<Avatar  src="/img/soluciones/extraccion_de_aire_localizada/SolucionesAutor.webp" className="-ml-8 w- h-[5.0vw] my-2 text-large"/>
 					<p className="my-auto ml-4 pt-4  pb-4  text-[#EF771C] font-lexend-bold text-[1.2vw]">Por: {" "}
 						<span className="underline">Juan Manuel de Porras</span>
 					</p>
@@ -92,8 +65,7 @@ export default function Soluciones_extraccion_de_aire_localizada_Page() {
 							alt="Banner 1"
 							className="p-6"
 							radius="none"
-							src="../../img/soluciones/extraccion_de_aire_localizada/Soluciones1.webp"
-							// width="100%"
+							src="/img/soluciones/extraccion_de_aire_localizada/Soluciones1.webp"
 							height="100%"
 							/> 
 							
@@ -135,7 +107,7 @@ export default function Soluciones_extraccion_de_aire_localizada_Page() {
 					<h1 className="lg:py-6 pl-2 lg:pl-12 py-2 text-white font-lexend-bold lg:text-[2.0vw] bg-[#EF771C] shadow-2xl">SOLUCIÓN EXTRACCIÓN DE AIRE LOCALIZADA</h1>
 
 					<div className="visible md:hidden flex mr-auto mt-1 text-white font-lexend-bold text-[2.5vw] bg-white- rounded-l-full border-1- border-lowgray- shadow-2xl-"> 
-							<Avatar  src="../../img/soluciones/extraccion_de_aire_localizada/SolucionesAutor.webp" className="w- h-[10.0vw] my-2 text-large"/>
+							<Avatar  src="/img/soluciones/extraccion_de_aire_localizada/SolucionesAutor.webp" className="w- h-[10.0vw] my-2 text-large"/>
 							<p className="my-auto ml-2 pt-4  pb-4  text-[#EF771C] font-lexend-bold text-[3.2vw]">Por: {" "}
 								<span className="underline">Juan Manuel de Porras</span>
 							</p>
@@ -146,7 +118,6 @@ export default function Soluciones_extraccion_de_aire_localizada_Page() {
 						{/* ------------- Contenido primario ------------- */}
 						<div className="w-full flex flex-col gap-6 text-[3.8vw] lg:text-[1.20vw] font-nunito items-center ">
 
-							
 							<p className="text-[3.8vw] lg:text-[1.20vw] font-nunito">
 								Cuando en una nave industrial, taller de soldadura, cocina de un restaurant u otro local se originan gases, vapores, olores y polvo, aplicar exclusivamente los principios de <span className="font-nunito-bolder">ventilación general</span>
 								{" "}puede generar alguna problemática, como por ejemplo, la extensión a todo el recinto, del contaminante que originalmente estaba localizado. Para estos casos con fuentes de contaminantes puntuales, la mejor solución suele ser una 
@@ -166,11 +137,9 @@ export default function Soluciones_extraccion_de_aire_localizada_Page() {
 								alt="Imagen 2"
 								className=""
 								radius="none"
-								src="../../img/soluciones/extraccion_de_aire_localizada/Soluciones2.webp"
+								src="/img/soluciones/extraccion_de_aire_localizada/Soluciones2.webp"
 								width="100%"
 							/>
-
-
 
 							<h2 className="text-[#EF771C] text-[3.8vw] lg:text-[1.3vw] font-nunito-bold lg:mt-16 mr-auto">ANÁLISIS DE SITUACIÓN Y SOLUCIÓN PROPUESTA POR EL EQUIPO DE INGENIERÍAS</h2>
 						    <p className="">
@@ -180,7 +149,7 @@ export default function Soluciones_extraccion_de_aire_localizada_Page() {
 								alt="Imagen 3"
 								className="lg:mt-16"
 								radius="none"
-								src="../../img/soluciones/extraccion_de_aire_localizada/Soluciones3.webp"
+								src="/img/soluciones/extraccion_de_aire_localizada/Soluciones3.webp"
 								width="100%"
 							/>
 
@@ -194,7 +163,6 @@ export default function Soluciones_extraccion_de_aire_localizada_Page() {
 							<p className="">
 								Además, se deberá tener en cuenta que la ubicación de los dispositivos de captado sea lo más cerca posible de la zona de emisión de los contaminantes, que a su vez el operario no quede entre este y la fuente de contaminación.
 							</p>
-
 
 						</div>
 						
@@ -250,13 +218,6 @@ export default function Soluciones_extraccion_de_aire_localizada_Page() {
 									</tr>
 								</tbody>
 							</table>
-							{/* <Image
-								alt="Imagen 4"
-								className="lg:mt-"
-								radius="none"
-								src="../../img/soluciones/extraccion_de_aire_localizada/Soluciones4.webp"
-								width="100%"
-							/> */}
 
 							<p className="text-[3.8vw] lg:text-[1.20vw] font-nunito-bolder">La superficie total de captación (A) = 1.2 m 2</p>
 
@@ -285,7 +246,6 @@ export default function Soluciones_extraccion_de_aire_localizada_Page() {
 
 							</p>
 
-
 							<h2 className="text-[#EF771C] text-[3.8vw] lg:text-[1.3vw] font-nunito-bold lg:mt-16">VENTILADOR DE EXTRACCIÓN</h2>
 							<p className="text-[3.8vw] lg:text-[1.20vw] font-nunito">
 								En el caso de análisis 
@@ -296,7 +256,6 @@ export default function Soluciones_extraccion_de_aire_localizada_Page() {
 							<p className="text-[3.8vw] lg:text-[1.20vw] font-nunito">
 								Para el sistema separador de sólidos, existen diversas alternativas tecnológicas, según el contaminante que se busque retener. Además, cada una de ellas con sus ventajas y desventajas: costo de inversión, frecuencia de mantenimiento, costos operativos.
 							</p>
-							
 
 							<h2 className="pt-6 text-center font-nunito-bold text-[#9D9D9C] text-[3.8vw] lg:text-[1.3vw] lg:mt-16 mr-auto">RECOMENDACIÓN FINAL</h2>
 							<p className="w-full text-[#EF771C] text-[3.8vw] lg:text-[1.20vw] font-nunito ">
@@ -315,7 +274,7 @@ export default function Soluciones_extraccion_de_aire_localizada_Page() {
 												alt="Banner 1"
 												className="p-2 px-	"
 												radius="none"
-												src="../../img/soluciones/extraccion_de_aire_localizada/Soluciones1.webp"	
+												src="/img/soluciones/extraccion_de_aire_localizada/Soluciones1.webp"	
 												height="100%"
 												/> 
 										</div>
@@ -340,8 +299,6 @@ export default function Soluciones_extraccion_de_aire_localizada_Page() {
 										<a href="/solucionesHVAC"> 
 											<button
 												className="  z-10 bg-[#EF771C] px-2 py-2 rounded-[12px] font-nunito text-white text-sm 2xl:text-xl shadow-xl"
-												// radius="full"
-												// size={BigScreen ? "sm" : "sm"}
 											>
 												Ver otras soluciones
 											</button>
@@ -354,8 +311,6 @@ export default function Soluciones_extraccion_de_aire_localizada_Page() {
 
 					</div>
 
-					
-					
 				</div>
 			</article>
 
@@ -371,13 +326,12 @@ export default function Soluciones_extraccion_de_aire_localizada_Page() {
                         </h2>
                     </div>
                     <div className="mr-0 md:mr-12  ">
-                        <Button size={BigScreen ? "lg" : "sm"} radius="full" className="2xl:text-2xl lg:px-8 mr-[23px] lg:mr-0 shadow-2xl" onClick={handleEmailClick}>
+                        <Button size={BigScreen ? "lg" : "sm"} radius="full" className="2xl:text-2xl lg:px-8 mr-[23px] lg:mr-0 shadow-2xl" onClick={openContactEmail}>
                             <div className="absolute rounded-full left-0 z-20 p-3   shadow-r-xl shadow-[rgba(29,29,27,0.24)] border- border-gray-200 
                                     bg-gradient-to-r from-[#EF771C] to-[#F4A86F]
                                     group-hover:bg-gradient-to-r group-hover:from-orange-400 group-hover:to-[#fe694f]
                                     group-active:bg-gradient-to-r group-active:from-[#f37a7ae5] group-active:to-[#FFFFFF]
                                 "> 
-                                    {/* <MailSvg css=" group-active:text-livered text-white lg:text-3xl" size={40}/> */}
                                     <IoMailOutline className=" group-active:text-livered text-white lg:text-4xl"/>
                                     </div>
                                 <span className="ml-[30px] lg:ml-10">Escribinos</span>
@@ -385,7 +339,6 @@ export default function Soluciones_extraccion_de_aire_localizada_Page() {
                     </div>
                 </div>
             </section>
-
 
 		</main>
 	);

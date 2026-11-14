@@ -1,9 +1,7 @@
 "use client";
 import React from "react";
 
-import { D15Anios } from "@/public/svg/D15Anios";
 import { ElementosOpcionales } from "@/public/svg/elementosOpcionales";
-
 
 interface Props {
     svg?: string;
@@ -21,7 +19,6 @@ export const DiferencialElementosOpcionales : React.FC<Props> =  ({size, text, t
 
 				<ElementosOpcionales size={size || 70}/>
 								
-				{/* <svg size={size || 70}/> */}
 				</span>
 				<p className={`z-0   h-2/3 pl-8 pr-1 md:px-10 py-1 -translate-x-8 
 					bg-white bg-opacity-100 border-2 border-[#FF7800] rounded-tr-2xl md:rounded-tr-3xl  

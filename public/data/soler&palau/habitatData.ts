@@ -37,7 +37,6 @@ interface habitatDataType {
 
     }; 
 
-
     videoYoutubeId1: string;
     videoYoutubeId2: string;
 
@@ -112,16 +111,15 @@ export const habitatData: habitatDataType  = {
         subTitle2: "ÑO",
         p1: "Diseñados para ofrecer una ventilación eficiente y confortable en cuartos de baño ",
         p2: "y pequeñas estancias tanto de locales residenciales como comerciales.",
-        // p3: "No solo facilitamos a nuestros usuarios la elección del modelo ideal, sino también el diseño preciso para realizar instalaciones de manera cómoda, segura y con garantías.",
     },
 
     videoYoutubeId1: "uMn8YFVzBkE",
     videoYoutubeId2: "ea8KWDyYWcA",
 
-    urltdaImageDemo: "../img/solerpalau/habitat/imgDemo/",
+    urltdaImageDemo: "/img/solerpalau/habitat/imgDemo/",
     demoImageNames: ["1", "2", "3", "1", "2", "3"],
 
-    urlImageBanner: "../../img/solerpalau/imgbanner/",
+    urlImageBanner: "/img/solerpalau/imgbanner/",
     bannerImageInfo: [
         {
             imgName:"1",
@@ -284,11 +282,8 @@ export const habitatData: habitatDataType  = {
                 label: "Peso (kg)",
             },
 
-
-
         ],
         
     },
-
 
 }

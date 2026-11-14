@@ -22,7 +22,6 @@ export const Durabilidad: React.FC<Props> = ({
             xmlns="http://www.w3.org/2000/svg"
         >
             <ellipse cx="49.5" cy="49.5" rx="49.5" ry="49.5" fill="#FF7800" />
-            {/* <g clip-path="url(#clip0_5034_600)"> */}
                 <path
                     d="M38.9499 68.0601H57.8999V72.35C57.8999 73.43 57.0199 74.3101 55.9399 74.3101H40.5699C39.6699 74.3101 38.9399 73.58 38.9399 72.68V68.05L38.9499 68.0601Z"
                     stroke="white"
@@ -86,7 +85,6 @@ export const Durabilidad: React.FC<Props> = ({
                     strokeMiterlimit="10"
                     strokeLinecap="round"
                 />
-            {/* </g> */}
         </svg>
     );
 };

@@ -1,16 +1,11 @@
 "use client";
-// import { Card, CardBody, CardHeader } from "@nextui-org/card";
 import { Image } from "@nextui-org/image";
-// import { Tabs, Tab } from "@nextui-org/tabs";
 import React from "react";
 import InfoTecnica from "./infotecnica";
 import { DotSVG } from "@/public/svg/dot";
-import {Tabs, Tab, Card, CardBody, CardHeader} from "@nextui-org/react";
+import { Tabs, Tab, Card, CardBody } from "@nextui-org/react";
 
 export default function Caracteristics() {
-    const [selected, setSelected] = React.useState("descripcion");
-
-
 
     return (
         <div className="flex flex-col  md:w-full lg:w-[900px]   mt-10">
@@ -19,9 +14,7 @@ export default function Caracteristics() {
             variant="solid"
             size={"lg"}
             radius={"lg"}
-            // color={"warning"}
             classNames={{
-                // tabList: "gap-6 w-full rounded-none p-0 border-b border-divider",
                 cursor: "w-full bg-orange-500",
                 tab: "text-xs p-1 md:text-md lg:text-xl md:px-6  h-12 font-bold",
                 tabContent: "group-data-[selected=true]:text-white ",
@@ -121,7 +114,7 @@ const tabs = [
                     <Image
                         alt="Soler Palau Tda 2"
                         className=""
-                        src="../img/solerpalau/tda/SolerPalauTda2.png"
+                        src="/img/solerpalau/tda/SolerPalauTda2.png"
                         width={400}
                         loading="lazy"
                     />

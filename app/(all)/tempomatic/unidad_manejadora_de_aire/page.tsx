@@ -1,27 +1,10 @@
 "use client";
-import { Link } from "@nextui-org/link";
-import Lottie from "lottie-react";
 import NextLink from "next/link";
 
-import { Snippet } from "@nextui-org/snippet";
-import { Code } from "@nextui-org/code";
-import { button as buttonStyles } from "@nextui-org/theme";
-import { siteConfig } from "@/config/site";
-import { title, subtitle } from "@/components/primitives";
-import { GithubIcon } from "@/components/icons";
 import { Image } from "@nextui-org/image";
-import { Button } from "@nextui-org/button";
 import CardDisplay from "@/components/navbar/cardDisplay";
-import SimpleSliderDemoImages from "@/components/imgslider/simpleSliderDemoImages";
-import { BsWhatsapp } from "react-icons/bs";
-import { itemsNavSolerPalauHome, itemsNavTempomatic } from "@/public/data/navbarData";
-import { SolerPalauSVG } from "@/public/svg/solerPalauSVG";
-import CardDisplaySypHome from "@/components/navbar/cardDisplaySypHome";
+import { itemsNavTempomatic } from "@/public/data/navbarData";
 import { AsesoramietoButton } from "@/components/custonButtons/asesoramiento";
-import { TiendaButton } from "@/components/custonButtons/tienda";
-import { useEffect, useState } from "react";
-import { EscribinosButton } from "@/components/custonButtons/escribinos";
-import { Divider } from "@nextui-org/react";
 import { VinietaNaranjaSVG } from "@/public/svg/vinietaNaranja";
 import { DiferencialConVentiladorSyP } from "@/components/diferenciales/diferencialConVentiladorSyP";
 import { DiferencialSerpentinaReforzada } from "@/components/diferenciales/diferencialSerpentinaReforzada";
@@ -29,46 +12,13 @@ import { DiferencialEmplazamientoInteriorExterior } from "@/components/diferenci
 import { DiferencialConstruccionRobusta } from "@/components/diferenciales/diferencialConstruccionRobusta";
 import { DiferencialOptimoRendimiento } from "@/components/diferenciales/diferencialOptimoRendimiento";
 import { ManualButtonNaranja } from "@/components/custonButtons/manual";
+import { useIsDesktop } from "@/hooks/useIsDesktop";
 
-
-
-// import ScrollVideoPlayer from "@/components/videoplayer/scrollVideo";
-// import VideoScrollPlayer from "@/components/videoplayer/videoplayer";
-interface ItemsNavbar {
-    key: string;
-    label: string[];
-    labelShort: string;
-    img: string;
-    href: string;
-}
 
 export default function UnidadManejadoraDeAirePage() {
 
-    const [BigScreen, setBigScreen] = useState(false);
-    useEffect(() => {
-        const handler = (e:any) => setBigScreen(e.matches);
-        const mediaQuery = window.matchMedia('(min-width: 768px)');
+    const BigScreen = useIsDesktop();
 
-        mediaQuery.addEventListener('change', handler);
-        setBigScreen(mediaQuery.matches);
-
-        return () => {
-        mediaQuery.removeEventListener('change', handler);
-        };
-    }, []);
-
-    const handleEmailClick = () => {
-        const email = 'info@electroterma.com.ar';
-        const subject = 'Consulta sobre equipamiento';
-        const body = 'Hola! Me gustaria hacer una consulta sobre equipamiento de Electroterma';
-    
-        const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(
-            subject
-        )}&body=${encodeURIComponent(body)}`;
-    
-        // window.location.href = mailtoLink;
-        window.open(mailtoLink, '_blank');
-    };
 
     return (
         <main className="flex flex-col h-full items-center justify-center gap-4 pb-4 md:pb-10 
@@ -80,7 +30,7 @@ export default function UnidadManejadoraDeAirePage() {
                     alt="Home banner 1"
                     className="rounded-[44-px]"
                     radius="none"
-                    src="../img/tempomatic/unidad_manejadora_de_aire/unidad_manejadora_de_aire-Banner.webp"
+                    src="/img/tempomatic/unidad_manejadora_de_aire/unidad_manejadora_de_aire-Banner.webp"
                     width="100%"
                 />
             </section>
@@ -90,7 +40,7 @@ export default function UnidadManejadoraDeAirePage() {
                     alt="Home banner 1"
                     className=""
                     radius="none"
-                    src="../img/tempomatic/unidad_manejadora_de_aire/tempomatic-Logo.jpg"
+                    src="/img/tempomatic/unidad_manejadora_de_aire/tempomatic-Logo.jpg"
                     width="100%"
                 />
             </section>  
@@ -122,12 +72,11 @@ export default function UnidadManejadoraDeAirePage() {
                             alt="Home banner 1"
                             className=""
                             radius="none"
-                            src="../img/tempomatic/unidad_manejadora_de_aire/unidad_manejadora_de_aire_01.webp"
+                            src="/img/tempomatic/unidad_manejadora_de_aire/unidad_manejadora_de_aire_01.webp"
                             width="100%"
                         />
                     </div>
-                    
-                
+
             </section>
 
             <section className="w-full px-[6%] -mt-10 flex">
@@ -154,7 +103,7 @@ export default function UnidadManejadoraDeAirePage() {
                         alt="Home banner 1"
                         className=""
                         radius="none"
-                        src="../img/tempomatic/unidad_manejadora_de_aire/unidad_manejadora_de_aire_02.webp"
+                        src="/img/tempomatic/unidad_manejadora_de_aire/unidad_manejadora_de_aire_02.webp"
                         width="100%"
                     />
                 </div>
@@ -195,7 +144,7 @@ export default function UnidadManejadoraDeAirePage() {
                             alt="Home banner 1"
                             className=""
                             radius="none"
-                            src="../img/tempomatic/unidad_manejadora_de_aire/unidad_manejadora_de_aire_03.webp"
+                            src="/img/tempomatic/unidad_manejadora_de_aire/unidad_manejadora_de_aire_03.webp"
                         />
                     </div>
                 </div>
@@ -210,7 +159,7 @@ export default function UnidadManejadoraDeAirePage() {
                             alt="Home banner 1"
                             className=""
                             radius="none"
-                            src="../img/tempomatic/unidad_manejadora_de_aire/unidad_manejadora_de_aire_04.webp"
+                            src="/img/tempomatic/unidad_manejadora_de_aire/unidad_manejadora_de_aire_04.webp"
                         />
                     </div>
                
@@ -336,12 +285,9 @@ export default function UnidadManejadoraDeAirePage() {
                
             </section>
 
-            
             {/* -------------CARACTERÍSTICAS ------------- */}
             <section className="w-full px-[6%] mt-10 ">
             <h1 className=" text-[#FF7800] md:text-3xl lg:text-4xl 2xl:text-5xl leading-none font-nunito-bolder ">CARACTERÍSTICAS</h1>
-
-                {/* <h1 className="font-nunito text-[#FF7800] text-[2.3vw] text-right">TOMA DE AIRE INTECCIÓN DE AIRE</h1> */}
 
                     <table className="table-auto mt-4 font-nunito text-[1.4vw] w-4/5">
                         <thead >
@@ -353,8 +299,7 @@ export default function UnidadManejadoraDeAirePage() {
                                 <th className="p-2 w-[10.5vw] border-r-2 rounded-b-[1.7vw] border-white">UMA 12/50</th>
                                 <th className="p-2 w-[10.5vw] border-r-2 rounded-b-[1.7vw] border-white">UMA 15/78</th>
                                 <th className="p-2 w-[10.5vw] border-r-2 rounded-b-[1.7vw] border-white">UMA 20/100</th>
-                            
-                            
+
                             </tr>
                         </thead>
                         <tbody>
@@ -442,7 +387,7 @@ export default function UnidadManejadoraDeAirePage() {
                             alt="Home banner 1"
                             className=""
                             radius="none"
-                            src="../img/tempomatic/unidad_manejadora_de_aire/unidad_manejadora_de_aire_05.webp"
+                            src="/img/tempomatic/unidad_manejadora_de_aire/unidad_manejadora_de_aire_05.webp"
                         />
                     </div>
             
@@ -450,7 +395,7 @@ export default function UnidadManejadoraDeAirePage() {
 
             {/* -------------BOTON MANUAL ------------- */}
             <section className="w-full px-[6%] mt-10 flex justify-end">
-                    <ManualButtonNaranja size={BigScreen ? 40 : 25} screen={BigScreen ? "xl" : "lg"} link={"../../manuales/05. Folleto unidad manejadora de aire.pdf"} dwName={"05. Folleto unidad manejadora de aire.pdf"}/>
+                    <ManualButtonNaranja size={BigScreen ? 40 : 25} screen={BigScreen ? "xl" : "lg"} link={"/manuales/05. Folleto unidad manejadora de aire.pdf"} dwName={"05. Folleto unidad manejadora de aire.pdf"}/>
             </section>
             </>
             :
@@ -472,9 +417,7 @@ export default function UnidadManejadoraDeAirePage() {
                             
                         </div>
                     </div>
-                    
-                        
-                
+
                 </section>
                 <section className="w-full px-[%] -mt-4 flex
                     bg-[url('/svg/ondasTempomaticItemsMobile.svg')] bg-contain lg:bg-fill  bg-[center_bottom_10vw] md:bg-[center_top_0vw] lg:bg-[center_top_6vw] bg-no-repeat
@@ -484,7 +427,7 @@ export default function UnidadManejadoraDeAirePage() {
                                 alt="Home banner 1"
                                 className=""
                                 radius="none"
-                                src="../img/tempomatic/unidad_manejadora_de_aire/unidad_manejadora_de_aire_02.webp"
+                                src="/img/tempomatic/unidad_manejadora_de_aire/unidad_manejadora_de_aire_02.webp"
                                 width="100%"
                             />
                         </div>
@@ -501,7 +444,6 @@ export default function UnidadManejadoraDeAirePage() {
                         <AsesoramietoButton screen={BigScreen ? "xl" : "md"} size={BigScreen ? 40 : 16}
                             link={"https://wa.me/5492236356756?text=Hola.%20Quiero%20más%20información%20sobre%20la%20Unidad%20Manejadora%20de%20Aire."}/>
                     </div>
-                    
 
                 </section> 
 
@@ -512,7 +454,6 @@ export default function UnidadManejadoraDeAirePage() {
                         <DiferencialConstruccionRobusta size={55} customWith={10} />
                         <DiferencialOptimoRendimiento size={55} customWith={10} />
                 </section>
-
 
                 {/* -------------COMPONENTES ------------- */}
                 <section className="w-full px-[6%] mt-4 lg:-mt-10 ">
@@ -542,7 +483,7 @@ export default function UnidadManejadoraDeAirePage() {
                                 alt="Home banner 1"
                                 className=""
                                 radius="none"
-                                src="../img/tempomatic/unidad_manejadora_de_aire/unidad_manejadora_de_aire_03.webp"
+                                src="/img/tempomatic/unidad_manejadora_de_aire/unidad_manejadora_de_aire_03.webp"
                             />
                         </div>
                     </div>
@@ -550,21 +491,20 @@ export default function UnidadManejadoraDeAirePage() {
 
                 {/* -------------BOTON MANUAL ------------- */}
                 <section className="w-full px-[6%] lg:mt-4 flex justify-center">
-                        <ManualButtonNaranja size={BigScreen ? 40 : 25} screen={BigScreen ? "xl" : "lg"} link={"../../manuales/05. Folleto unidad manejadora de aire.pdf"} dwName={"05. Folleto unidad manejadora de aire.pdf"}/>
+                        <ManualButtonNaranja size={BigScreen ? 40 : 25} screen={BigScreen ? "xl" : "lg"} link={"/manuales/05. Folleto unidad manejadora de aire.pdf"} dwName={"05. Folleto unidad manejadora de aire.pdf"}/>
                 </section>
                 {/* ------------- Imagenes presentacion ------------- */}
                 <section className="w-full flex items-center justify-center mx-auto p-0 bg-transparent space-x-0">
                         <Image
                             alt="Otam Logo"
                             radius="none"
-                            src="../img/electrotermalogoletrasProducido.png"
+                            src="/img/electrotermalogoletrasProducido.png"
                             width={300}
                         />
                         
                 </section>
             </>
             }
-            
 
             {/* -------------OTROS PRODUCTOS TEMPOMATIC ------------- */}
             <section className="w-full px-[6%] mt-4 lg:mt-10 flex justify-center">
@@ -589,63 +529,22 @@ export default function UnidadManejadoraDeAirePage() {
                         ))}  
                         </div>
                     </div>
-                    
-                
+
             </section>
 
             {/* ------------- Botonera ------------- */}
-{/* 
-            <section className="w-full 2xl:w-2/3 mx-auto 2xl:mx-[3%] 2xl:-translate-x-10 lg:mb-10 lg:mt-10 font-nunito flex flex-col items-center lg:flex-row justify-center md:justify-around
-                overflow-hidden">
-                    
-                <section className=" 2xl:w-4/5 ">
-					<div className=" px-auto  flex h-[150px] lg:h-[250px] items-center mt-10 md:mt-2 space-x-2 lg:space-x-10  text-[12px] lg:text-3xl text-center text-[#4C4B4B]">
-						<div>
-							<h1 className="w-mx px-1">Contactá</h1>
-							<h1>a un vendedor</h1><br/>
-
-							<AsesoramietoButton size={BigScreen ? 42 : 15} screen={BigScreen ? "xl" : "xs"}
-                            link={"https://wa.me/5492236356756?text=Hola.%20visité%20tu%20página%20web%20y%20me%20gustaría%20más%20información."}
-                            // Hola,%20visite%20tu%20pagina%20web%20y%20me%20gustaria%20mas%20informacion
-                            />
-						</div>
-
-						<Divider orientation="vertical" className="bg-[#EDEDED]" />
-						<div>
-							<h1 className="w-mx px-1">Comprá en</h1>
-							<h1>nuestra tienda</h1><br/>
-
-                            <TiendaButton size={BigScreen ? 40 : 15} screen={BigScreen ? "xl" : "xs"}/>
-                    
-						</div>
-                        <Divider orientation="vertical" className="bg-[#EDEDED]" />
-						<div>
-							<h1 className="w-max px-0.5">Escribinos a través</h1>
-							<h1>de nuestro mail</h1><br/>
-
-                            <EscribinosButton size={BigScreen ? 42 : 15} screen={BigScreen ? "xl" : "xs"} />
-						</div>
-
-					</div>
-                        
-                </section>
-            </section> */}
-
 
             {/* ------------- Imagenes presentacion ------------- */}
             <section className=" hidden w-full lg:flex items-center justify-center mx-auto p-0 bg-transparent space-x-0">
                     <Image
                         alt="Otam Logo"
                         radius="none"
-                        src="../img/electrotermalogoletrasProducido.png"
+                        src="/img/electrotermalogoletrasProducido.png"
                         width={500}
                     />
                     
             </section>
         </main>
-        // 	<div className={'h-[5000px]'}>
-        // 		<VideoScrollPlayer/>
-        // </div>
     );
 }
 

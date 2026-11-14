@@ -7,7 +7,6 @@ interface Props {
 }
 export const Ondas03SVG: React.FC<Props> = ({ css, size, height, width, ...props}) => {
     return (
-        // <svg width="1538" height="797" viewBox="0 0 1538 797" fill="none" xmlns="http://www.w3.org/2000/svg"></svg>
         <svg
             className={css}
             width={size || width || 1538}
