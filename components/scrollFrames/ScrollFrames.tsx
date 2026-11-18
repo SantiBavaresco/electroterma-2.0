@@ -29,7 +29,9 @@ interface ScrollFramesProps {
 
 // La animación arranca cuando el borde superior de la sección llega a este punto
 // de la pantalla (antes empezaba recién al quedar fija arriba de todo)
-const START_AT = "top 60%";
+// En celular el canvas ocupa casi toda la pantalla: arranca cuando ya se ve entero,
+// así no se pierde el comienzo de la animación.
+const START_AT: Record<ScrollFramesVariant, string> = { web: "top 60%", mobile: "top 10%" };
 // Desplazamiento vertical con el que se dibujaba cada frame en la versión original
 const OFFSET_Y: Record<ScrollFramesVariant, number> = { web: 30, mobile: 50 };
 const MAX_DPR = 2;
@@ -173,7 +175,7 @@ export default function ScrollFrames({ product, frameCount, variant, storyClassN
         // ---------- scroll ----------
         const trigger = ScrollTrigger.create({
             trigger: section,
-            start: START_AT,
+            start: START_AT[variant],
             end: "bottom bottom",
             scrub: 0.4,
             onUpdate: (self) => {
