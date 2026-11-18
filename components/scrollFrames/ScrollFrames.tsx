@@ -21,8 +21,10 @@ interface ScrollFramesProps {
     /** Clase extra del div de la "story" en desktop (se mantiene la del diseño original) */
     storyClassName?: string;
     /**
-     * "cover": respeta la proporción de los frames (recorta un poco los bordes si la
-     * pantalla no es 16:9). "stretch": los estira a toda la pantalla como la versión original.
+     * "stretch": el frame entero ocupa toda la pantalla, como la versión original
+     * (por defecto en escritorio: no se corta nada del ventilador ni de los textos).
+     * "cover": respeta la proporción y recorta los bordes que sobran
+     * (por defecto en celular, donde estirar deformaba mucho la imagen).
      */
     fit?: "cover" | "stretch";
 }
@@ -44,9 +46,10 @@ const CONCURRENT_LOADS = 6;
  *   mostrado depende del progreso del scroll dentro de esa sección, en ambos sentidos.
  * - Los frames se cargan de a poco y en orden "grueso a fino" (cada 32, 16, 8...):
  *   si el usuario scrollea rápido se dibuja el frame cargado más cercano.
- * - Por defecto el dibujo respeta la proporción de la imagen ("cover"), sin deformarla.
+ * - En escritorio el frame se ve entero (como el original); en celular respeta la proporción.
  */
-export default function ScrollFrames({ product, frameCount, variant, storyClassName = "pt-32", fit = "cover" }: ScrollFramesProps) {
+export default function ScrollFrames({ product, frameCount, variant, storyClassName = "pt-32", fit: fitProp }: ScrollFramesProps) {
+    const fit = fitProp ?? (variant === "web" ? "stretch" : "cover");
     const sectionRef = useRef<HTMLElement>(null);
     const canvasRef = useRef<HTMLCanvasElement>(null);
 
